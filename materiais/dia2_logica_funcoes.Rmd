@@ -59,28 +59,71 @@ knitr::opts_chunk$set(
 
 ## 1. Operadores e Condicionais (≈ 30 min)
 
+### O que são operadores?
+
+**Operadores** são símbolos especiais que realizam operações entre valores. Eles são fundamentais para tomar decisões no código e controlar o fluxo de execução.
+
 ### 1.1 Operadores lógicos e relacionais
+
+**Operadores relacionais** comparam dois valores e retornam `TRUE` ou `FALSE`:
+
+- `==` : igual a
+- `!=` : diferente de  
+- `>` : maior que
+- `<` : menor que
+- `>=` : maior ou igual
+- `<=` : menor ou igual
+
+**Operadores lógicos** combinam condições:
+
+- `&` : E (AND) - ambas condições devem ser verdadeiras
+- `|` : OU (OR) - pelo menos uma condição deve ser verdadeira
+- `!` : NÃO (NOT) - inverte o valor lógico
+- `xor()` : OU EXCLUSIVO - apenas uma condição pode ser verdadeira
+
+**Operador especial:**
+- `%in%` : verifica se um valor está presente em um vetor
+
 ```{r}
 # Lógicos: & | ! xor()
-TRUE & FALSE
-TRUE | FALSE
-!TRUE
-xor(TRUE, FALSE)
+TRUE & FALSE    # FALSE (ambos precisam ser TRUE)
+TRUE | FALSE    # TRUE (pelo menos um é TRUE)
+!TRUE          # FALSE (inverte)
+xor(TRUE, FALSE) # TRUE (apenas um é TRUE)
 
 # Relacionais: == != > < >= <=
-3 == 3
-5 != 2
-5 > 2; 1 < 0
-2 >= 2; 3 <= 10
+3 == 3         # TRUE (igual)
+5 != 2         # TRUE (diferente)
+5 > 2; 1 < 0   # TRUE; FALSE
+2 >= 2; 3 <= 10 # TRUE; TRUE
 
 # %in% (teste de pertinência)
-2 %in% c(1, 2, 3)
-"Adelie" %in% c("Chinstrap", "Gentoo")
+2 %in% c(1, 2, 3)                        # TRUE
+"Adelie" %in% c("Chinstrap", "Gentoo")   # FALSE
 ```
 
-### 1.2 Condicionais: `if`, `else`, `ifelse`, `case_when`
+### 1.2 Condicionais: tomando decisões no código
+
+**Condicionais** permitem que seu código tome decisões baseadas em condições. São como perguntas "se... então... senão...".
+
+**Três formas principais:**
+
+1. **`if/else`** - Estrutura clássica para **um único valor**
+   - Avalia uma condição e executa diferentes blocos de código
+   - Útil para controle de fluxo em funções
+   
+2. **`ifelse()`** - Versão **vetorizada** para múltiplos valores
+   - Aplica a condição a cada elemento de um vetor
+   - Retorna um vetor de resultados
+   - Ideal para criar novas colunas em data.frames
+
+3. **`case_when()`** - Para **múltiplas condições** complexas
+   - Avalia várias regras em sequência
+   - Para na primeira regra verdadeira
+   - Mais legível que `ifelse()` aninhados
+
 ```{r}
-# if/else (escala escalar)
+# if/else (escalar - um valor por vez)
 x <- 18
 if (x >= 18) {
   status <- "maior_de_idade"
@@ -89,56 +132,101 @@ if (x >= 18) {
 }
 status
 
-# ifelse() (vetorizado)
+# ifelse() (vetorizado - múltiplos valores)
 notas <- c(5.9, 7.5, 9.2, 6.0)
 resultado <- ifelse(notas >= 7, "Aprovado", "Recuperação")
 resultado
 
-# case_when() (multiplas regras)
-# require(dplyr)
-# dplyr::case_when avalia em ordem
+# case_when() (múltiplas regras em ordem)
 library(dplyr)
 faixa <- case_when(
-  notas >= 9           ~ "Excelente",
+  notas >= 9             ~ "Excelente",
   notas >= 7 & notas < 9 ~ "Bom",
   notas >= 5 & notas < 7 ~ "Regular",
-  TRUE                  ~ "Insuficiente"
+  TRUE                   ~ "Insuficiente"  # TRUE = "caso contrário"
 )
 faixa
 ```
 
-> **Dica didática**: usar `ifelse` quando quiser **vetorizar**; `case_when` quando houver **várias regras**.
+> **Dica didática**: use `ifelse()` quando quiser **vetorizar**; `case_when()` quando houver **várias regras**.
 
 ---
 
 ## 2. Loops, Vetorização e Funções (≈ 25 min)
 
 ### 2.1 Loops vs. operações vetorizadas
+
+**O que são loops?**
+
+Um **loop** (laço) é uma estrutura que repete um bloco de código várias vezes. O loop `for` é o mais comum e executa o código uma vez para cada elemento de uma sequência.
+
+**Por que evitar loops em R?**
+
+R é uma linguagem **vetorizada**, o que significa que muitas operações funcionam automaticamente em vetores inteiros, sem precisar de loops explícitos. Operações vetorizadas são:
+- **Mais rápidas** (otimizadas internamente em C/Fortran)
+- **Mais legíveis** (menos linhas de código)
+- **Mais idiomáticas** (o "jeito R" de fazer)
+
+**Quando usar loops:**
+- Quando não existe alternativa vetorizada
+- Para operações que dependem de iterações anteriores
+- Em simulações e processos iterativos
+
 ```{r}
 valores <- 1:5
 
-# Loop for (didático)
+# Loop for (didático, mas não idiomático)
 soma <- 0
 for (v in valores) {
   soma <- soma + v
 }
 soma
 
-# Vetorizado (mais idiomático em R)
-sum(valores)
+# Vetorizado (preferido em R!)
+sum(valores)  # Muito mais simples e rápido
 ```
 
-### 2.2 Sua primeira função: IMC
+### 2.2 Funções: empacotando lógica reutilizável
+
+**O que são funções?**
+
+**Funções** são blocos de código que realizam uma tarefa específica e podem ser reutilizados. São fundamentais para:
+- **Organizar** código em partes lógicas
+- **Reutilizar** lógica sem repetir código
+- **Documentar** intenções através de nomes descritivos
+- **Facilitar** manutenção e debugging
+
+**Estrutura de uma função:**
+```r
+nome_funcao <- function(argumento1, argumento2 = valor_padrao) {
+  # corpo da função
+  resultado <- alguma_operacao
+  return(resultado)  # return é opcional (retorna última expressão)
+}
+```
+
+**Boas práticas:**
+- Use nomes descritivos que indiquem o que a função faz
+- Valide entradas com `stop()`, `stopifnot()` ou `if`
+- Documente com comentários o que a função faz e quais são os argumentos
+- Retorne sempre o mesmo tipo de objeto
+
+**Exemplo prático: calculadora de IMC**
+
 ```{r}
 # Fórmula: IMC = peso(kg) / altura(m)^2
 imc <- function(peso, altura) {
+  # Validação: altura não pode ser zero ou negativa
   if (any(altura <= 0)) stop("Altura deve ser > 0")
+  
+  # Cálculo vetorizado (funciona com um ou vários valores)
   peso / (altura ^ 2)
 }
 
+# Testando com múltiplos valores
 imc(c(70, 80), c(1.70, 1.80))
 
-# Classificando IMC usando case_when()
+# Função para classificar IMC usando case_when()
 classificar_imc <- function(imc) {
   dplyr::case_when(
     imc < 18.5              ~ "Abaixo do peso",
@@ -148,11 +236,12 @@ classificar_imc <- function(imc) {
   )
 }
 
+# Combinando as duas funções
 val <- imc(80, 1.75)
 classificar_imc(val)
 ```
 
-> **Boas práticas**: funções **nomeiam intenções**, validam entradas e retornam **um** resultado claro.
+> **Princípio DRY** (Don't Repeat Yourself): se você copiou e colou código mais de 2 vezes, provavelmente deveria criar uma função!
 
 ---
 
@@ -235,8 +324,8 @@ interval(ymd("2025-11-01"), ymd("2025-11-18"))
 
 ### Exercício 1 — Condicionais
 1. Crie um vetor de 8 notas qualquer.  
-2. Classifique com `ifelse` como **Aprovado/Recuperação** (corte em 7).  
-3. Depois, crie uma classificação mais rica usando `case_when` com 4 faixas.
+2. Classifique com `ifelse()` como **Aprovado/Recuperação** (corte em 7).  
+3. Depois, crie uma classificação mais rica usando `case_when()` com 4 faixas.
 
 ```{r}
 # Seu código aqui
@@ -304,8 +393,25 @@ git push origin main
 
 ---
 
-## 8. Referências rápidas
+## 8. Checklist de encerramento
+
+- [ ] Dominou operadores lógicos e relacionais
+- [ ] Entendeu diferenças entre `if/else`, `ifelse()` e `case_when()`
+- [ ] Compreendeu por que vetorização é preferível a loops
+- [ ] Criou suas primeiras funções com validação
+- [ ] Aplicou pipeline básico com `dplyr`
+- [ ] Explorou manipulação de datas com `lubridate`
+- [ ] Realizou commit e push no seu fork
+
+---
+
+## 9. Referências rápidas
 - **`dplyr` cheatsheet**: https://posit.co/resources/cheatsheets/  
 - **R for Data Science (2e)**: https://r4ds.hadley.nz/  
 - **Happy Git with R**: https://happygitwithr.com/  
 - **palmerpenguins**: https://allisonhorst.github.io/palmerpenguins/
+- **lubridate**: https://lubridate.tidyverse.org/
+
+---
+
+**Nos vemos no Dia 3 para transformação de dados e visualização com ggplot2!** 🚀
