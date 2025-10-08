@@ -1,28 +1,67 @@
-% -------- capa.tex --------
-\thispagestyle{empty}
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Times}
+\setsansfont{Helvetica}
+\setmonofont{Menlo}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\pagestyle{empty}
+
+\begin{document}
 \begin{titlepage}
+  \thispagestyle{empty}
   \centering
-  % Caso queira incluir um logo, descomente a linha abaixo e adicione a imagem:
-  % \includegraphics[width=0.35\textwidth]{materiais/logo.png}\par\vspace{1.5cm}
 
-  {\Huge \textbf{Curso Intensivo de R, Git/GitHub e Inteligência Artificial}\par}
-  \vspace{0.8cm}
-  {\Large (16 horas)\par}
-  \vspace{2cm}
+  % Logo (opcional) — descomente se tiver:
+  % \includegraphics[width=0.3\textwidth]{logo.png}\\[1cm]
 
-  {\Large \textbf{Instrutor:} Vinícius Silva Junqueira}\par
-  \vspace{0.4cm}
-  {\Large \textbf{Local:} Uberlândia, MG}\par
-  \vspace{0.4cm}
-  {\Large \textbf{Data:} Novembro de 2025}\par
+  \vspace*{2cm}
+
+  % Título
+  {\Huge\bfseries Curso Intensivo de R\\[0.3cm]
+  com GitHub e IA\\[1.5cm]}
+
+  % Subtítulo
+  {\Large Análise de Dados Moderna para Iniciantes\\[0.5cm]
+  Material Didático Completo\\[2cm]}
+
+  % Informações do curso
+  \begin{tabular}{rl}
+    \textbf{Carga horária:} & 16 horas \\[0.2cm]
+    \textbf{Período:} & 17, 18, 24 e 25 de Novembro de 2024 \\[0.2cm]
+    \textbf{Horário:} & 19h00 às 22h00 \\[0.2cm]
+    \textbf{Formato:} & Prático e hands-on \\[0.2cm]
+  \end{tabular}
 
   \vfill
-  % Se quiser uma imagem de fundo na capa:
-  % \includegraphics[width=\textwidth]{materiais/capa-imagem.png}
-\end{titlepage}
 
-% Desativa a numeração na capa
-\clearpage
-\pagenumbering{gobble}
-\clearpage
-\pagenumbering{arabic}
+  % Instrutor
+  {\large
+  \textbf{Instrutor}\\[0.3cm]
+  Vinícius Silva Junqueira\\[0.2cm]
+  \small
+  Doutor em Genética e Melhoramento\\
+  Pesquisador Bayer - Melhoramento Genético\\[0.5cm]
+  }
+
+  % Contato
+  {\footnotesize
+  \texttt{junqueiravinicius@hotmail.com}\\
+  \texttt{github.com/viniciusjunqueira}\\
+  \texttt{linkedin.com/in/junqueiravinicius}\\[1cm]
+  }
+
+  % Rodapé
+  {\small
+  Versão 1.0 -- \today\\
+  Uberlândia, Minas Gerais, Brasil
+  }
+
+  % ... (seu conteúdo da capa aqui) ...
+\end{titlepage}
+\end{document}
