@@ -1,11 +1,13 @@
 ---
 title: "Sobre o Curso"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 geometry: margin=2.5cm
 fontsize: 11pt
 ---
 
-# Bem-vindo ao Curso Intensivo de R!
+# Bem-vindo a Introdução Programação em R com GitHub, ChatGPT e Claude
 
 Este curso foi desenvolvido para quem deseja dar os primeiros passos no mundo da análise de dados usando R, uma das linguagens mais poderosas e populares para ciência de dados. Em 16 horas de conteúdo prático e objetivo, você aprenderá não apenas a programar em R, mas também a integrar ferramentas modernas que potencializam seu aprendizado e produtividade.
 

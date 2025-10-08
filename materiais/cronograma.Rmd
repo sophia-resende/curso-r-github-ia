@@ -1,17 +1,18 @@
 ---
-title: "Introdução à Programação em R com GitHub, ChatGPT e Claude"
+title: "Cronograma"
+subtitle: "Introdução à Programação em R com GitHub, ChatGPT e Claude"
 author: "Vinícius Silva Junqueira"
 date: "`r Sys.Date()`"
 output:
+  html_document:
+    toc: true
+    toc_depth: '2'
+    df_print: paged
   pdf_document:
     latex_engine: xelatex
     toc: true
     toc_depth: 2
     number_sections: true
-  html_document:
-    toc: true
-    toc_depth: '2'
-    df_print: paged
 lang: "pt-BR"
 fontsize: 11pt
 geometry: margin=2.5cm

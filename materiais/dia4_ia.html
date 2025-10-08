@@ -13,7 +13,7 @@
 
 <meta name="date" content="2025-10-08" />
 
-<title>Cronograma</title>
+<title>Dia 4</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1621,8 +1621,8 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Cronograma</h1>
-<h3 class="subtitle">Introdução à Programação em R com GitHub, ChatGPT e
+<h1 class="title toc-ignore">Dia 4</h1>
+<h3 class="subtitle">Introdução Programação em R com GitHub, ChatGPT e
 Claude</h3>
 <h4 class="author">Vinícius Silva Junqueira</h4>
 <h4 class="date">2025-10-08</h4>
@@ -1631,406 +1631,1433 @@ Claude</h3>
 
 <div id="TOC">
 <ul>
-<li><a href="#informa%C3%A7%C3%B5es-gerais-do-curso" id="toc-informações-gerais-do-curso">Informações Gerais do
-Curso</a></li>
-<li><a href="#pr%C3%A9-requisitos-t%C3%A9cnicos" id="toc-pré-requisitos-técnicos">Pré-requisitos Técnicos</a>
+<li><a href="#integra%C3%A7%C3%A3o-do-chatgpt-e-claude-no-rstudio" id="toc-integração-do-chatgpt-e-claude-no-rstudio">Integração do ChatGPT
+e Claude no RStudio</a>
 <ul>
-<li><a href="#instala%C3%A7%C3%B5es-obrigat%C3%B3rias-para-todos-os-sistemas" id="toc-instalações-obrigatórias-para-todos-os-sistemas">Instalações
-obrigatórias (para todos os sistemas)</a></li>
+<li><a href="#revis%C3%A3o-r%C3%A1pida-dos-dias-anteriores-10-min" id="toc-revisão-rápida-dos-dias-anteriores-10-min">Revisão Rápida dos
+Dias Anteriores (≈ 10 min)</a></li>
 </ul></li>
-<li><a href="#estrutura-pedag%C3%B3gica-e-filosofia" id="toc-estrutura-pedagógica-e-filosofia">Estrutura Pedagógica e
-Filosofia</a></li>
-<li><a href="#pacotes-r-necess%C3%A1rios" id="toc-pacotes-r-necessários">Pacotes R Necessários</a>
+<li><a href="#parte-1-conceitos-e-modelos-19h00---19h30" id="toc-parte-1-conceitos-e-modelos-19h00---19h30">Parte 1: Conceitos e
+Modelos (19h00 - 19h30)</a>
 <ul>
-<li><a href="#instala%C3%A7%C3%A3o-no-dia-1-a-3-n%C3%BAcleo-do-curso" id="toc-instalação-no-dia-1-a-3-núcleo-do-curso">Instalação no Dia 1 a 3
-(núcleo do curso)</a></li>
-<li><a href="#pacotes-de-ia-dia-4" id="toc-pacotes-de-ia-dia-4">Pacotes
-de IA (Dia 4)</a></li>
+<li><a href="#o-que-s%C3%A3o-llms-large-language-models" id="toc-o-que-são-llms-large-language-models">1.1 O que são LLMs (Large
+Language Models)?</a></li>
+<li><a href="#o-que-s%C3%A3o-apis" id="toc-o-que-são-apis">1.2 O que são
+APIs?</a></li>
+<li><a href="#limites-e-custos" id="toc-limites-e-custos">1.3 Limites e
+Custos</a></li>
+<li><a href="#boas-pr%C3%A1ticas-de-uso-respons%C3%A1vel-de-ia" id="toc-boas-práticas-de-uso-responsável-de-ia">1.4 Boas Práticas de Uso
+Responsável de IA</a></li>
 </ul></li>
-<li><a href="#dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho" id="toc-dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho">Dia 1:
-17/11 (Segunda) — Fundamentos e Ambiente de Trabalho</a>
+<li><a href="#parte-2-configura%C3%A7%C3%A3o-de-chaves-e-ambiente-19h30---20h15" id="toc-parte-2-configuração-de-chaves-e-ambiente-19h30---20h15">Parte
+2: Configuração de Chaves e Ambiente (19h30 - 20h15)</a>
 <ul>
-<li><a href="#h00---20h30-ambienta%C3%A7%C3%A3o-e-setup-completo" id="toc-h00---20h30-ambientação-e-setup-completo">19h00 - 20h30 |
-Ambientação e Setup Completo</a></li>
-<li><a href="#h30---20h50-intervalo" id="toc-h30---20h50-intervalo">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-fundamentos-do-r" id="toc-h50---22h00-fundamentos-do-r">20h50 - 22h00 | Fundamentos do
+<li><a href="#vari%C3%A1veis-de-ambiente-no-r" id="toc-variáveis-de-ambiente-no-r">2.1 Variáveis de Ambiente no
 R</a></li>
+<li><a href="#criando-chaves-de-api" id="toc-criando-chaves-de-api">2.2
+Criando Chaves de API</a></li>
+<li><a href="#instala%C3%A7%C3%A3o-de-pacotes" id="toc-instalação-de-pacotes">2.3 Instalação de Pacotes</a></li>
 </ul></li>
-<li><a href="#dia-2-1811-ter%C3%A7a-l%C3%B3gica-fun%C3%A7%C3%B5es-e-introdu%C3%A7%C3%A3o-ao-tidyverse" id="toc-dia-2-1811-terça-lógica-funções-e-introdução-ao-tidyverse">Dia
-2: 18/11 (Terça) — Lógica, Funções e Introdução ao Tidyverse</a>
+<li><a href="#intervalo-20h15---20h30" id="toc-intervalo-20h15---20h30">INTERVALO (20h15 - 20h30)</a></li>
+<li><a href="#parte-3-rstudio-gptstudio-chatgpt-20h30---21h00" id="toc-parte-3-rstudio-gptstudio-chatgpt-20h30---21h00">Parte 3:
+RStudio + gptstudio (ChatGPT) (20h30 - 21h00)</a>
 <ul>
-<li><a href="#h00---20h30-programa%C3%A7%C3%A3o-em-r" id="toc-h00---20h30-programação-em-r">19h00 - 20h30 | Programação em
-R</a></li>
-<li><a href="#h30---20h50-intervalo-1" id="toc-h30---20h50-intervalo-1">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-introdu%C3%A7%C3%A3o-ao-tidyverse" id="toc-h50---22h00-introdução-ao-tidyverse">20h50 - 22h00 | Introdução
-ao Tidyverse</a></li>
+<li><a href="#conhecendo-o-gptstudio" id="toc-conhecendo-o-gptstudio">3.1 Conhecendo o gptstudio</a></li>
+<li><a href="#chat-integrado" id="toc-chat-integrado">3.2 Chat
+Integrado</a></li>
+<li><a href="#explicar-c%C3%B3digo-selecionado" id="toc-explicar-código-selecionado">3.3 Explicar Código
+Selecionado</a></li>
+<li><a href="#comentar-c%C3%B3digo-automaticamente" id="toc-comentar-código-automaticamente">3.4 Comentar Código
+Automaticamente</a></li>
+<li><a href="#chamadas-via-api-manual-httr2" id="toc-chamadas-via-api-manual-httr2">3.5 Chamadas via API Manual
+(httr2)</a></li>
+<li><a href="#casos-de-uso-pr%C3%A1ticos-com-chatgpt" id="toc-casos-de-uso-práticos-com-chatgpt">3.6 Casos de Uso Práticos com
+ChatGPT</a></li>
 </ul></li>
-<li><a href="#dia-3-2411-segunda-transforma%C3%A7%C3%A3o-io-e-visualiza%C3%A7%C3%A3o" id="toc-dia-3-2411-segunda-transformação-io-e-visualização">Dia 3: 24/11
-(Segunda) — Transformação, I/O e Visualização</a>
+<li><a href="#parte-4-rstudio-chattr-claude-21h00---21h30" id="toc-parte-4-rstudio-chattr-claude-21h00---21h30">Parte 4: RStudio +
+chattr (Claude) (21h00 - 21h30)</a>
 <ul>
-<li><a href="#h00---20h30-transforma%C3%A7%C3%A3o-e-io-de-dados" id="toc-h00---20h30-transformação-e-io-de-dados">19h00 - 20h30 |
-Transformação e I/O de Dados</a></li>
-<li><a href="#h30---20h50-intervalo-2" id="toc-h30---20h50-intervalo-2">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-visualiza%C3%A7%C3%A3o-com-ggplot2" id="toc-h50---22h00-visualização-com-ggplot2">20h50 - 22h00 |
-Visualização com ggplot2</a></li>
+<li><a href="#conhecendo-o-chattr" id="toc-conhecendo-o-chattr">4.1
+Conhecendo o chattr</a></li>
+<li><a href="#chat-interativo" id="toc-chat-interativo">4.2 Chat
+Interativo</a></li>
+<li><a href="#chat-program%C3%A1tico" id="toc-chat-programático">4.3
+Chat Programático</a></li>
+<li><a href="#chamadas-via-api-manual-claude" id="toc-chamadas-via-api-manual-claude">4.4 Chamadas via API Manual
+(Claude)</a></li>
+<li><a href="#casos-de-uso-pr%C3%A1ticos-com-claude" id="toc-casos-de-uso-práticos-com-claude">4.5 Casos de Uso Práticos com
+Claude</a></li>
 </ul></li>
-<li><a href="#dia-4-2511-ter%C3%A7a-integra%C3%A7%C3%A3o-do-chatgpt-e-claude-no-rstudio" id="toc-dia-4-2511-terça-integração-do-chatgpt-e-claude-no-rstudio">Dia
-4: 25/11 (Terça) — Integração do ChatGPT e Claude no RStudio</a>
+<li><a href="#parte-5-exerc%C3%ADcio-guiado-de-integra%C3%A7%C3%A3o-21h30---22h00" id="toc-parte-5-exercício-guiado-de-integração-21h30---22h00">Parte 5:
+Exercício Guiado de Integração (21h30 - 22h00)</a>
 <ul>
-<li><a href="#h00---19h30-conceitos-e-modelos" id="toc-h00---19h30-conceitos-e-modelos">19h00 - 19h30 | Conceitos e
-modelos</a></li>
-<li><a href="#h30---20h15-configura%C3%A7%C3%A3o-de-chaves-e-ambiente" id="toc-h30---20h15-configuração-de-chaves-e-ambiente">19h30 - 20h15 |
-Configuração de chaves e ambiente</a></li>
-<li><a href="#h15---20h30-intervalo" id="toc-h15---20h30-intervalo">20h15 - 20h30 | Intervalo</a></li>
-<li><a href="#h30---21h00-rstudio-gptstudio-chatgpt" id="toc-h30---21h00-rstudio-gptstudio-chatgpt">20h30 - 21h00 | RStudio +
-gptstudio (ChatGPT)</a></li>
-<li><a href="#h00---21h30-rstudio-chattr-claude" id="toc-h00---21h30-rstudio-chattr-claude">21h00 - 21h30 | RStudio +
-chattr (Claude)</a></li>
-<li><a href="#h30---22h00-exerc%C3%ADcio-guiado-de-integra%C3%A7%C3%A3o" id="toc-h30---22h00-exercício-guiado-de-integração">21h30 - 22h00 |
-Exercício guiado de integração</a></li>
-</ul></li>
-<li><a href="#troubleshooting-por-sistema-operacional" id="toc-troubleshooting-por-sistema-operacional">Troubleshooting por
-Sistema Operacional</a>
-<ul>
-<li><a href="#windows" id="toc-windows">Windows</a></li>
-<li><a href="#macos" id="toc-macos">macOS</a></li>
-<li><a href="#linux-ubuntudebian" id="toc-linux-ubuntudebian">Linux
-(Ubuntu/Debian)</a></li>
-<li><a href="#problemas-comuns-todos-os-so" id="toc-problemas-comuns-todos-os-so">Problemas comuns (todos os
-SO)</a></li>
+<li><a href="#tarefa-1-revisar-c%C3%B3digo-com-gptstudio" id="toc-tarefa-1-revisar-código-com-gptstudio">5.1 Tarefa 1: Revisar
+código com gptstudio</a></li>
+<li><a href="#tarefa-2-gerar-fun%C3%A7%C3%A3o-com-chattr-claude" id="toc-tarefa-2-gerar-função-com-chattr-claude">5.2 Tarefa 2: Gerar
+função com chattr (Claude)</a></li>
+<li><a href="#tarefa-3-documento-de-reflex%C3%A3o" id="toc-tarefa-3-documento-de-reflexão">5.3 Tarefa 3: Documento de
+Reflexão</a></li>
+<li><a href="#compara%C3%A7%C3%A3o-chatgpt-vs-claude" id="toc-comparação-chatgpt-vs-claude">Comparação ChatGPT vs
+Claude</a></li>
+<li><a href="#reflex%C3%A3o-final" id="toc-reflexão-final">Reflexão
+Final</a></li>
+<li><a href="#commit-e-push" id="toc-commit-e-push">5.5 Commit e
+Push</a></li>
 </ul></li>
 <li><a href="#recursos-adicionais" id="toc-recursos-adicionais">Recursos
-Adicionais</a></li>
-<li><a href="#contato" id="toc-contato">Contato</a></li>
-</ul>
-</div>
-
-<div style="page-break-after: always;"></div>
-<div id="informações-gerais-do-curso" class="section level1">
-<h1>Informações Gerais do Curso</h1>
-<p>Carga horária total: 16 horas<br />
-Datas: 17/11, 18/11, 24/11 e 25/11<br />
-Horário: 19h00 às 22h00 (com intervalo de 20 minutos às 20h30)<br />
-Tempo líquido por dia: 2h40 de conteúdo efetivo<br />
-Público-alvo: Iniciantes de diversas áreas (ciências agrárias, saúde,
-economia, biologia, ciências sociais)<br />
-Material: Repositório GitHub com datasets, scripts e exercícios<br />
-Repositório original: <a href="https://github.com/viniciusjunqueira/curso-r-github-ia" class="uri">https://github.com/viniciusjunqueira/curso-r-github-ia</a><br />
-Sistemas Operacionais: Windows, macOS e Linux (curso compatível com
-todos)</p>
-<p>Estrutura do curso (visão geral):<br />
-- Dia 1: Fundamentos de R + Ambiente reprodutível (RStudio, Git, GitHub,
-fork).<br />
-- Dia 2: Lógica, condicionais, funções, tidyverse básico.<br />
-- Dia 3: Transformações com tidyr/dplyr, I/O e visualização com
-ggplot2.<br />
-- Dia 4: Integração prática do ChatGPT e do Claude dentro do
-RStudio.</p>
-<div style="page-break-after: always;"></div>
-</div>
-<div id="pré-requisitos-técnicos" class="section level1">
-<h1>Pré-requisitos Técnicos</h1>
-<div id="instalações-obrigatórias-para-todos-os-sistemas" class="section level2">
-<h2>Instalações obrigatórias (para todos os sistemas)</h2>
-<ol style="list-style-type: decimal">
-<li><p>R (versão 4.3 ou superior)<br />
-Download: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
-<li><p>RStudio Desktop (2023.09+)<br />
-Download: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p></li>
-<li><p>Git<br />
-Windows: <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a><br />
-macOS: verifique com <code>git --version</code> (ou use o
-instalador)<br />
-Linux (Ubuntu/Debian):</p>
-<pre class="bash"><code>sudo apt update
-sudo apt install git</code></pre></li>
-<li><p>Conta no GitHub<br />
-<a href="https://github.com/signup" class="uri">https://github.com/signup</a></p></li>
-</ol>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="estrutura-pedagógica-e-filosofia" class="section level1">
-<h1>Estrutura Pedagógica e Filosofia</h1>
+Adicionais</a>
 <ul>
-<li>Multiplataforma: conteúdo compatível com Windows, macOS e
-Linux<br />
-</li>
-<li>RStudio como IDE padrão<br />
-</li>
-<li>Teoria seguida de prática guiada<br />
-</li>
-<li>Commits diários no fork do aluno<br />
-</li>
-<li>IA como ferramenta para explicação, depuração e geração de
-material<br />
-</li>
-<li>Portabilidade: here::here() e projetos .Rproj</li>
+<li><a href="#documenta%C3%A7%C3%A3o-oficial" id="toc-documentação-oficial">Documentação Oficial</a></li>
+<li><a href="#tutoriais-e-cursos" id="toc-tutoriais-e-cursos">Tutoriais
+e Cursos</a></li>
+<li><a href="#comunidades" id="toc-comunidades">Comunidades</a></li>
+</ul></li>
+<li><a href="#troubleshooting" id="toc-troubleshooting">Troubleshooting</a>
+<ul>
+<li><a href="#erro-api-key-inv%C3%A1lida" id="toc-erro-api-key-inválida">Erro: API Key inválida</a></li>
+<li><a href="#erro-rate-limit-excedido" id="toc-erro-rate-limit-excedido">Erro: Rate Limit excedido</a></li>
+<li><a href="#erro-insufficient-credits" id="toc-erro-insufficient-credits">Erro: Insufficient credits</a></li>
+<li><a href="#gptstudio-n%C3%A3o-aparece-nos-addins" id="toc-gptstudio-não-aparece-nos-addins">gptstudio não aparece nos
+Addins</a></li>
+<li><a href="#problemas-de-conex%C3%A3o" id="toc-problemas-de-conexão">Problemas de conexão</a></li>
+</ul></li>
+<li><a href="#dicas-finais" id="toc-dicas-finais">Dicas Finais</a>
+<ul>
+<li><a href="#prompts-eficazes" id="toc-prompts-eficazes">Prompts
+Eficazes</a></li>
+<li><a href="#itera%C3%A7%C3%A3o-com-ia" id="toc-iteração-com-ia">Iteração com IA</a></li>
+<li><a href="#quando-n%C3%A3o-usar-ia" id="toc-quando-não-usar-ia">Quando NÃO usar IA</a></li>
+<li><a href="#quando-sim-usar-ia" id="toc-quando-sim-usar-ia">Quando SIM
+usar IA</a></li>
+</ul></li>
+<li><a href="#conclus%C3%A3o-do-curso" id="toc-conclusão-do-curso">Conclusão do Curso</a>
+<ul>
+<li><a href="#o-que-voc%C3%AA-aprendeu" id="toc-o-que-você-aprendeu">O
+que você aprendeu:</a></li>
+<li><a href="#pr%C3%B3ximos-passos" id="toc-próximos-passos">Próximos
+passos:</a></li>
+</ul></li>
 </ul>
-<div style="page-break-after: always;"></div>
 </div>
-<div id="pacotes-r-necessários" class="section level1">
-<h1>Pacotes R Necessários</h1>
-<div id="instalação-no-dia-1-a-3-núcleo-do-curso" class="section level2">
-<h2>Instalação no Dia 1 a 3 (núcleo do curso)</h2>
-<pre class="r"><code>install.packages(c(
-  &quot;tidyverse&quot;, &quot;here&quot;, &quot;janitor&quot;, &quot;skimr&quot;,
-  &quot;readxl&quot;, &quot;writexl&quot;, &quot;rmarkdown&quot;, &quot;knitr&quot;,
-  &quot;lubridate&quot;, &quot;scales&quot;, &quot;patchwork&quot;, &quot;broom&quot;,
-  &quot;palmerpenguins&quot;
-))</code></pre>
-</div>
-<div id="pacotes-de-ia-dia-4" class="section level2">
-<h2>Pacotes de IA (Dia 4)</h2>
-<pre class="r"><code>install.packages(c(&quot;gptstudio&quot;, &quot;chattr&quot;, &quot;httr2&quot;, &quot;jsonlite&quot;))</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho" class="section level1">
-<h1>Dia 1: 17/11 (Segunda) — Fundamentos e Ambiente de Trabalho</h1>
-<div id="h00---20h30-ambientação-e-setup-completo" class="section level2">
-<h2>19h00 - 20h30 | Ambientação e Setup Completo</h2>
-<p>Apresentação do curso, objetivos e metodologia.<br />
-Por que R, GitHub e IA.<br />
-Checklist de instalações (R, RStudio, Git).<br />
-Configuração do Git (user.name/user.email).<br />
-Autenticação no GitHub (PAT recomendado).<br />
-Fazer fork do repositório do curso.<br />
-Clonar o fork no RStudio (Projeto .Rproj).<br />
-Verificar <code>git remote -v</code> apontando para o fork do aluno.</p>
-</div>
-<div id="h30---20h50-intervalo" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-fundamentos-do-r" class="section level2">
-<h2>20h50 - 22h00 | Fundamentos do R</h2>
-<p>Objetos e estruturas básicas: vetores, listas, data.frames,
-fatores.<br />
-Funções básicas: c(), length(), class(), typeof().<br />
-Exploração: str(), head(), tail(), names(), dplyr::glimpse(),
-summary().<br />
-Indexação: [], $, subsetting lógico.<br />
-Prática guiada: criar vetores e data.frames, manipular objetos.<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git add scripts/01_fundamentos.R
-git commit -m &quot;Fundamentos do R - Dia 1&quot;
-git push origin main</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-2-1811-terça-lógica-funções-e-introdução-ao-tidyverse" class="section level1">
-<h1>Dia 2: 18/11 (Terça) — Lógica, Funções e Introdução ao
-Tidyverse</h1>
-<div id="h00---20h30-programação-em-r" class="section level2">
-<h2>19h00 - 20h30 | Programação em R</h2>
-<p>Operadores lógicos e relacionais.<br />
-Condicionais: if/else, ifelse() (vetorizado), dplyr::case_when().<br />
-Loops e funções: for vs. vetorização, criação de funções, validação de
-entradas.<br />
-Boas práticas e debugging: snake_case, comentários, leitura de
-traceback.<br />
-Mini demonstração de como a IA pode explicar um erro simples.</p>
-</div>
-<div id="h30---20h50-intervalo-1" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-introdução-ao-tidyverse" class="section level2">
-<h2>20h50 - 22h00 | Introdução ao Tidyverse</h2>
-<p>Filosofia tidyverse e uso de pipes (%&gt;% e |&gt;).<br />
-Verbos essenciais do dplyr: filter(), select(), mutate(), arrange(),
-summarize(), group_by().<br />
-Datas com lubridate: ymd/dmy/mdy, year/month/wday, today/now.<br />
-Exemplo integrado com palmerpenguins.<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git commit -m &quot;Lógica, funções e tidyverse - Dia 2&quot;</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-3-2411-segunda-transformação-io-e-visualização" class="section level1">
-<h1>Dia 3: 24/11 (Segunda) — Transformação, I/O e Visualização</h1>
-<div id="h00---20h30-transformação-e-io-de-dados" class="section level2">
-<h2>19h00 - 20h30 | Transformação e I/O de Dados</h2>
-<p>Reshape com tidyr: pivot_longer(), pivot_wider(), separate(),
-unite().<br />
-Tratamento de NAs: is.na(), drop_na(), replace_na(), fill().<br />
-Leitura/Escrita: readr::read_csv(), read_csv2(),
-readxl::read_excel().<br />
-Portabilidade com here::here() e organização de projetos.<br />
-Ferramentas úteis: janitor::clean_names(), skimr::skim().</p>
-</div>
-<div id="h30---20h50-intervalo-2" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-visualização-com-ggplot2" class="section level2">
-<h2>20h50 - 22h00 | Visualização com ggplot2</h2>
-<p>Gramática de gráficos: camadas, aesthetics, geoms comuns.<br />
-Gráficos: dispersão, barras, boxplot, linhas,
-histograma/densidade.<br />
-Combinação com patchwork, formatos com scales.<br />
-Personalização e salvamento: theme_*, labs(), ggsave().<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git commit -m &quot;Transformação, I/O e visualização - Dia 3&quot;</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-4-2511-terça-integração-do-chatgpt-e-claude-no-rstudio" class="section level1">
-<h1>Dia 4: 25/11 (Terça) — Integração do ChatGPT e Claude no
-RStudio</h1>
-<p>Objetivo do dia: capacitar o aluno a usar ChatGPT (OpenAI) e Claude
-(Anthropic) diretamente no RStudio para explicar erros, revisar e gerar
-código, criar rascunhos de relatórios e automatizar pequenas rotinas via
-API.</p>
-<div id="h00---19h30-conceitos-e-modelos" class="section level2">
-<h2>19h00 - 19h30 | Conceitos e modelos</h2>
-<p>Panorama rápido sobre LLMs, APIs, limites e custos.<br />
-Boas práticas de uso responsável de IA: privacidade, dados sensíveis,
-versionamento de código gerado.<br />
-Comparação prática: quando usar ChatGPT e quando usar Claude.</p>
-</div>
-<div id="h30---20h15-configuração-de-chaves-e-ambiente" class="section level2">
-<h2>19h30 - 20h15 | Configuração de chaves e ambiente</h2>
-<p>Variáveis de ambiente no R: uso de ~/.Renviron e Sys.getenv().<br />
-Criação de chaves de API e configuração local.<br />
-Nomes convencionados: - OPENAI_API_KEY para ChatGPT (OpenAI) -
-ANTHROPIC_API_KEY para Claude (Anthropic)</p>
-<p>Exemplo de ~/.Renviron:</p>
-<pre class="r"><code>OPENAI_API_KEY=coloque_sua_chave_aqui
-ANTHROPIC_API_KEY=coloque_sua_chave_aqui</code></pre>
-<p>Teste rápido no R:</p>
-<pre class="r"><code>Sys.getenv(&quot;OPENAI_API_KEY&quot;)
-Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)</code></pre>
-<p>Instalação de pacotes:</p>
-<pre class="r"><code>install.packages(c(&quot;gptstudio&quot;, &quot;chattr&quot;, &quot;httr2&quot;, &quot;jsonlite&quot;))</code></pre>
-</div>
-<div id="h15---20h30-intervalo" class="section level2">
-<h2>20h15 - 20h30 | Intervalo</h2>
-</div>
-<div id="h30---21h00-rstudio-gptstudio-chatgpt" class="section level2">
-<h2>20h30 - 21h00 | RStudio + gptstudio (ChatGPT)</h2>
-<p>Abertura dos Addins do gptstudio no RStudio (chat pane e code
-assistant).<br />
-Uso no editor: seleção de código e prompt de revisão.<br />
-Exemplos típicos: explicar erro, refatorar função, gerar testes
-unitários simples.<br />
-Script de exemplo (via API manual com httr2):</p>
-<pre class="r"><code>library(httr2); library(jsonlite)
 
+<div id="integração-do-chatgpt-e-claude-no-rstudio" class="section level1">
+<h1>Integração do ChatGPT e Claude no RStudio</h1>
+<blockquote>
+<p><strong>Objetivo do dia</strong></p>
+<p>Capacitar você a usar ChatGPT (OpenAI) e Claude (Anthropic)
+diretamente no RStudio para: - Explicar erros e debugar código - Revisar
+e refatorar código - Gerar código e funções - Criar rascunhos de
+relatórios e documentação - Automatizar tarefas via API</p>
+</blockquote>
+<p><strong>Tempo previsto:</strong> 19h00–22h00 (intervalo
+20h15–20h30)</p>
+<hr />
+<div id="revisão-rápida-dos-dias-anteriores-10-min" class="section level2">
+<h2>Revisão Rápida dos Dias Anteriores (≈ 10 min)</h2>
+<pre class="r"><code>library(tidyverse)
+
+# Dia 1: Fundamentos
+vetor &lt;- c(1, 2, 3, 4, 5)
+mean(vetor)
+
+# Dia 2: Funções e tidyverse
+calcular_media &lt;- function(x) {
+  mean(x, na.rm = TRUE)
+}
+
+dados &lt;- tibble(x = 1:10, y = x^2)
+
+# Dia 3: Transformação e visualização
+dados %&gt;%
+  mutate(z = x + y) %&gt;%
+  ggplot(aes(x, y)) +
+  geom_point()</code></pre>
+<hr />
+</div>
+</div>
+<div id="parte-1-conceitos-e-modelos-19h00---19h30" class="section level1">
+<h1>Parte 1: Conceitos e Modelos (19h00 - 19h30)</h1>
+<div id="o-que-são-llms-large-language-models" class="section level2">
+<h2>1.1 O que são LLMs (Large Language Models)?</h2>
+<p><strong>LLM = Large Language Model</strong> (Modelo de Linguagem
+Grande)</p>
+<p><strong>O que são:</strong> - Modelos de inteligência artificial
+treinados em volumes massivos de texto - Aprendem padrões da linguagem,
+conceitos e relações - Capazes de gerar texto, código, explicações e
+muito mais</p>
+<p><strong>Como funcionam (simplificado):</strong> 1.
+<strong>Treinamento</strong>: Leem bilhões de páginas de texto da
+internet, livros, código 2. <strong>Aprendizado</strong>: Identificam
+padrões - como palavras se relacionam, estruturas de código 3.
+<strong>Geração</strong>: Preveem a próxima palavra/token mais provável
+dada uma entrada</p>
+<p><strong>Não são:</strong> - ❌ Bancos de dados que “buscam” respostas
+- ❌ Sistemas de busca como Google - ❌ Calculadoras ou compiladores</p>
+<p><strong>São:</strong> - ✅ Sistemas de reconhecimento de padrões
+estatísticos - ✅ Geradores de texto coerente baseados em probabilidades
+- ✅ Assistentes que “entendem” contexto</p>
+<div id="modelos-principais-que-usaremos" class="section level3">
+<h3>Modelos principais que usaremos</h3>
+<p><strong>1. ChatGPT (OpenAI)</strong></p>
+<p><strong>Família GPT-4:</strong> - <code>gpt-4o</code>: Mais rápido e
+barato, multimodal (texto + imagem) - <code>gpt-4o-mini</code>: Ainda
+mais rápido e barato, excelente custo-benefício -
+<code>gpt-4-turbo</code>: Balanceado entre velocidade e qualidade</p>
+<p><strong>Pontos fortes:</strong> - ✅ Explicações didáticas e passo a
+passo - ✅ Geração rápida de código - ✅ Bom em tarefas criativas - ✅
+Interface conversacional natural - ✅ Mais barato que Claude</p>
+<p><strong>Quando usar:</strong> - Explicar conceitos de forma simples -
+Gerar código rapidamente (protótipos) - Criar documentação básica -
+Responder dúvidas gerais</p>
+<p><strong>2. Claude (Anthropic)</strong></p>
+<p><strong>Família Claude 3:</strong> -
+<code>claude-3-5-sonnet-latest</code>: Melhor modelo, mais inteligente -
+<code>claude-3-opus</code>: Mais preciso, melhor para análises complexas
+- <code>claude-3-sonnet</code>: Balanceado -
+<code>claude-3-haiku</code>: Mais rápido e barato</p>
+<p><strong>Pontos fortes:</strong> - ✅ Análise profunda de código - ✅
+Respostas mais longas e detalhadas - ✅ Melhor em raciocínio complexo -
+✅ Mais cuidadoso e preciso - ✅ Melhor contexto (200k tokens vs 128k do
+GPT)</p>
+<p><strong>Quando usar:</strong> - Revisar código complexo - Análise e
+refatoração profunda - Explicações técnicas detalhadas - Debugging de
+problemas difíceis</p>
+</div>
+<div id="comparação-prática" class="section level3">
+<h3>Comparação prática</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Critério</th>
+<th>ChatGPT</th>
+<th>Claude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Velocidade</strong></td>
+<td>Muito rápido ⚡⚡⚡</td>
+<td>Rápido ⚡⚡</td>
+</tr>
+<tr class="even">
+<td><strong>Custo</strong></td>
+<td>Mais barato 💰</td>
+<td>Mais caro 💰💰</td>
+</tr>
+<tr class="odd">
+<td><strong>Explicações simples</strong></td>
+<td>Excelente ⭐⭐⭐</td>
+<td>Muito bom ⭐⭐</td>
+</tr>
+<tr class="even">
+<td><strong>Análise profunda</strong></td>
+<td>Bom ⭐⭐</td>
+<td>Excelente ⭐⭐⭐</td>
+</tr>
+<tr class="odd">
+<td><strong>Código complexo</strong></td>
+<td>Bom ⭐⭐</td>
+<td>Excelente ⭐⭐⭐</td>
+</tr>
+<tr class="even">
+<td><strong>Contexto (tokens)</strong></td>
+<td>128k</td>
+<td>200k</td>
+</tr>
+<tr class="odd">
+<td><strong>Criatividade</strong></td>
+<td>Alta ⭐⭐⭐</td>
+<td>Moderada ⭐⭐</td>
+</tr>
+<tr class="even">
+<td><strong>Precisão técnica</strong></td>
+<td>Boa ⭐⭐</td>
+<td>Excelente ⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+<div id="o-que-são-apis" class="section level2">
+<h2>1.2 O que são APIs?</h2>
+<p><strong>API = Application Programming Interface</strong> (Interface
+de Programação de Aplicações)</p>
+<p><strong>Analogia do restaurante:</strong> - <strong>Você</strong> =
+seu código R - <strong>Cozinha</strong> = servidor da OpenAI/Anthropic
+com o modelo de IA - <strong>Garçom</strong> = API que leva seu pedido e
+traz a resposta - <strong>Cardápio</strong> = documentação da API (o que
+você pode pedir)</p>
+<p><strong>Como funciona:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Você faz uma requisição</strong> (pergunta)</p>
+<pre><code>&quot;Explique o que este código faz: x &lt;- mean(1:10)&quot;</code></pre></li>
+<li><p><strong>API envia para o modelo de IA</strong></p>
+<ul>
+<li>Viaja pela internet até os servidores</li>
+<li>Processa sua pergunta</li>
+</ul></li>
+<li><p><strong>Modelo gera resposta</strong></p>
+<ul>
+<li>Analisa contexto</li>
+<li>Gera texto/código</li>
+</ul></li>
+<li><p><strong>API retorna resposta</strong></p>
+<pre><code>&quot;Este código calcula a média dos números de 1 a 10...&quot;</code></pre></li>
+</ol>
+<p><strong>Componentes de uma API:</strong></p>
+<ul>
+<li><strong>Endpoint</strong>: URL para onde enviar requisições
+<ul>
+<li>OpenAI: <code>https://api.openai.com/v1/chat/completions</code></li>
+<li>Anthropic: <code>https://api.anthropic.com/v1/messages</code></li>
+</ul></li>
+<li><strong>Método HTTP</strong>: Como enviar (GET, POST, etc.)
+<ul>
+<li>Usaremos POST (enviar dados)</li>
+</ul></li>
+<li><strong>Headers</strong>: Informações sobre a requisição
+<ul>
+<li>Authorization: sua chave API</li>
+<li>Content-Type: formato dos dados (JSON)</li>
+</ul></li>
+<li><strong>Body</strong>: Os dados da requisição
+<ul>
+<li>Modelo a usar</li>
+<li>Sua pergunta/prompt</li>
+<li>Parâmetros (temperatura, max_tokens, etc.)</li>
+</ul></li>
+<li><strong>Response</strong>: A resposta do servidor
+<ul>
+<li>Conteúdo gerado</li>
+<li>Metadados (tokens usados, etc.)</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="limites-e-custos" class="section level2">
+<h2>1.3 Limites e Custos</h2>
+<div id="custos-por-modelo" class="section level3">
+<h3>Custos por modelo</h3>
+<p><strong>OpenAI (GPT-4o-mini) - mais barato:</strong> - Input: $0.150
+/ 1M tokens (~750k palavras) - Output: $0.600 / 1M tokens</p>
+<p><strong>Exemplo prático:</strong> - 1 conversa típica = ~1000 tokens
+= $0.0015 (menos de 1 centavo!) - 1000 conversas = ~$1.50</p>
+<p><strong>Anthropic (Claude 3.5 Sonnet) - mais caro mas
+melhor:</strong> - Input: $3.00 / 1M tokens - Output: $15.00 / 1M
+tokens</p>
+<p><strong>Exemplo prático:</strong> - 1 conversa típica = ~1000 tokens
+= $0.03 (3 centavos) - 1000 conversas = ~$30</p>
+<p><strong>O que é um token?</strong> - Token ≈ 0.75 palavras em inglês
+- Token ≈ 0.5 palavras em português (devido aos acentos) - “Olá, como
+você está?” ≈ 7-8 tokens</p>
+</div>
+<div id="rate-limits-limites-de-taxa" class="section level3">
+<h3>Rate Limits (Limites de taxa)</h3>
+<p><strong>Por que existem:</strong> - Prevenir abuso e spam - Garantir
+disponibilidade para todos - Controlar custos</p>
+<p><strong>Limites típicos (conta gratuita/tier 1):</strong></p>
+<p><strong>OpenAI:</strong> - ~10,000 tokens/minuto - ~3
+requisições/minuto (com GPT-4) - ~200 requisições/dia</p>
+<p><strong>Anthropic:</strong> - ~10,000 tokens/minuto - ~5
+requisições/minuto - ~1000 requisições/dia</p>
+<p><strong>O que acontece se exceder:</strong> - Erro HTTP 429: “Too
+Many Requests” - Precisa esperar (geralmente 1 minuto)</p>
+<p><strong>Como evitar:</strong> - Não faça loops rápidos com chamadas à
+API - Implemente delays entre requisições - Use um modelo mais barato
+para testes</p>
+<hr />
+</div>
+</div>
+<div id="boas-práticas-de-uso-responsável-de-ia" class="section level2">
+<h2>1.4 Boas Práticas de Uso Responsável de IA</h2>
+<div id="privacidade-e-dados-sensíveis" class="section level3">
+<h3>Privacidade e Dados Sensíveis</h3>
+<p><strong>⚠️ NUNCA envie para APIs de IA:</strong> - ❌ Senhas ou
+credenciais - ❌ Dados pessoais identificáveis (CPF, RG, etc.) - ❌
+Informações médicas ou financeiras privadas - ❌ Dados proprietários ou
+confidenciais da empresa - ❌ Código com chaves de API ou tokens</p>
+<p><strong>O que é seguro enviar:</strong> - ✅ Código genérico e
+exemplos - ✅ Dados públicos ou sintéticos - ✅ Perguntas conceituais -
+✅ Erros e stacktraces (sem informação sensível)</p>
+<p><strong>Lembre-se:</strong> Tudo que você envia pode ser usado para
+treinar modelos futuros!</p>
+</div>
+<div id="versionamento-de-código-gerado-por-ia" class="section level3">
+<h3>Versionamento de Código Gerado por IA</h3>
+<p><strong>Por que versionar:</strong> - Transparência sobre origem do
+código - Rastreabilidade de mudanças - Facilita debugging futuro - Ética
+e honestidade acadêmica/profissional</p>
+<p><strong>Como fazer:</strong></p>
+<pre class="r"><code># Bom: documenta que IA gerou
+# Esta função foi gerada por ChatGPT em 2024-11-25
+# Prompt: &quot;Crie função para calcular z-score&quot;
+zscore &lt;- function(x) {
+  (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
+}
+
+# Commits descritivos
+git commit -m &quot;feat: adiciona função zscore (gerada com ChatGPT)&quot;</code></pre>
+</div>
+<div id="validação-e-teste" class="section level3">
+<h3>Validação e Teste</h3>
+<p><strong>⚠️ CRÍTICO: NUNCA use código de IA sem entender e
+testar!</strong></p>
+<p><strong>Processo recomendado:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Entenda</strong> o código gerado</p>
+<ul>
+<li>Leia linha por linha</li>
+<li>Pergunte à IA se não entender algo</li>
+<li>Pesquise funções desconhecidas</li>
+</ul></li>
+<li><p><strong>Teste</strong> extensivamente</p>
+<pre class="r"><code># Sempre teste casos extremos
+zscore(c(1, 2, 3))        # Normal
+zscore(c(1, 1, 1))        # Todos iguais (sd = 0?)
+zscore(c(1, NA, 3))       # Com NA
+zscore(numeric(0))        # Vetor vazio</code></pre></li>
+<li><p><strong>Valide</strong> resultados</p>
+<ul>
+<li>Compare com métodos conhecidos</li>
+<li>Verifique casos conhecidos</li>
+<li>Use diferentes inputs</li>
+</ul></li>
+<li><p><strong>Refatore</strong> se necessário</p>
+<ul>
+<li>Melhore legibilidade</li>
+<li>Adicione validações</li>
+<li>Otimize performance</li>
+</ul></li>
+</ol>
+</div>
+<div id="uso-ético" class="section level3">
+<h3>Uso Ético</h3>
+<p><strong>Faça:</strong> - ✅ Use IA como assistente, não substituto do
+aprendizado - ✅ Entenda o que a IA está fazendo - ✅ Cite quando código
+foi gerado por IA (contextos acadêmicos) - ✅ Revise e melhore código
+gerado - ✅ Use para aprender conceitos novos</p>
+<p><strong>Não faça:</strong> - ❌ Submeta código de IA sem entender (em
+trabalhos/provas) - ❌ Confie cegamente nas respostas - ❌ Use como
+substituto de documentação oficial - ❌ Compartilhe chaves de API - ❌
+Use para gerar trabalhos acadêmicos inteiros sem transparência</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="parte-2-configuração-de-chaves-e-ambiente-19h30---20h15" class="section level1">
+<h1>Parte 2: Configuração de Chaves e Ambiente (19h30 - 20h15)</h1>
+<div id="variáveis-de-ambiente-no-r" class="section level2">
+<h2>2.1 Variáveis de Ambiente no R</h2>
+<p><strong>O que são variáveis de ambiente?</strong></p>
+<p>Variáveis de ambiente são configurações que ficam armazenadas fora do
+seu código, disponíveis para todos os programas no seu sistema
+operacional.</p>
+<p><strong>Por que usar para chaves de API?</strong></p>
+<p><strong>Segurança:</strong> - ✅ Chaves não ficam no código (evita
+commit acidental para GitHub) - ✅ Diferentes chaves para diferentes
+ambientes (dev, prod) - ✅ Fácil rotação de chaves sem mudar código</p>
+<p><strong>Como funcionam no R:</strong></p>
+<pre class="r"><code># Ler variável de ambiente
+Sys.getenv(&quot;NOME_DA_VARIAVEL&quot;)
+
+# Definir variável (apenas na sessão atual)
+Sys.setenv(NOME_DA_VARIAVEL = &quot;valor&quot;)
+
+# Listar todas
+Sys.getenv()</code></pre>
+<div id="o-arquivo-.renviron" class="section level3">
+<h3>O arquivo .Renviron</h3>
+<p><strong>O que é .Renviron:</strong> - Arquivo de texto simples que
+define variáveis de ambiente - Carregado automaticamente quando R inicia
+- Localização: diretório home do usuário (<code>~/.Renviron</code>)</p>
+<p><strong>Vantagens:</strong> - Variáveis persistem entre sessões - Não
+precisa redefinir toda vez - Fácil de gerenciar</p>
+<p><strong>Como criar/editar:</strong></p>
+<pre class="r"><code># Abrir .Renviron no RStudio (cria se não existir)
+usethis::edit_r_environ()
+
+# Ou manualmente encontrar localização
+path.expand(&quot;~/.Renviron&quot;)</code></pre>
+<p><strong>Formato do arquivo:</strong></p>
+<pre><code># Arquivo .Renviron
+# Linhas começando com # são comentários
+# Formato: VARIAVEL=valor (SEM espaços ao redor do =)
+
+OPENAI_API_KEY=sk-proj-abcdefg123456789
+ANTHROPIC_API_KEY=sk-ant-abcdefg123456789
+
+# ERRADO (com espaços):
+# VARIAVEL = valor
+
+# CERTO (sem espaços):
+# VARIAVEL=valor</code></pre>
+<p><strong>Depois de editar:</strong> 1. Salve o arquivo 2. Reinicie o
+R: <code>Session → Restart R</code> ou <code>.rs.restartR()</code> 3.
+Teste: <code>Sys.getenv(&quot;OPENAI_API_KEY&quot;)</code></p>
+<hr />
+</div>
+</div>
+<div id="criando-chaves-de-api" class="section level2">
+<h2>2.2 Criando Chaves de API</h2>
+<div id="openai-chatgpt" class="section level3">
+<h3>OpenAI (ChatGPT)</h3>
+<p><strong>Passo 1: Criar conta</strong> 1. Acesse <a href="https://platform.openai.com/" class="uri">https://platform.openai.com/</a> 2. Sign up (criar conta) ou
+Login 3. Verifique email</p>
+<p><strong>Passo 2: Adicionar método de pagamento</strong> 1. Settings →
+Billing 2. Add payment method 3. <strong>Importante:</strong> Configure
+um limite de gastos! - Recommended: $5-10/mês para aprendizado - Evita
+surpresas na fatura</p>
+<p><strong>Passo 3: Criar API Key</strong> 1. Settings → API Keys 2.
+Create new secret key 3. Dê um nome descritivo: “RStudio - Curso R” 4.
+<strong>⚠️ COPIE A CHAVE AGORA!</strong> (só aparece uma vez) - Formato:
+<code>sk-proj-...</code> - Guarde em local seguro temporariamente</p>
+<p><strong>Passo 4: Configurar no R</strong></p>
+<pre class="r"><code>usethis::edit_r_environ()
+# Adicione: OPENAI_API_KEY=sk-proj-SUA_CHAVE_AQUI
+# Salve e reinicie R</code></pre>
+<p><strong>Passo 5: Testar</strong></p>
+<pre class="r"><code>Sys.getenv(&quot;OPENAI_API_KEY&quot;)
+# Deve mostrar: &quot;sk-proj-...&quot;</code></pre>
+</div>
+<div id="anthropic-claude" class="section level3">
+<h3>Anthropic (Claude)</h3>
+<p><strong>Passo 1: Criar conta</strong> 1. Acesse <a href="https://console.anthropic.com/" class="uri">https://console.anthropic.com/</a> 2. Sign up ou Login 3.
+Verifique email</p>
+<p><strong>Passo 2: Obter créditos</strong> - Contas novas ganham alguns
+créditos gratuitos ($5-10) - Depois precisa adicionar método de
+pagamento</p>
+<p><strong>Passo 3: Criar API Key</strong> 1. Settings → API Keys 2.
+Create Key 3. Nome: “RStudio - Curso R” 4. <strong>⚠️ COPIE A
+CHAVE!</strong> (só aparece uma vez) - Formato:
+<code>sk-ant-...</code></p>
+<p><strong>Passo 4: Configurar no R</strong></p>
+<pre class="r"><code>usethis::edit_r_environ()
+# Adicione: ANTHROPIC_API_KEY=sk-ant-SUA_CHAVE_AQUI
+# Salve e reinicie R</code></pre>
+<p><strong>Passo 5: Testar</strong></p>
+<pre class="r"><code>Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)
+# Deve mostrar: &quot;sk-ant-...&quot;</code></pre>
+<hr />
+</div>
+</div>
+<div id="instalação-de-pacotes" class="section level2">
+<h2>2.3 Instalação de Pacotes</h2>
+<pre class="r"><code># Pacotes necessários
+install.packages(c(
+  &quot;gptstudio&quot;,    # Interface para ChatGPT no RStudio
+  &quot;chattr&quot;,       # Interface para múltiplos LLMs (incluindo Claude)
+  &quot;httr2&quot;,        # Cliente HTTP moderno (para APIs)
+  &quot;jsonlite&quot;      # Trabalhar com JSON
+))
+
+# Verificar instalação
+library(gptstudio)
+library(chattr)
+library(httr2)
+library(jsonlite)</code></pre>
+<div id="o-que-cada-pacote-faz" class="section level3">
+<h3>O que cada pacote faz</h3>
+<p><strong>gptstudio:</strong> - Addins no RStudio para ChatGPT - Chat
+panel integrado - Seleção de código + análise - Geração de documentação
+- Correção de erros</p>
+<p><strong>chattr:</strong> - Interface unificada para múltiplos LLMs -
+Suporta OpenAI, Anthropic, Google, outros - Chat interativo no console -
+Configuração flexível de modelos</p>
+<p><strong>httr2:</strong> - Cliente HTTP moderno para R - Fazer
+requisições para APIs - Melhor que httr (versão anterior) -
+Pipe-friendly (<code>|&gt;</code>)</p>
+<p><strong>jsonlite:</strong> - Converter entre R e JSON - APIs usam
+JSON para comunicação - Parse de respostas JSON</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="intervalo-20h15---20h30" class="section level1">
+<h1>INTERVALO (20h15 - 20h30)</h1>
+<p>Aproveite para: - Verificar se suas chaves estão configuradas -
+Instalar os pacotes - Testar conexão com internet - Tomar água/café!</p>
+<hr />
+</div>
+<div id="parte-3-rstudio-gptstudio-chatgpt-20h30---21h00" class="section level1">
+<h1>Parte 3: RStudio + gptstudio (ChatGPT) (20h30 - 21h00)</h1>
+<div id="conhecendo-o-gptstudio" class="section level2">
+<h2>3.1 Conhecendo o gptstudio</h2>
+<p><strong>gptstudio</strong> adiciona superpoderes de IA ao RStudio
+através de Addins.</p>
+<p><strong>Recursos principais:</strong> 1. <strong>ChatGPT
+Chat</strong>: Painel de chat lateral 2. <strong>Comment Code</strong>:
+Adiciona comentários ao código 3. <strong>Explain Code</strong>: Explica
+código selecionado 4. <strong>Write Code</strong>: Gera código a partir
+de descrição 5. <strong>Edit Code</strong>: Refatora/melhora código</p>
+<div id="acessando-os-addins" class="section level3">
+<h3>Acessando os Addins</h3>
+<p><strong>Menu:</strong> <code>Addins → GPTSTUDIO → ...</code></p>
+<p><strong>Atalhos de teclado (configuráveis):</strong> - Tools → Modify
+Keyboard Shortcuts - Busque “GPTSTUDIO” - Configure atalhos
+personalizados</p>
+<hr />
+</div>
+</div>
+<div id="chat-integrado" class="section level2">
+<h2>3.2 Chat Integrado</h2>
+<p><strong>Como abrir:</strong></p>
+<pre class="r"><code># No console
+gptstudio::chat()
+
+# Ou: Addins → GPTSTUDIO → ChatGPT Chat</code></pre>
+<p><strong>Interface do Chat:</strong> - Painel lateral direito - Campo
+de input na parte inferior - Histórico de conversa acima - Botões para
+copiar/limpar</p>
+<p><strong>Uso básico:</strong></p>
+<pre class="r"><code># Perguntas gerais
+&quot;Como criar um vetor em R?&quot;
+
+# Explicar conceitos
+&quot;O que é um data.frame?&quot;
+
+# Gerar código
+&quot;Crie uma função que calcule média e desvio padrão&quot;
+
+# Debugging
+&quot;Por que este código dá erro: mean(NA)&quot;</code></pre>
+<p><strong>Dicas para bons prompts:</strong> - Seja específico - Dê
+contexto quando necessário - Peça explicações passo a passo - Solicite
+exemplos</p>
+<hr />
+</div>
+<div id="explicar-código-selecionado" class="section level2">
+<h2>3.3 Explicar Código Selecionado</h2>
+<p><strong>Como usar:</strong> 1. Selecione código no editor 2.
+<code>Addins → GPTSTUDIO → Explain Code</code> 3. Explicação aparece no
+console ou chat</p>
+<p><strong>Exemplo:</strong></p>
+<pre class="r"><code># Selecione este código e peça explicação
+dados %&gt;%
+  filter(!is.na(valor)) %&gt;%
+  group_by(categoria) %&gt;%
+  summarize(
+    n = n(),
+    media = mean(valor),
+    dp = sd(valor)
+  ) %&gt;%
+  arrange(desc(media))</code></pre>
+<p><strong>O que o ChatGPT explica:</strong> - O que cada linha faz -
+Ordem de execução - Funções usadas - Resultado esperado</p>
+<hr />
+</div>
+<div id="comentar-código-automaticamente" class="section level2">
+<h2>3.4 Comentar Código Automaticamente</h2>
+<p><strong>Como usar:</strong> 1. Selecione código sem comentários 2.
+<code>Addins → GPTSTUDIO → Comment Code</code> 3. Comentários são
+inseridos automaticamente</p>
+<p><strong>Exemplo:</strong></p>
+<pre class="r"><code># ANTES (sem comentários)
+calcular_estatisticas &lt;- function(x) {
+  x &lt;- x[!is.na(x)]
+  list(
+    n = length(x),
+    media = mean(x),
+    mediana = median(x),
+    dp = sd(x),
+    min = min(x),
+    max = max(x)
+  )
+}
+
+# DEPOIS (com comentários gerados)
+# Calcula estatísticas descritivas de um vetor numérico
+calcular_estatisticas &lt;- function(x) {
+  # Remove valores NA do vetor
+  x &lt;- x[!is.na(x)]
+  
+  # Retorna lista com estatísticas básicas
+  list(
+    n = length(x),           # Tamanho da amostra
+    media = mean(x),         # Média aritmética
+    mediana = median(x),     # Mediana (valor central)
+    dp = sd(x),             # Desvio padrão
+    min = min(x),           # Valor mínimo
+    max = max(x)            # Valor máximo
+  )
+}</code></pre>
+<hr />
+</div>
+<div id="chamadas-via-api-manual-httr2" class="section level2">
+<h2>3.5 Chamadas via API Manual (httr2)</h2>
+<p>Para mais controle e automação, podemos chamar a API diretamente.</p>
+<p><strong>Estrutura básica:</strong></p>
+<pre class="r"><code>library(httr2)
+library(jsonlite)
+
+# 1. ENDPOINT da API
 endpoint &lt;- &quot;https://api.openai.com/v1/chat/completions&quot;
-prompt &lt;- &quot;Explique o que este código faz e sugira melhorias:\n\nx &lt;- 1:10; mean(x)&quot;
+
+# 2. SEU PROMPT
+prompt &lt;- &quot;Explique o que este código faz: x &lt;- mean(1:10)&quot;
+
+# 3. CORPO DA REQUISIÇÃO (body)
 body &lt;- list(
-  model = &quot;gpt-4o-mini&quot;,
-  messages = list(list(role=&quot;user&quot;, content=prompt))
+  model = &quot;gpt-4o-mini&quot;,  # Modelo a usar
+  messages = list(
+    list(
+      role = &quot;user&quot;,       # Quem está falando (user/assistant/system)
+      content = prompt     # O que está dizendo
+    )
+  ),
+  temperature = 0.7,       # Criatividade (0-2, padrão 1)
+  max_tokens = 500         # Máximo de tokens na resposta
 )
 
+# 4. CRIAR REQUISIÇÃO
 req &lt;- request(endpoint) |&gt;
-  req_method(&quot;POST&quot;) |&gt;
-  req_headers(Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;OPENAI_API_KEY&quot;))) |&gt;
-  req_body_json(body)
+  req_method(&quot;POST&quot;) |&gt;    # Método HTTP
+  req_headers(
+    Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;OPENAI_API_KEY&quot;)),
+    &quot;Content-Type&quot; = &quot;application/json&quot;
+  ) |&gt;
+  req_body_json(body)      # Corpo em JSON
 
+# 5. EXECUTAR REQUISIÇÃO
 resp &lt;- req_perform(req)
+
+# 6. EXTRAIR RESPOSTA
 json &lt;- resp_body_json(resp)
-cat(json$choices[[1]]$message$content)</code></pre>
+resposta &lt;- json$choices[[1]]$message$content
+
+# 7. MOSTRAR
+cat(resposta)</code></pre>
+<p><strong>Parâmetros importantes:</strong></p>
+<ul>
+<li><strong>model</strong>: Qual modelo usar
+<ul>
+<li><code>gpt-4o-mini</code>: Mais barato, rápido</li>
+<li><code>gpt-4o</code>: Mais inteligente</li>
+<li><code>gpt-4-turbo</code>: Balanceado</li>
+</ul></li>
+<li><strong>temperature</strong>: Criatividade (0-2)
+<ul>
+<li><code>0</code>: Determinístico, sempre mesma resposta</li>
+<li><code>1</code> (padrão): Balanceado</li>
+<li><code>2</code>: Muito criativo, imprevisível</li>
+</ul></li>
+<li><strong>max_tokens</strong>: Limite de resposta
+<ul>
+<li>Controla tamanho e custo</li>
+<li>~500 tokens = ~375 palavras</li>
+</ul></li>
+</ul>
+<hr />
 </div>
-<div id="h00---21h30-rstudio-chattr-claude" class="section level2">
-<h2>21h00 - 21h30 | RStudio + chattr (Claude)</h2>
-<p>Fluxo básico com chattr::chat_claude().<br />
-Exemplos práticos: explicar um traceback, sugerir validação de
-argumentos, gerar esqueleto de RMarkdown.<br />
-Script de exemplo (API manual com httr2):</p>
-<pre class="r"><code>library(httr2); library(jsonlite)
+<div id="casos-de-uso-práticos-com-chatgpt" class="section level2">
+<h2>3.6 Casos de Uso Práticos com ChatGPT</h2>
+<div id="caso-1-explicar-um-erro" class="section level3">
+<h3>Caso 1: Explicar um erro</h3>
+<pre class="r"><code># Código com erro
+dados &lt;- data.frame(x = 1:5, y = c(2, 4, NA, 8, 10))
+mean(dados$y)  # Retorna NA
 
+# Prompt para ChatGPT:
+&quot;Por que mean(dados$y) retorna NA? Como corrigir?&quot;
+
+# ChatGPT explica:
+# &quot;mean() retorna NA quando há valores ausentes.
+#  Solução: use na.rm = TRUE
+#  Exemplo: mean(dados$y, na.rm = TRUE)&quot;</code></pre>
+</div>
+<div id="caso-2-refatorar-função" class="section level3">
+<h3>Caso 2: Refatorar função</h3>
+<pre class="r"><code># Função verbosa
+calcular &lt;- function(x, y) {
+  resultado1 &lt;- x + y
+  resultado2 &lt;- x * y
+  resultado3 &lt;- x / y
+  output &lt;- list()
+  output$soma &lt;- resultado1
+  output$produto &lt;- resultado2
+  output$divisao &lt;- resultado3
+  return(output)
+}
+
+# Prompt:
+&quot;Refatore esta função para ser mais concisa e clara&quot;
+
+# ChatGPT sugere:
+calcular &lt;- function(x, y) {
+  list(
+    soma = x + y,
+    produto = x * y,
+    divisao = x / y
+  )
+}</code></pre>
+</div>
+<div id="caso-3-gerar-testes-unitários" class="section level3">
+<h3>Caso 3: Gerar testes unitários</h3>
+<pre class="r"><code># Sua função
+zscore &lt;- function(x) {
+  (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
+}
+
+# Prompt:
+&quot;Gere testes unitários simples para validar esta função zscore&quot;
+
+# ChatGPT gera:
+# Teste 1: vetor normal
+teste1 &lt;- zscore(c(1, 2, 3, 4, 5))
+stopifnot(abs(mean(teste1)) &lt; 0.0001)  # Média ~0
+
+# Teste 2: vetor com NA
+teste2 &lt;- zscore(c(1, NA, 3))
+stopifnot(!is.na(teste2[1]))  # Remove NA
+
+# Teste 3: vetor constante
+teste3 &lt;- zscore(c(5, 5, 5))
+stopifnot(all(is.nan(teste3)))  # sd=0 → NaN</code></pre>
+<hr />
+</div>
+</div>
+</div>
+<div id="parte-4-rstudio-chattr-claude-21h00---21h30" class="section level1">
+<h1>Parte 4: RStudio + chattr (Claude) (21h00 - 21h30)</h1>
+<div id="conhecendo-o-chattr" class="section level2">
+<h2>4.1 Conhecendo o chattr</h2>
+<p><strong>chattr</strong> é uma interface unificada para múltiplos
+modelos de IA, incluindo Claude.</p>
+<p><strong>Vantagens:</strong> - Suporta Claude, ChatGPT, Google Gemini,
+outros - Interface simples e consistente - Chat interativo no console -
+Fácil trocar entre modelos</p>
+<div id="configuração-inicial" class="section level3">
+<h3>Configuração inicial</h3>
+<pre class="r"><code>library(chattr)
+
+# Ver modelos disponíveis
+chattr_models()
+
+# Configurar Claude como padrão
+chattr_defaults(
+  provider = &quot;anthropic&quot;,
+  model = &quot;claude-3-5-sonnet-latest&quot;,
+  max_tokens = 1000
+)
+
+# Verificar configuração
+chattr_defaults()</code></pre>
+<hr />
+</div>
+</div>
+<div id="chat-interativo" class="section level2">
+<h2>4.2 Chat Interativo</h2>
+<p><strong>Como usar:</strong></p>
+<pre class="r"><code># Iniciar chat no console
+chattr()
+
+# Interface interativa aparece
+# Digite sua pergunta e Enter
+# &quot;Como criar um data.frame em R?&quot;
+
+# Para sair: digite &quot;exit&quot; ou &quot;quit&quot;</code></pre>
+<p><strong>Recursos do chat:</strong> - Histórico de conversa mantido na
+sessão - Contexto preservado (lembra conversa anterior) - Copy/paste de
+código facilmente</p>
+<hr />
+</div>
+<div id="chat-programático" class="section level2">
+<h2>4.3 Chat Programático</h2>
+<pre class="r"><code># Fazer pergunta diretamente
+resposta &lt;- chattr(&quot;Como calcular média em R?&quot;)
+cat(resposta)
+
+# Com contexto/código
+codigo &lt;- &quot;
+dados &lt;- data.frame(x = 1:5, y = c(2, 4, NA, 8, 10))
+mean(dados$y)
+&quot;
+
+resposta &lt;- chattr(paste0(
+  &quot;Explique o que acontece neste código:\n&quot;,
+  codigo
+))
+cat(resposta)
+
+# Salvar histórico
+historico &lt;- chattr_history()
+print(historico)</code></pre>
+<hr />
+</div>
+<div id="chamadas-via-api-manual-claude" class="section level2">
+<h2>4.4 Chamadas via API Manual (Claude)</h2>
+<p>Para controle total e automação com Claude:</p>
+<pre class="r"><code>library(httr2)
+library(jsonlite)
+
+# 1. ENDPOINT
 endpoint &lt;- &quot;https://api.anthropic.com/v1/messages&quot;
-prompt &lt;- &quot;Revise a função abaixo e a torne mais robusta a NAs.\n\nsoma_media &lt;- function(x){ sum(x)/length(x) }&quot;
 
+# 2. PROMPT
+prompt &lt;- &quot;Revise esta função e torne-a mais robusta a NAs:
+
+soma_media &lt;- function(x) { 
+  sum(x) / length(x) 
+}&quot;
+
+# 3. CORPO DA REQUISIÇÃO
 body &lt;- list(
   model = &quot;claude-3-5-sonnet-latest&quot;,
-  max_tokens = 300,
-  messages = list(list(role=&quot;user&quot;, content=prompt))
+  max_tokens = 1000,
+  messages = list(
+    list(
+      role = &quot;user&quot;,
+      content = prompt
+    )
+  )
 )
 
+# 4. CRIAR REQUISIÇÃO
 req &lt;- request(endpoint) |&gt;
+  req_method(&quot;POST&quot;) |&gt;
+  req_headers(
+    Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)),
+    &quot;anthropic-version&quot; = &quot;2023-06-01&quot;,  # Versão da API
+    &quot;content-type&quot; = &quot;application/json&quot;
+  ) |&gt;
+  req_body_json(body)
+
+# 5. EXECUTAR
+resp &lt;- req_perform(req)
+
+# 6. EXTRAIR RESPOSTA
+json &lt;- resp_body_json(resp)
+resposta &lt;- json$content[[1]]$text
+
+# 7. MOSTRAR
+cat(resposta)</code></pre>
+<p><strong>Diferenças da API Claude:</strong></p>
+<ul>
+<li>Header extra: <code>anthropic-version</code></li>
+<li>Estrutura de resposta diferente:
+<code>json$content[[1]]$text</code></li>
+<li>Sem parâmetro <code>temperature</code> (usa <code>top_p</code> e
+<code>top_k</code>)</li>
+<li><code>max_tokens</code> é obrigatório</li>
+</ul>
+<hr />
+</div>
+<div id="casos-de-uso-práticos-com-claude" class="section level2">
+<h2>4.5 Casos de Uso Práticos com Claude</h2>
+<div id="caso-1-análise-profunda-de-código" class="section level3">
+<h3>Caso 1: Análise profunda de código</h3>
+<pre class="r"><code># Código complexo para analisar
+pipeline_complexo &lt;- &quot;
+library(tidyverse)
+
+resultado &lt;- mtcars %&gt;%
+  mutate(
+    eficiencia = mpg / wt,
+    categoria_cyl = case_when(
+      cyl &lt;= 4 ~ &#39;Pequeno&#39;,
+      cyl &lt;= 6 ~ &#39;Médio&#39;,
+      TRUE ~ &#39;Grande&#39;
+    )
+  ) %&gt;%
+  group_by(categoria_cyl, gear) %&gt;%
+  summarize(
+    n = n(),
+    media_ef = mean(eficiencia),
+    dp_ef = sd(eficiencia),
+    .groups = &#39;drop&#39;
+  ) %&gt;%
+  filter(n &gt;= 3) %&gt;%
+  arrange(desc(media_ef))
+&quot;
+
+# Prompt para Claude:
+&quot;Analise este pipeline tidyverse em detalhes:
+1. O que cada etapa faz?
+2. Há potenciais problemas ou melhorias?
+3. O código está otimizado?
+
+Código:
+[cole o código acima]&quot;
+
+# Claude fornece análise profunda:
+# - Explicação linha por linha
+# - Identificação de possíveis NAs não tratados
+# - Sugestões de otimização
+# - Alertas sobre edge cases</code></pre>
+</div>
+<div id="caso-2-gerar-função-robusta" class="section level3">
+<h3>Caso 2: Gerar função robusta</h3>
+<pre class="r"><code># Prompt para Claude:
+&quot;Crie uma função em R que:
+1. Receba um data.frame e nome de coluna numérica
+2. Remova NAs
+3. Retorne lista com média e desvio padrão
+4. Inclua validações de tipo e mensagens de erro claras
+5. Documente com comentários&quot;
+
+# Claude gera:
+#&#39; Calcula estatísticas descritivas de uma coluna numérica
+#&#39;
+#&#39; @param df Data frame contendo os dados
+#&#39; @param col_name String com nome da coluna numérica
+#&#39; @return Lista com média e desvio padrão
+calcular_stats &lt;- function(df, col_name) {
+  # Validar entrada: df deve ser data.frame
+  if (!is.data.frame(df)) {
+    stop(&quot;Erro: &#39;df&#39; deve ser um data.frame&quot;)
+  }
+  
+  # Validar: coluna existe
+  if (!col_name %in% names(df)) {
+    stop(paste0(&quot;Erro: coluna &#39;&quot;, col_name, &quot;&#39; não encontrada&quot;))
+  }
+  
+  # Extrair coluna
+  coluna &lt;- df[[col_name]]
+  
+  # Validar: coluna é numérica
+  if (!is.numeric(coluna)) {
+    stop(paste0(&quot;Erro: coluna &#39;&quot;, col_name, &quot;&#39; não é numérica&quot;))
+  }
+  
+  # Remover NAs e avisar se houver
+  n_nas &lt;- sum(is.na(coluna))
+  if (n_nas &gt; 0) {
+    message(paste0(&quot;Aviso: &quot;, n_nas, &quot; valores NA foram removidos&quot;))
+  }
+  coluna_limpa &lt;- na.omit(coluna)
+  
+  # Validar: ainda há dados após remover NAs
+  if (length(coluna_limpa) == 0) {
+    stop(&quot;Erro: nenhum valor válido após remover NAs&quot;)
+  }
+  
+  # Calcular estatísticas
+  list(
+    media = mean(coluna_limpa),
+    desvio_padrao = sd(coluna_limpa),
+    n_observacoes = length(coluna_limpa),
+    n_nas_removidos = n_nas
+  )
+}
+
+# Teste
+dados &lt;- data.frame(x = c(1, 2, NA, 4, 5), y = letters[1:5])
+calcular_stats(dados, &quot;x&quot;)</code></pre>
+</div>
+<div id="caso-3-explicar-traceback-complexo" class="section level3">
+<h3>Caso 3: Explicar traceback complexo</h3>
+<pre class="r"><code># Erro complexo
+erro &lt;- &quot;
+Error in mutate(., nova_col = antiga_col * 2) : 
+  ℹ In argument: `nova_col = antiga_col * 2`.
+Caused by error:
+! object &#39;antiga_col&#39; not found
+Run `rlang::last_trace()` to see where the error occurred.
+&quot;
+
+# Prompt para Claude:
+&quot;Explique este erro do R e como corrigi-lo:
+[cole o erro acima]&quot;
+
+# Claude explica:
+# - O que significa cada linha do erro
+# - Por que ocorreu (coluna não existe)
+# - Como diagnosticar (verificar names(dados))
+# - Como corrigir (usar nome correto ou criar coluna)
+# - Dicas para evitar no futuro</code></pre>
+<hr />
+</div>
+</div>
+</div>
+<div id="parte-5-exercício-guiado-de-integração-21h30---22h00" class="section level1">
+<h1>Parte 5: Exercício Guiado de Integração (21h30 - 22h00)</h1>
+<div id="tarefa-1-revisar-código-com-gptstudio" class="section level2">
+<h2>5.1 Tarefa 1: Revisar código com gptstudio</h2>
+<p><strong>Objetivo:</strong> Usar ChatGPT para revisar um script
+tidyverse e propor melhorias.</p>
+<p><strong>Código para revisar:</strong></p>
+<pre class="r"><code># Salve este código em: scripts/04_ia_integracao_gptstudio.R
+
+library(tidyverse)
+library(palmerpenguins)
+
+# Análise de pinguins
+dados &lt;- penguins
+dados &lt;- dados %&gt;% filter(!is.na(bill_length_mm))
+dados &lt;- dados %&gt;% filter(!is.na(bill_depth_mm))
+dados &lt;- dados %&gt;% filter(!is.na(flipper_length_mm))
+dados &lt;- dados %&gt;% filter(!is.na(body_mass_g))
+
+resultado &lt;- dados %&gt;%
+  mutate(bill_ratio = bill_length_mm / bill_depth_mm) %&gt;%
+  group_by(species) %&gt;%
+  summarize(
+    n = n(),
+    bill_ratio_mean = mean(bill_ratio),
+    bill_ratio_sd = sd(bill_ratio),
+    mass_mean = mean(body_mass_g),
+    mass_sd = sd(body_mass_g)
+  )
+
+print(resultado)</code></pre>
+<p><strong>Passos:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Selecione todo o código</li>
+<li>Use gptstudio → Explain Code</li>
+<li>Depois use gptstudio → Write Code com prompt: “Sugira 2 melhorias
+para este código”</li>
+</ol>
+<p><strong>Melhorias esperadas do ChatGPT:</strong></p>
+<pre class="r"><code># VERSÃO MELHORADA
+library(tidyverse)
+library(palmerpenguins)
+
+# Melhoria 1: Usar drop_na() em vez de múltiplos filter
+# Melhoria 2: Encadear operações em um único pipeline
+resultado &lt;- penguins %&gt;%
+  drop_na(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g) %&gt;%
+  mutate(bill_ratio = bill_length_mm / bill_depth_mm) %&gt;%
+  group_by(species) %&gt;%
+  summarize(
+    n = n(),
+    across(
+      c(bill_ratio, body_mass_g),
+      list(mean = mean, sd = sd),
+      .names = &quot;{.col}_{.fn}&quot;
+    )
+  )
+
+print(resultado)</code></pre>
+<hr />
+</div>
+<div id="tarefa-2-gerar-função-com-chattr-claude" class="section level2">
+<h2>5.2 Tarefa 2: Gerar função com chattr (Claude)</h2>
+<p><strong>Objetivo:</strong> Usar Claude para gerar uma função
+robusta.</p>
+<p><strong>Especificações:</strong> - Receber um data.frame e nome de
+coluna numérica - Remover NAs - Retornar média e desvio-padrão com nomes
+claros - Incluir validação de tipos e mensagens de erro úteis</p>
+<p><strong>Prompt para Claude:</strong></p>
+<pre class="r"><code># No console R:
+chattr(&quot;
+Crie uma função em R chamada &#39;estatisticas_coluna&#39; que:
+
+1. Receba dois argumentos:
+   - df: um data.frame
+   - col_name: string com nome da coluna
+
+2. Valide que:
+   - df é um data.frame (se não, erro claro)
+   - col_name existe em df (se não, erro claro)
+   - A coluna é numérica (se não, erro claro)
+
+3. Remova valores NA e avise quantos foram removidos
+
+4. Retorne uma lista nomeada com:
+   - media: média da coluna
+   - desvio_padrao: desvio padrão da coluna
+   - n_validos: número de observações válidas
+   - n_nas: número de NAs removidos
+
+5. Adicione documentação roxygen2 e comentários
+
+6. Inclua exemplo de uso
+&quot;)</code></pre>
+<p><strong>Salve a resposta em:</strong>
+<code>scripts/04_ia_integracao_claude.R</code></p>
+<hr />
+</div>
+<div id="tarefa-3-documento-de-reflexão" class="section level2">
+<h2>5.3 Tarefa 3: Documento de Reflexão</h2>
+<p><strong>Objetivo:</strong> Documentar o processo e aprendizados.</p>
+<p><strong>Crie:</strong> <code>docs/relatorio_ia.Rmd</code></p>
+<pre class="r"><code># Arquivo: docs/relatorio_ia.Rmd
+---
+title: &quot;Integração de IA no RStudio - Reflexões&quot;
+author: &quot;Seu Nome&quot;
+date: &quot;`r Sys.Date()`&quot;
+output: html_document
+---
+
+## Tarefa 1: Revisão com ChatGPT
+
+**Código Original:**
+[Cole o código original aqui]
+
+**Sugestões do ChatGPT:**
+1. [Descreva a primeira sugestão]
+2. [Descreva a segunda sugestão]
+
+**O que adotei e por quê:**
+[Explique quais sugestões você implementou e sua justificativa]
+
+**O que não adotei e por quê:**
+[Se houver, explique o que não usou e por quê]
+
+## Tarefa 2: Função com Claude
+
+**Especificações solicitadas:**
+- [Liste as especificações]
+
+**Código gerado pelo Claude:**</code></pre>
+<pre class="r"><code># [Cole a função gerada]</code></pre>
+<p><strong>Testes realizados:</strong></p>
+<pre class="r"><code># [Cole seus testes]</code></pre>
+<p><strong>Avaliação:</strong> - <strong>Pontos positivos:</strong> [O
+que funcionou bem] - <strong>Ajustes necessários:</strong> [O que você
+teve que modificar] - <strong>Aprendizados:</strong> [O que você
+aprendeu no processo]</p>
+</div>
+<div id="comparação-chatgpt-vs-claude" class="section level2">
+<h2>Comparação ChatGPT vs Claude</h2>
+<p><strong>ChatGPT:</strong> - Velocidade: [sua observação] - Qualidade:
+[sua observação] - Melhor para: [sua conclusão]</p>
+<p><strong>Claude:</strong> - Velocidade: [sua observação] - Qualidade:
+[sua observação] - Melhor para: [sua conclusão]</p>
+</div>
+<div id="reflexão-final" class="section level2">
+<h2>Reflexão Final</h2>
+<p>[Escreva um parágrafo sobre como você pretende usar IA no seu
+trabalho com R]</p>
+<pre><code>
+---
+
+## 5.4 Checklist Final
+
+Antes de fazer o commit final, verifique:
+
+- [ ] `.Renviron` configurado com ambas as chaves
+  ```r
+  Sys.getenv(&quot;OPENAI_API_KEY&quot;)  # Deve mostrar sk-proj-...
+  Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)  # Deve mostrar sk-ant-...</code></pre>
+<ul class="task-list">
+<li><p><label><input type="checkbox"></input>Pacotes instalados</label></p>
+<pre class="r"><code>library(gptstudio)
+library(chattr)
+library(httr2)
+library(jsonlite)</code></pre></li>
+<li><p><label><input type="checkbox"></input>Addins do gptstudio
+funcionando</label></p>
+<ul>
+<li>Addins → GPTSTUDIO → ChatGPT Chat abre?</li>
+</ul></li>
+<li><p><label><input type="checkbox"></input>Chamada mínima via httr2 para
+cada API funciona</label></p>
+<pre class="r"><code># Teste ChatGPT (simplificado)
+req &lt;- request(&quot;https://api.openai.com/v1/chat/completions&quot;) |&gt;
+  req_method(&quot;POST&quot;) |&gt;
+  req_headers(Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;OPENAI_API_KEY&quot;))) |&gt;
+  req_body_json(list(
+    model = &quot;gpt-4o-mini&quot;,
+    messages = list(list(role = &quot;user&quot;, content = &quot;Diga olá&quot;))
+  ))
+resp &lt;- req_perform(req)
+resp_body_json(resp)$choices[[1]]$message$content
+
+# Teste Claude (simplificado)
+req &lt;- request(&quot;https://api.anthropic.com/v1/messages&quot;) |&gt;
   req_method(&quot;POST&quot;) |&gt;
   req_headers(
     Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)),
     &quot;anthropic-version&quot; = &quot;2023-06-01&quot;,
     &quot;content-type&quot; = &quot;application/json&quot;
   ) |&gt;
-  req_body_json(body)
-
+  req_body_json(list(
+    model = &quot;claude-3-5-sonnet-latest&quot;,
+    max_tokens = 100,
+    messages = list(list(role = &quot;user&quot;, content = &quot;Diga olá&quot;))
+  ))
 resp &lt;- req_perform(req)
-json &lt;- resp_body_json(resp)
-cat(json$content[[1]]$text)</code></pre>
+resp_body_json(resp)$content[[1]]$text</code></pre></li>
+<li><p><label><input type="checkbox"></input>Arquivos criados:</label></p>
+<ul>
+<li><code>scripts/04_ia_integracao_gptstudio.R</code></li>
+<li><code>scripts/04_ia_integracao_claude.R</code></li>
+<li><code>docs/relatorio_ia.Rmd</code></li>
+</ul></li>
+</ul>
+<hr />
 </div>
-<div id="h30---22h00-exercício-guiado-de-integração" class="section level2">
-<h2>21h30 - 22h00 | Exercício guiado de integração</h2>
-<p>Tarefa 1: usar gptstudio para revisar um script curto de dplyr e
-propor 2 melhorias.<br />
-Tarefa 2: usar chattr para gerar uma função em R que: - receba um
-data.frame e uma coluna numérica - remova NAs, retorne média e
-desvio-padrão com nomes claros - inclua validação de tipos e mensagens
-de erro úteis</p>
-<p>Entrega esperada no fork do aluno: -
-scripts/04_ia_integracao_gptstudio.R - scripts/04_ia_integracao_claude.R
-- docs/relatorio_ia.Rmd com um parágrafo descrevendo o que a IA sugeriu,
-o que foi adotado e por quê.</p>
-<p>Checklist final: - variáveis de ambiente lidas com Sys.getenv() -
-addins do gptstudio funcionando - chamada mínima via httr2 para cada API
-- commit e push no fork</p>
-<pre class="bash"><code>git add scripts/04_*.R docs/relatorio_ia.Rmd
-git commit -m &quot;Integração ChatGPT e Claude no RStudio (Dia 4)&quot;
+<div id="commit-e-push" class="section level2">
+<h2>5.5 Commit e Push</h2>
+<pre class="bash"><code># Adicionar arquivos
+git add scripts/04_*.R docs/relatorio_ia.Rmd
+
+# Commit descritivo
+git commit -m &quot;feat: integração ChatGPT e Claude no RStudio (Dia 4)
+
+- Configura APIs OpenAI e Anthropic
+- Implementa revisão de código com gptstudio
+- Gera função robusta com Claude
+- Documenta processo e aprendizados&quot;
+
+# Push para seu fork
 git push origin main</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="troubleshooting-por-sistema-operacional" class="section level1">
-<h1>Troubleshooting por Sistema Operacional</h1>
-<div id="windows" class="section level2">
-<h2>Windows</h2>
-<p>Git não encontrado: reinstalar Git (opção Git from the command
-line…).<br />
-Acentos estranhos: garantir UTF-8 ao salvar, ou usar
-locale(encoding=“latin1”) quando necessário.<br />
-Pacotes com erro: tentar instalar na biblioteca do usuário.</p>
-</div>
-<div id="macos" class="section level2">
-<h2>macOS</h2>
-<p>xcrun error com Git: <code>xcode-select --install</code><br />
-LaTeX não encontrado: <code>tinytex::install_tinytex()</code></p>
-</div>
-<div id="linux-ubuntudebian" class="section level2">
-<h2>Linux (Ubuntu/Debian)</h2>
-<p>Compilação de pacotes:</p>
-<pre class="bash"><code>sudo apt install build-essential libcurl4-openssl-dev libssl-dev libxml2-dev
-sudo apt install libfontconfig1-dev libharfbuzz-dev libfribidi-dev</code></pre>
-</div>
-<div id="problemas-comuns-todos-os-so" class="section level2">
-<h2>Problemas comuns (todos os SO)</h2>
-<p>Permission denied ao fazer push: corrigir origin para o fork do
-aluno:</p>
-<pre class="bash"><code>git remote set-url origin https://github.com/SEU-USUARIO/curso-r-github-ia.git</code></pre>
-<p>API Key não encontrada: configurar no ~/.Renviron e reiniciar o
-R.</p>
-<div style="page-break-after: always;"></div>
+<p><strong>IMPORTANTE:</strong> NÃO faça commit do arquivo
+<code>.Renviron</code> com suas chaves!</p>
+<hr />
 </div>
 </div>
 <div id="recursos-adicionais" class="section level1">
 <h1>Recursos Adicionais</h1>
-<p>R for Data Science (2e): <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a><br />
-Happy Git with R: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a><br />
-Cheatsheets Posit: <a href="https://posit.co/resources/cheatsheets/" class="uri">https://posit.co/resources/cheatsheets/</a><br />
-palmerpenguins: <a href="https://allisonhorst.github.io/palmerpenguins/" class="uri">https://allisonhorst.github.io/palmerpenguins/</a><br />
-Datasets: TidyTuesday, Brasil.io, Kaggle</p>
-<div style="page-break-after: always;"></div>
+<div id="documentação-oficial" class="section level2">
+<h2>Documentação Oficial</h2>
+<p><strong>OpenAI:</strong> - API Reference: <a href="https://platform.openai.com/docs/api-reference" class="uri">https://platform.openai.com/docs/api-reference</a> -
+Pricing: <a href="https://openai.com/pricing" class="uri">https://openai.com/pricing</a> - Best Practices: <a href="https://platform.openai.com/docs/guides/prompt-engineering" class="uri">https://platform.openai.com/docs/guides/prompt-engineering</a></p>
+<p><strong>Anthropic:</strong> - API Reference: <a href="https://docs.anthropic.com/claude/reference" class="uri">https://docs.anthropic.com/claude/reference</a> - Pricing:
+<a href="https://www.anthropic.com/pricing" class="uri">https://www.anthropic.com/pricing</a> - Prompt Engineering:
+<a href="https://docs.anthropic.com/claude/docs/intro-to-prompting" class="uri">https://docs.anthropic.com/claude/docs/intro-to-prompting</a></p>
+<p><strong>Pacotes R:</strong> - gptstudio: <a href="https://github.com/MichelNivard/gptstudio" class="uri">https://github.com/MichelNivard/gptstudio</a> - chattr: <a href="https://mlverse.github.io/chattr/" class="uri">https://mlverse.github.io/chattr/</a> - httr2: <a href="https://httr2.r-lib.org/" class="uri">https://httr2.r-lib.org/</a></p>
 </div>
-<div id="contato" class="section level1">
-<h1>Contato</h1>
-<p>Instrutor: Vinícius Silva Junqueira<br />
-Email: <a href="mailto:junqueiravinicius@hotmail.com" class="email">junqueiravinicius@hotmail.com</a><br />
-GitHub: <a href="https://github.com/viniciusjunqueira/curso-r-github-ia" class="uri">https://github.com/viniciusjunqueira/curso-r-github-ia</a><br />
-Lattes: <a href="http://lattes.cnpq.br/4686677580216927" class="uri">http://lattes.cnpq.br/4686677580216927</a><br />
-LinkedIn: www.linkedin.com/in/junqueiravinicius</p>
-<p>Última atualização: 2025-10-08<br />
-Versão: 6.0 – Dia 4 100% integração com IA no RStudio</p>
+<div id="tutoriais-e-cursos" class="section level2">
+<h2>Tutoriais e Cursos</h2>
+<ul>
+<li>Prompt Engineering Guide: <a href="https://www.promptingguide.ai/" class="uri">https://www.promptingguide.ai/</a></li>
+<li>Learn Prompting: <a href="https://learnprompting.org/" class="uri">https://learnprompting.org/</a></li>
+<li>OpenAI Cookbook: <a href="https://cookbook.openai.com/" class="uri">https://cookbook.openai.com/</a></li>
+</ul>
+</div>
+<div id="comunidades" class="section level2">
+<h2>Comunidades</h2>
+<ul>
+<li>r/ChatGPT: <a href="https://reddit.com/r/ChatGPT" class="uri">https://reddit.com/r/ChatGPT</a></li>
+<li>r/ClaudeAI: <a href="https://reddit.com/r/ClaudeAI" class="uri">https://reddit.com/r/ClaudeAI</a></li>
+<li>RStudio Community: <a href="https://community.rstudio.com/" class="uri">https://community.rstudio.com/</a></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="troubleshooting" class="section level1">
+<h1>Troubleshooting</h1>
+<div id="erro-api-key-inválida" class="section level2">
+<h2>Erro: API Key inválida</h2>
+<pre><code>Error: 401 Unauthorized</code></pre>
+<p><strong>Causas:</strong> - Chave copiada errada - Chave expirada -
+Chave não configurada corretamente</p>
+<p><strong>Soluções:</strong> 1. Verifique:
+<code>Sys.getenv(&quot;OPENAI_API_KEY&quot;)</code> 2. Recrie chave no dashboard
+3. Edite <code>.Renviron</code>: <code>usethis::edit_r_environ()</code>
+4. Reinicie R</p>
+</div>
+<div id="erro-rate-limit-excedido" class="section level2">
+<h2>Erro: Rate Limit excedido</h2>
+<pre><code>Error: 429 Too Many Requests</code></pre>
+<p><strong>Causa:</strong> Muitas requisições em pouco tempo</p>
+<p><strong>Solução:</strong> - Espere 1 minuto - Reduza frequência de
+chamadas - Use modelo mais barato para testes</p>
+</div>
+<div id="erro-insufficient-credits" class="section level2">
+<h2>Erro: Insufficient credits</h2>
+<pre><code>Error: 402 Payment Required</code></pre>
+<p><strong>Causa:</strong> Créditos/limite de gastos esgotado</p>
+<p><strong>Solução:</strong> - Adicione créditos (OpenAI/Anthropic
+dashboard) - Configure limite de gastos - Verifique método de
+pagamento</p>
+</div>
+<div id="gptstudio-não-aparece-nos-addins" class="section level2">
+<h2>gptstudio não aparece nos Addins</h2>
+<p><strong>Soluções:</strong> 1. Reinstale:
+<code>install.packages(&quot;gptstudio&quot;)</code> 2. Reinicie RStudio 3.
+Verifique se instalou corretamente: <code>library(gptstudio)</code></p>
+</div>
+<div id="problemas-de-conexão" class="section level2">
+<h2>Problemas de conexão</h2>
+<pre><code>Error: Could not resolve host</code></pre>
+<p><strong>Soluções:</strong> - Verifique conexão com internet - Teste:
+<code>ping api.openai.com</code> - Desative VPN se houver - Configure
+proxy se necessário</p>
+<hr />
+</div>
+</div>
+<div id="dicas-finais" class="section level1">
+<h1>Dicas Finais</h1>
+<div id="prompts-eficazes" class="section level2">
+<h2>Prompts Eficazes</h2>
+<p><strong>Seja específico:</strong> ❌ “Melhore este código” ✅
+“Refatore este código para usar tidyverse em vez de loops for”</p>
+<p><strong>Dê contexto:</strong> ❌ “Como fazer isso?” ✅ “Tenho um
+data.frame com colunas x, y, z. Como filtrar linhas onde x &gt; 10 e
+calcular média de y por z?”</p>
+<p><strong>Peça passo a passo:</strong> ✅ “Explique passo a passo como
+criar um gráfico ggplot2 com facetas”</p>
+<p><strong>Solicite validações:</strong> ✅ “Gere esta função e inclua
+validação de inputs e tratamento de erros”</p>
+</div>
+<div id="iteração-com-ia" class="section level2">
+<h2>Iteração com IA</h2>
+<ol style="list-style-type: decimal">
+<li><strong>Primeira tentativa:</strong> Prompt simples</li>
+<li><strong>Refinar:</strong> Se não satisfatório, refine o prompt</li>
+<li><strong>Especificar:</strong> Adicione detalhes que faltaram</li>
+<li><strong>Validar:</strong> Sempre teste o código gerado</li>
+<li><strong>Iterar:</strong> Peça ajustes específicos</li>
+</ol>
+</div>
+<div id="quando-não-usar-ia" class="section level2">
+<h2>Quando NÃO usar IA</h2>
+<ul>
+<li>❌ Código com dados sensíveis/confidenciais</li>
+<li>❌ Decisões críticas sem validação</li>
+<li>❌ Substituir documentação oficial</li>
+<li>❌ Aprendizado de conceitos fundamentais (use IA como complemento,
+não substituto)</li>
+</ul>
+</div>
+<div id="quando-sim-usar-ia" class="section level2">
+<h2>Quando SIM usar IA</h2>
+<ul>
+<li>✅ Entender erros complexos</li>
+<li>✅ Gerar boilerplate code</li>
+<li>✅ Refatorar código existente</li>
+<li>✅ Criar testes</li>
+<li>✅ Documentar código</li>
+<li>✅ Aprender novas funções/pacotes</li>
+<li>✅ Brainstorming de soluções</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="conclusão-do-curso" class="section level1">
+<h1>Conclusão do Curso</h1>
+<p>🎉 <strong>Parabéns!</strong> Você completou o curso de R com GitHub
+e IA!</p>
+<div id="o-que-você-aprendeu" class="section level2">
+<h2>O que você aprendeu:</h2>
+<p><strong>Dia 1:</strong> - Fundamentos de R (vetores, data.frames,
+fatores) - Git e GitHub - Workflow com fork - Organização de
+projetos</p>
+<p><strong>Dia 2:</strong> - Operadores e condicionais - Funções
+personalizadas - Tidyverse e dplyr - Manipulação de datas</p>
+<p><strong>Dia 3:</strong> - Transformação com tidyr - Tratamento de NAs
+- I/O de dados - Visualização com ggplot2</p>
+<p><strong>Dia 4:</strong> - Integração de IA no workflow - APIs OpenAI
+e Anthropic - gptstudio e chattr - Uso responsável de IA</p>
+</div>
+<div id="próximos-passos" class="section level2">
+<h2>Próximos passos:</h2>
+<ol style="list-style-type: decimal">
+<li><strong>Pratique regularmente</strong> - Consistência &gt;
+Intensidade</li>
+<li><strong>Trabalhe em projetos reais</strong> - Aplique em seus
+dados</li>
+<li><strong>Participe da comunidade R</strong> - Twitter, Reddit,
+RStudio Community</li>
+<li><strong>Continue aprendendo</strong>:
+<ul>
+<li>R for Data Science: <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a></li>
+<li>Advanced R: <a href="https://adv-r.hadley.nz/" class="uri">https://adv-r.hadley.nz/</a></li>
+<li>TidyTuesday: <a href="https://github.com/rfordatascience/tidytuesday" class="uri">https://github.com/rfordatascience/tidytuesday</a></li>
+</ul></li>
+<li><strong>Use IA como assistente</strong> - Mas sempre entenda o
+código!</li>
+</ol>
+<hr />
+<p><strong>Obrigado por participar!</strong></p>
+<p>Mantenha contato: - Email: <a href="mailto:junqueiravinicius@hotmail.com" class="email">junqueiravinicius@hotmail.com</a> - GitHub: <a href="https://github.com/viniciusjunqueira/curso-r-github-ia" class="uri">https://github.com/viniciusjunqueira/curso-r-github-ia</a> -
+LinkedIn: linkedin.com/in/junqueiravinicius</p>
+<p><strong>Bons códigos e boas análises!</strong> 🚀📊</p>
+</div>
 </div>
 
 

@@ -1,6 +1,6 @@
 ---
-title: "Introdução Programação em R com GitHub, ChatGPT e Claude"
-# subtitle: "Análise de Dados Moderna para Iniciantes"
+title: "Dia 2"
+subtitle: "Introdução Programação em R com GitHub, ChatGPT e Claude"
 author: "Vinícius Silva Junqueira"
 date: "`r Sys.Date()`"
 output: 
@@ -44,7 +44,7 @@ knitr::opts_chunk$set(
 # library(palmerpenguins)
 ```
 
-# Dia 2 — Lógica, Funções e Introdução ao Tidyverse
+# Lógica, Funções e Introdução ao Tidyverse
 
 > **Objetivos do dia**
 >

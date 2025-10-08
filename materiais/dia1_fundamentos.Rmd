@@ -1,6 +1,6 @@
 ---
-title: "Introdução Programação em R com GitHub, ChatGPT e Claude"
-# subtitle: "Fundamentos e Ambiente de Trabalho"
+title: "Dia 1"
+subtitle: "Fundamentos e Ambiente de Trabalho"
 author: "Vinícius Silva Junqueira"
 date: "`r Sys.Date()`"
 output: 
@@ -47,7 +47,7 @@ knitr::opts_chunk$set(
 # library(palmerpenguins)
 ```
 
-# Dia 1 — Fundamentos e Ambiente de Trabalho
+# Abertura
 
 **Tempo previsto** 19h00–22h00 (intervalo 20h30–20h50)
 

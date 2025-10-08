@@ -13,5 +13,5 @@ pdf_combine(
             ,"dia2_logica_funcoes.pdf"
             ,"dia3_manipulacao.pdf"
             ,"dia4_ia.pdf"),
-  output = "Curso_Completo.pdf"
+  output = "Curso_Completo_R_GitHub_IA.pdf"
 )

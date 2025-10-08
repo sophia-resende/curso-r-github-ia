@@ -1,26 +1,30 @@
 ---
-title: "Introdução Programação em R com GitHub, ChatGPT e Claude"
-# subtitle: "Transformação, I/O e Visualização"
+title: "Dia 3"
 author: "Vinícius Silva Junqueira"
 date: "`r Sys.Date()`"
-output: 
+output:
+  html_document:
+    toc: true
+    toc_depth: '2'
+    df_print: paged
   pdf_document:
     latex_engine: xelatex
     toc: true
     toc_depth: 2
     number_sections: true
-lang: pt-BR
+subtitle: Introdução Programação em R com GitHub, ChatGPT e Claude
+lang: "pt-BR"
 fontsize: 11pt
 geometry: margin=2.5cm
 header-includes:
-  - \usepackage{fancyhdr}
-  - \pagestyle{fancy}
-  - \fancyhead[L]{\small Vinícius Silva Junqueira}
-  - \fancyhead[R]{\small \thepage}
-  - \fancyfoot[L]{\small Curso R + GitHub + IA}
-  - \fancyfoot[R]{\small junqueiravinicius@hotmail.com}
-  - \renewcommand{\headrulewidth}{0.4pt}
-  - \renewcommand{\footrulewidth}{0.4pt}
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhead[L]{\small Vinícius Silva Junqueira}
+- \fancyhead[R]{\small \thepage}
+- \fancyfoot[L]{\small Curso R + GitHub + IA}
+- \fancyfoot[R]{\small junqueiravinicius@hotmail.com}
+- \renewcommand{\headrulewidth}{0.4pt}
+- \renewcommand{\footrulewidth}{0.4pt}
 ---
 
 ```{r setup, include=FALSE}
@@ -37,7 +41,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Dia 3 — Transformação, I/O e Visualização
+# Transformação, I/O e Visualização
 
 > **Objetivos do dia**
 >

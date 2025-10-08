@@ -1,6 +1,8 @@
 ---
 title: "Sobre o Autor"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 geometry: margin=2.5cm
 fontsize: 11pt
 ---

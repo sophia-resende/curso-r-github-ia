@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR" xml:lang="pt-BR">
+<html>
 
 <head>
 
@@ -9,11 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Vinícius Silva Junqueira" />
 
-<meta name="date" content="2025-10-08" />
 
-<title>Cronograma</title>
+<title>Sobre o Curso</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1621,416 +1619,121 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Cronograma</h1>
-<h3 class="subtitle">Introdução à Programação em R com GitHub, ChatGPT e
-Claude</h3>
-<h4 class="author">Vinícius Silva Junqueira</h4>
-<h4 class="date">2025-10-08</h4>
+<h1 class="title toc-ignore">Sobre o Curso</h1>
 
 </div>
 
-<div id="TOC">
+
+<div id="bem-vindo-a-introdução-programação-em-r-com-github-chatgpt-e-claude" class="section level1">
+<h1>Bem-vindo a Introdução Programação em R com GitHub, ChatGPT e
+Claude</h1>
+<p>Este curso foi desenvolvido para quem deseja dar os primeiros passos
+no mundo da análise de dados usando R, uma das linguagens mais poderosas
+e populares para ciência de dados. Em 16 horas de conteúdo prático e
+objetivo, você aprenderá não apenas a programar em R, mas também a
+integrar ferramentas modernas que potencializam seu aprendizado e
+produtividade.</p>
+<div id="pré-requisitos" class="section level2">
+<h2>Pré-requisitos</h2>
+<p>Este curso foi pensado para ser <strong>acessível a todos</strong>,
+independentemente da sua experiência prévia com programação. Os únicos
+requisitos são:</p>
 <ul>
-<li><a href="#informa%C3%A7%C3%B5es-gerais-do-curso" id="toc-informações-gerais-do-curso">Informações Gerais do
-Curso</a></li>
-<li><a href="#pr%C3%A9-requisitos-t%C3%A9cnicos" id="toc-pré-requisitos-técnicos">Pré-requisitos Técnicos</a>
+<li><strong>Computador</strong> com acesso à internet (Windows, Mac ou
+Linux)</li>
+<li><strong>Curiosidade</strong> e vontade de aprender</li>
+<li><strong>Disposição</strong> para praticar e experimentar</li>
+</ul>
+<p><strong>Não é necessário</strong> conhecimento prévio em programação,
+estatística ou análise de dados. Se você nunca escreveu uma linha de
+código, não se preocupe! O curso foi estruturado pensando exatamente em
+você. Iniciaremos do zero, apresentando cada conceito de forma clara e
+progressiva.</p>
+</div>
+<div id="objetivos-de-aprendizagem" class="section level2">
+<h2>Objetivos de Aprendizagem</h2>
+<p>Ao final deste curso, você será capaz de:</p>
+<p><strong>Fundamentos de R e Análise de Dados:</strong></p>
 <ul>
-<li><a href="#instala%C3%A7%C3%B5es-obrigat%C3%B3rias-para-todos-os-sistemas" id="toc-instalações-obrigatórias-para-todos-os-sistemas">Instalações
-obrigatórias (para todos os sistemas)</a></li>
-</ul></li>
-<li><a href="#estrutura-pedag%C3%B3gica-e-filosofia" id="toc-estrutura-pedagógica-e-filosofia">Estrutura Pedagógica e
-Filosofia</a></li>
-<li><a href="#pacotes-r-necess%C3%A1rios" id="toc-pacotes-r-necessários">Pacotes R Necessários</a>
+<li>Compreender a sintaxe básica da linguagem R e executar operações
+fundamentais</li>
+<li>Importar, manipular e transformar dados de diferentes fontes
+utilizando o tidyverse</li>
+<li>Aplicar técnicas de limpeza e preparação de dados para análises
+robustas</li>
+<li>Realizar análises exploratórias e extrair insights relevantes de
+conjuntos de dados</li>
+</ul>
+<p><strong>Visualização de Dados:</strong></p>
 <ul>
-<li><a href="#instala%C3%A7%C3%A3o-no-dia-1-a-3-n%C3%BAcleo-do-curso" id="toc-instalação-no-dia-1-a-3-núcleo-do-curso">Instalação no Dia 1 a 3
-(núcleo do curso)</a></li>
-<li><a href="#pacotes-de-ia-dia-4" id="toc-pacotes-de-ia-dia-4">Pacotes
-de IA (Dia 4)</a></li>
-</ul></li>
-<li><a href="#dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho" id="toc-dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho">Dia 1:
-17/11 (Segunda) — Fundamentos e Ambiente de Trabalho</a>
+<li>Criar visualizações profissionais e informativas usando ggplot2</li>
+<li>Escolher o tipo adequado de gráfico para diferentes tipos de dados e
+mensagens</li>
+<li>Personalizar cores, temas e elementos visuais para comunicar
+resultados com clareza</li>
+<li>Produzir gráficos prontos para apresentações, relatórios e
+publicações</li>
+</ul>
+<p><strong>Controle de Versão e Colaboração:</strong></p>
 <ul>
-<li><a href="#h00---20h30-ambienta%C3%A7%C3%A3o-e-setup-completo" id="toc-h00---20h30-ambientação-e-setup-completo">19h00 - 20h30 |
-Ambientação e Setup Completo</a></li>
-<li><a href="#h30---20h50-intervalo" id="toc-h30---20h50-intervalo">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-fundamentos-do-r" id="toc-h50---22h00-fundamentos-do-r">20h50 - 22h00 | Fundamentos do
-R</a></li>
-</ul></li>
-<li><a href="#dia-2-1811-ter%C3%A7a-l%C3%B3gica-fun%C3%A7%C3%B5es-e-introdu%C3%A7%C3%A3o-ao-tidyverse" id="toc-dia-2-1811-terça-lógica-funções-e-introdução-ao-tidyverse">Dia
-2: 18/11 (Terça) — Lógica, Funções e Introdução ao Tidyverse</a>
+<li>Utilizar Git e GitHub para versionar e documentar seu código</li>
+<li>Colaborar em projetos de dados de forma organizada e
+profissional</li>
+<li>Compreender fluxos de trabalho modernos em ciência de dados</li>
+<li>Publicar e compartilhar seus projetos com a comunidade</li>
+</ul>
+<p><strong>Aprendizado Assistido por IA:</strong></p>
 <ul>
-<li><a href="#h00---20h30-programa%C3%A7%C3%A3o-em-r" id="toc-h00---20h30-programação-em-r">19h00 - 20h30 | Programação em
-R</a></li>
-<li><a href="#h30---20h50-intervalo-1" id="toc-h30---20h50-intervalo-1">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-introdu%C3%A7%C3%A3o-ao-tidyverse" id="toc-h50---22h00-introdução-ao-tidyverse">20h50 - 22h00 | Introdução
-ao Tidyverse</a></li>
-</ul></li>
-<li><a href="#dia-3-2411-segunda-transforma%C3%A7%C3%A3o-io-e-visualiza%C3%A7%C3%A3o" id="toc-dia-3-2411-segunda-transformação-io-e-visualização">Dia 3: 24/11
-(Segunda) — Transformação, I/O e Visualização</a>
-<ul>
-<li><a href="#h00---20h30-transforma%C3%A7%C3%A3o-e-io-de-dados" id="toc-h00---20h30-transformação-e-io-de-dados">19h00 - 20h30 |
-Transformação e I/O de Dados</a></li>
-<li><a href="#h30---20h50-intervalo-2" id="toc-h30---20h50-intervalo-2">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-visualiza%C3%A7%C3%A3o-com-ggplot2" id="toc-h50---22h00-visualização-com-ggplot2">20h50 - 22h00 |
-Visualização com ggplot2</a></li>
-</ul></li>
-<li><a href="#dia-4-2511-ter%C3%A7a-integra%C3%A7%C3%A3o-do-chatgpt-e-claude-no-rstudio" id="toc-dia-4-2511-terça-integração-do-chatgpt-e-claude-no-rstudio">Dia
-4: 25/11 (Terça) — Integração do ChatGPT e Claude no RStudio</a>
-<ul>
-<li><a href="#h00---19h30-conceitos-e-modelos" id="toc-h00---19h30-conceitos-e-modelos">19h00 - 19h30 | Conceitos e
-modelos</a></li>
-<li><a href="#h30---20h15-configura%C3%A7%C3%A3o-de-chaves-e-ambiente" id="toc-h30---20h15-configuração-de-chaves-e-ambiente">19h30 - 20h15 |
-Configuração de chaves e ambiente</a></li>
-<li><a href="#h15---20h30-intervalo" id="toc-h15---20h30-intervalo">20h15 - 20h30 | Intervalo</a></li>
-<li><a href="#h30---21h00-rstudio-gptstudio-chatgpt" id="toc-h30---21h00-rstudio-gptstudio-chatgpt">20h30 - 21h00 | RStudio +
-gptstudio (ChatGPT)</a></li>
-<li><a href="#h00---21h30-rstudio-chattr-claude" id="toc-h00---21h30-rstudio-chattr-claude">21h00 - 21h30 | RStudio +
-chattr (Claude)</a></li>
-<li><a href="#h30---22h00-exerc%C3%ADcio-guiado-de-integra%C3%A7%C3%A3o" id="toc-h30---22h00-exercício-guiado-de-integração">21h30 - 22h00 |
-Exercício guiado de integração</a></li>
-</ul></li>
-<li><a href="#troubleshooting-por-sistema-operacional" id="toc-troubleshooting-por-sistema-operacional">Troubleshooting por
-Sistema Operacional</a>
-<ul>
-<li><a href="#windows" id="toc-windows">Windows</a></li>
-<li><a href="#macos" id="toc-macos">macOS</a></li>
-<li><a href="#linux-ubuntudebian" id="toc-linux-ubuntudebian">Linux
-(Ubuntu/Debian)</a></li>
-<li><a href="#problemas-comuns-todos-os-so" id="toc-problemas-comuns-todos-os-so">Problemas comuns (todos os
-SO)</a></li>
-</ul></li>
-<li><a href="#recursos-adicionais" id="toc-recursos-adicionais">Recursos
-Adicionais</a></li>
-<li><a href="#contato" id="toc-contato">Contato</a></li>
+<li>Utilizar ferramentas de IA (ChatGPT e Claude) como assistentes no
+aprendizado</li>
+<li>Formular perguntas eficazes para obter ajuda precisa na resolução de
+problemas</li>
+<li>Interpretar e adaptar sugestões de código geradas por IA</li>
+<li>Acelerar seu processo de aprendizagem combinando estudo tradicional
+e ferramentas modernas</li>
 </ul>
 </div>
-
-<div style="page-break-after: always;"></div>
-<div id="informações-gerais-do-curso" class="section level1">
-<h1>Informações Gerais do Curso</h1>
-<p>Carga horária total: 16 horas<br />
-Datas: 17/11, 18/11, 24/11 e 25/11<br />
-Horário: 19h00 às 22h00 (com intervalo de 20 minutos às 20h30)<br />
-Tempo líquido por dia: 2h40 de conteúdo efetivo<br />
-Público-alvo: Iniciantes de diversas áreas (ciências agrárias, saúde,
-economia, biologia, ciências sociais)<br />
-Material: Repositório GitHub com datasets, scripts e exercícios<br />
-Repositório original: <a href="https://github.com/viniciusjunqueira/curso-r-github-ia" class="uri">https://github.com/viniciusjunqueira/curso-r-github-ia</a><br />
-Sistemas Operacionais: Windows, macOS e Linux (curso compatível com
-todos)</p>
-<p>Estrutura do curso (visão geral):<br />
-- Dia 1: Fundamentos de R + Ambiente reprodutível (RStudio, Git, GitHub,
-fork).<br />
-- Dia 2: Lógica, condicionais, funções, tidyverse básico.<br />
-- Dia 3: Transformações com tidyr/dplyr, I/O e visualização com
-ggplot2.<br />
-- Dia 4: Integração prática do ChatGPT e do Claude dentro do
-RStudio.</p>
-<div style="page-break-after: always;"></div>
+<div id="metodologia" class="section level2">
+<h2>Metodologia</h2>
+<p>O curso adota uma abordagem <strong>prática e hands-on</strong>, onde
+você aprenderá fazendo. Nossa metodologia se baseia em três pilares
+fundamentais:</p>
+<p><strong>Aprendizagem Ativa:</strong></p>
+<p>Cada conceito apresentado é imediatamente seguido de exercícios
+práticos. Acreditamos que a melhor forma de aprender programação é
+escrevendo código. Você trabalhará com dados reais e enfrentará
+problemas autênticos desde o primeiro dia, construindo confiança e
+competência progressivamente.</p>
+<p><strong>Estrutura Modular:</strong></p>
+<p>O conteúdo está organizado em módulos que se constroem de forma
+lógica e incremental. Começamos com os fundamentos do R, avançamos para
+manipulação de dados com tidyverse, exploramos visualização com ggplot2,
+e integramos controle de versão e ferramentas de IA ao longo do caminho.
+Cada módulo é independente mas conectado, permitindo que você compreenda
+tanto os detalhes quanto o panorama geral.</p>
+<p><strong>Aprendizado Assistido por IA:</strong></p>
+<p>Uma das características mais inovadoras deste curso é o uso integrado
+de inteligência artificial como ferramenta pedagógica. Você aprenderá
+não apenas R, mas também como usar ChatGPT e Claude para tirar dúvidas,
+debugar código, explorar alternativas e acelerar seu aprendizado. Esta é
+uma habilidade essencial no cenário atual da programação e ciência de
+dados.</p>
+<p><strong>Projetos Práticos:</strong></p>
+<p>Ao invés de exercícios isolados, você desenvolverá pequenos projetos
+que simulam situações reais de análise de dados. Isso inclui trabalhar
+com datasets públicos, criar visualizações para comunicar resultados, e
+documentar seu trabalho de forma profissional usando GitHub.</p>
+<p><strong>Suporte e Comunidade:</strong></p>
+<p>Durante todo o curso, você terá acesso a materiais de referência,
+exemplos comentados e uma comunidade de colegas aprendendo junto com
+você. Incentivamos a colaboração e a troca de experiências, pois
+aprendemos muito ao ensinar e compartilhar conhecimento.</p>
+<p><strong>Prepare-se para uma jornada transformadora!</strong> Ao final
+destas 16 horas, você não apenas saberá programar em R, mas terá
+desenvolvido uma mentalidade analítica e as ferramentas necessárias para
+continuar evoluindo de forma autônoma. Seja bem-vindo ao fascinante
+mundo da análise de dados!</p>
 </div>
-<div id="pré-requisitos-técnicos" class="section level1">
-<h1>Pré-requisitos Técnicos</h1>
-<div id="instalações-obrigatórias-para-todos-os-sistemas" class="section level2">
-<h2>Instalações obrigatórias (para todos os sistemas)</h2>
-<ol style="list-style-type: decimal">
-<li><p>R (versão 4.3 ou superior)<br />
-Download: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
-<li><p>RStudio Desktop (2023.09+)<br />
-Download: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p></li>
-<li><p>Git<br />
-Windows: <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a><br />
-macOS: verifique com <code>git --version</code> (ou use o
-instalador)<br />
-Linux (Ubuntu/Debian):</p>
-<pre class="bash"><code>sudo apt update
-sudo apt install git</code></pre></li>
-<li><p>Conta no GitHub<br />
-<a href="https://github.com/signup" class="uri">https://github.com/signup</a></p></li>
-</ol>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="estrutura-pedagógica-e-filosofia" class="section level1">
-<h1>Estrutura Pedagógica e Filosofia</h1>
-<ul>
-<li>Multiplataforma: conteúdo compatível com Windows, macOS e
-Linux<br />
-</li>
-<li>RStudio como IDE padrão<br />
-</li>
-<li>Teoria seguida de prática guiada<br />
-</li>
-<li>Commits diários no fork do aluno<br />
-</li>
-<li>IA como ferramenta para explicação, depuração e geração de
-material<br />
-</li>
-<li>Portabilidade: here::here() e projetos .Rproj</li>
-</ul>
-<div style="page-break-after: always;"></div>
-</div>
-<div id="pacotes-r-necessários" class="section level1">
-<h1>Pacotes R Necessários</h1>
-<div id="instalação-no-dia-1-a-3-núcleo-do-curso" class="section level2">
-<h2>Instalação no Dia 1 a 3 (núcleo do curso)</h2>
-<pre class="r"><code>install.packages(c(
-  &quot;tidyverse&quot;, &quot;here&quot;, &quot;janitor&quot;, &quot;skimr&quot;,
-  &quot;readxl&quot;, &quot;writexl&quot;, &quot;rmarkdown&quot;, &quot;knitr&quot;,
-  &quot;lubridate&quot;, &quot;scales&quot;, &quot;patchwork&quot;, &quot;broom&quot;,
-  &quot;palmerpenguins&quot;
-))</code></pre>
-</div>
-<div id="pacotes-de-ia-dia-4" class="section level2">
-<h2>Pacotes de IA (Dia 4)</h2>
-<pre class="r"><code>install.packages(c(&quot;gptstudio&quot;, &quot;chattr&quot;, &quot;httr2&quot;, &quot;jsonlite&quot;))</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho" class="section level1">
-<h1>Dia 1: 17/11 (Segunda) — Fundamentos e Ambiente de Trabalho</h1>
-<div id="h00---20h30-ambientação-e-setup-completo" class="section level2">
-<h2>19h00 - 20h30 | Ambientação e Setup Completo</h2>
-<p>Apresentação do curso, objetivos e metodologia.<br />
-Por que R, GitHub e IA.<br />
-Checklist de instalações (R, RStudio, Git).<br />
-Configuração do Git (user.name/user.email).<br />
-Autenticação no GitHub (PAT recomendado).<br />
-Fazer fork do repositório do curso.<br />
-Clonar o fork no RStudio (Projeto .Rproj).<br />
-Verificar <code>git remote -v</code> apontando para o fork do aluno.</p>
-</div>
-<div id="h30---20h50-intervalo" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-fundamentos-do-r" class="section level2">
-<h2>20h50 - 22h00 | Fundamentos do R</h2>
-<p>Objetos e estruturas básicas: vetores, listas, data.frames,
-fatores.<br />
-Funções básicas: c(), length(), class(), typeof().<br />
-Exploração: str(), head(), tail(), names(), dplyr::glimpse(),
-summary().<br />
-Indexação: [], $, subsetting lógico.<br />
-Prática guiada: criar vetores e data.frames, manipular objetos.<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git add scripts/01_fundamentos.R
-git commit -m &quot;Fundamentos do R - Dia 1&quot;
-git push origin main</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-2-1811-terça-lógica-funções-e-introdução-ao-tidyverse" class="section level1">
-<h1>Dia 2: 18/11 (Terça) — Lógica, Funções e Introdução ao
-Tidyverse</h1>
-<div id="h00---20h30-programação-em-r" class="section level2">
-<h2>19h00 - 20h30 | Programação em R</h2>
-<p>Operadores lógicos e relacionais.<br />
-Condicionais: if/else, ifelse() (vetorizado), dplyr::case_when().<br />
-Loops e funções: for vs. vetorização, criação de funções, validação de
-entradas.<br />
-Boas práticas e debugging: snake_case, comentários, leitura de
-traceback.<br />
-Mini demonstração de como a IA pode explicar um erro simples.</p>
-</div>
-<div id="h30---20h50-intervalo-1" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-introdução-ao-tidyverse" class="section level2">
-<h2>20h50 - 22h00 | Introdução ao Tidyverse</h2>
-<p>Filosofia tidyverse e uso de pipes (%&gt;% e |&gt;).<br />
-Verbos essenciais do dplyr: filter(), select(), mutate(), arrange(),
-summarize(), group_by().<br />
-Datas com lubridate: ymd/dmy/mdy, year/month/wday, today/now.<br />
-Exemplo integrado com palmerpenguins.<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git commit -m &quot;Lógica, funções e tidyverse - Dia 2&quot;</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-3-2411-segunda-transformação-io-e-visualização" class="section level1">
-<h1>Dia 3: 24/11 (Segunda) — Transformação, I/O e Visualização</h1>
-<div id="h00---20h30-transformação-e-io-de-dados" class="section level2">
-<h2>19h00 - 20h30 | Transformação e I/O de Dados</h2>
-<p>Reshape com tidyr: pivot_longer(), pivot_wider(), separate(),
-unite().<br />
-Tratamento de NAs: is.na(), drop_na(), replace_na(), fill().<br />
-Leitura/Escrita: readr::read_csv(), read_csv2(),
-readxl::read_excel().<br />
-Portabilidade com here::here() e organização de projetos.<br />
-Ferramentas úteis: janitor::clean_names(), skimr::skim().</p>
-</div>
-<div id="h30---20h50-intervalo-2" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-visualização-com-ggplot2" class="section level2">
-<h2>20h50 - 22h00 | Visualização com ggplot2</h2>
-<p>Gramática de gráficos: camadas, aesthetics, geoms comuns.<br />
-Gráficos: dispersão, barras, boxplot, linhas,
-histograma/densidade.<br />
-Combinação com patchwork, formatos com scales.<br />
-Personalização e salvamento: theme_*, labs(), ggsave().<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git commit -m &quot;Transformação, I/O e visualização - Dia 3&quot;</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-4-2511-terça-integração-do-chatgpt-e-claude-no-rstudio" class="section level1">
-<h1>Dia 4: 25/11 (Terça) — Integração do ChatGPT e Claude no
-RStudio</h1>
-<p>Objetivo do dia: capacitar o aluno a usar ChatGPT (OpenAI) e Claude
-(Anthropic) diretamente no RStudio para explicar erros, revisar e gerar
-código, criar rascunhos de relatórios e automatizar pequenas rotinas via
-API.</p>
-<div id="h00---19h30-conceitos-e-modelos" class="section level2">
-<h2>19h00 - 19h30 | Conceitos e modelos</h2>
-<p>Panorama rápido sobre LLMs, APIs, limites e custos.<br />
-Boas práticas de uso responsável de IA: privacidade, dados sensíveis,
-versionamento de código gerado.<br />
-Comparação prática: quando usar ChatGPT e quando usar Claude.</p>
-</div>
-<div id="h30---20h15-configuração-de-chaves-e-ambiente" class="section level2">
-<h2>19h30 - 20h15 | Configuração de chaves e ambiente</h2>
-<p>Variáveis de ambiente no R: uso de ~/.Renviron e Sys.getenv().<br />
-Criação de chaves de API e configuração local.<br />
-Nomes convencionados: - OPENAI_API_KEY para ChatGPT (OpenAI) -
-ANTHROPIC_API_KEY para Claude (Anthropic)</p>
-<p>Exemplo de ~/.Renviron:</p>
-<pre class="r"><code>OPENAI_API_KEY=coloque_sua_chave_aqui
-ANTHROPIC_API_KEY=coloque_sua_chave_aqui</code></pre>
-<p>Teste rápido no R:</p>
-<pre class="r"><code>Sys.getenv(&quot;OPENAI_API_KEY&quot;)
-Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)</code></pre>
-<p>Instalação de pacotes:</p>
-<pre class="r"><code>install.packages(c(&quot;gptstudio&quot;, &quot;chattr&quot;, &quot;httr2&quot;, &quot;jsonlite&quot;))</code></pre>
-</div>
-<div id="h15---20h30-intervalo" class="section level2">
-<h2>20h15 - 20h30 | Intervalo</h2>
-</div>
-<div id="h30---21h00-rstudio-gptstudio-chatgpt" class="section level2">
-<h2>20h30 - 21h00 | RStudio + gptstudio (ChatGPT)</h2>
-<p>Abertura dos Addins do gptstudio no RStudio (chat pane e code
-assistant).<br />
-Uso no editor: seleção de código e prompt de revisão.<br />
-Exemplos típicos: explicar erro, refatorar função, gerar testes
-unitários simples.<br />
-Script de exemplo (via API manual com httr2):</p>
-<pre class="r"><code>library(httr2); library(jsonlite)
-
-endpoint &lt;- &quot;https://api.openai.com/v1/chat/completions&quot;
-prompt &lt;- &quot;Explique o que este código faz e sugira melhorias:\n\nx &lt;- 1:10; mean(x)&quot;
-body &lt;- list(
-  model = &quot;gpt-4o-mini&quot;,
-  messages = list(list(role=&quot;user&quot;, content=prompt))
-)
-
-req &lt;- request(endpoint) |&gt;
-  req_method(&quot;POST&quot;) |&gt;
-  req_headers(Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;OPENAI_API_KEY&quot;))) |&gt;
-  req_body_json(body)
-
-resp &lt;- req_perform(req)
-json &lt;- resp_body_json(resp)
-cat(json$choices[[1]]$message$content)</code></pre>
-</div>
-<div id="h00---21h30-rstudio-chattr-claude" class="section level2">
-<h2>21h00 - 21h30 | RStudio + chattr (Claude)</h2>
-<p>Fluxo básico com chattr::chat_claude().<br />
-Exemplos práticos: explicar um traceback, sugerir validação de
-argumentos, gerar esqueleto de RMarkdown.<br />
-Script de exemplo (API manual com httr2):</p>
-<pre class="r"><code>library(httr2); library(jsonlite)
-
-endpoint &lt;- &quot;https://api.anthropic.com/v1/messages&quot;
-prompt &lt;- &quot;Revise a função abaixo e a torne mais robusta a NAs.\n\nsoma_media &lt;- function(x){ sum(x)/length(x) }&quot;
-
-body &lt;- list(
-  model = &quot;claude-3-5-sonnet-latest&quot;,
-  max_tokens = 300,
-  messages = list(list(role=&quot;user&quot;, content=prompt))
-)
-
-req &lt;- request(endpoint) |&gt;
-  req_method(&quot;POST&quot;) |&gt;
-  req_headers(
-    Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)),
-    &quot;anthropic-version&quot; = &quot;2023-06-01&quot;,
-    &quot;content-type&quot; = &quot;application/json&quot;
-  ) |&gt;
-  req_body_json(body)
-
-resp &lt;- req_perform(req)
-json &lt;- resp_body_json(resp)
-cat(json$content[[1]]$text)</code></pre>
-</div>
-<div id="h30---22h00-exercício-guiado-de-integração" class="section level2">
-<h2>21h30 - 22h00 | Exercício guiado de integração</h2>
-<p>Tarefa 1: usar gptstudio para revisar um script curto de dplyr e
-propor 2 melhorias.<br />
-Tarefa 2: usar chattr para gerar uma função em R que: - receba um
-data.frame e uma coluna numérica - remova NAs, retorne média e
-desvio-padrão com nomes claros - inclua validação de tipos e mensagens
-de erro úteis</p>
-<p>Entrega esperada no fork do aluno: -
-scripts/04_ia_integracao_gptstudio.R - scripts/04_ia_integracao_claude.R
-- docs/relatorio_ia.Rmd com um parágrafo descrevendo o que a IA sugeriu,
-o que foi adotado e por quê.</p>
-<p>Checklist final: - variáveis de ambiente lidas com Sys.getenv() -
-addins do gptstudio funcionando - chamada mínima via httr2 para cada API
-- commit e push no fork</p>
-<pre class="bash"><code>git add scripts/04_*.R docs/relatorio_ia.Rmd
-git commit -m &quot;Integração ChatGPT e Claude no RStudio (Dia 4)&quot;
-git push origin main</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="troubleshooting-por-sistema-operacional" class="section level1">
-<h1>Troubleshooting por Sistema Operacional</h1>
-<div id="windows" class="section level2">
-<h2>Windows</h2>
-<p>Git não encontrado: reinstalar Git (opção Git from the command
-line…).<br />
-Acentos estranhos: garantir UTF-8 ao salvar, ou usar
-locale(encoding=“latin1”) quando necessário.<br />
-Pacotes com erro: tentar instalar na biblioteca do usuário.</p>
-</div>
-<div id="macos" class="section level2">
-<h2>macOS</h2>
-<p>xcrun error com Git: <code>xcode-select --install</code><br />
-LaTeX não encontrado: <code>tinytex::install_tinytex()</code></p>
-</div>
-<div id="linux-ubuntudebian" class="section level2">
-<h2>Linux (Ubuntu/Debian)</h2>
-<p>Compilação de pacotes:</p>
-<pre class="bash"><code>sudo apt install build-essential libcurl4-openssl-dev libssl-dev libxml2-dev
-sudo apt install libfontconfig1-dev libharfbuzz-dev libfribidi-dev</code></pre>
-</div>
-<div id="problemas-comuns-todos-os-so" class="section level2">
-<h2>Problemas comuns (todos os SO)</h2>
-<p>Permission denied ao fazer push: corrigir origin para o fork do
-aluno:</p>
-<pre class="bash"><code>git remote set-url origin https://github.com/SEU-USUARIO/curso-r-github-ia.git</code></pre>
-<p>API Key não encontrada: configurar no ~/.Renviron e reiniciar o
-R.</p>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="recursos-adicionais" class="section level1">
-<h1>Recursos Adicionais</h1>
-<p>R for Data Science (2e): <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a><br />
-Happy Git with R: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a><br />
-Cheatsheets Posit: <a href="https://posit.co/resources/cheatsheets/" class="uri">https://posit.co/resources/cheatsheets/</a><br />
-palmerpenguins: <a href="https://allisonhorst.github.io/palmerpenguins/" class="uri">https://allisonhorst.github.io/palmerpenguins/</a><br />
-Datasets: TidyTuesday, Brasil.io, Kaggle</p>
-<div style="page-break-after: always;"></div>
-</div>
-<div id="contato" class="section level1">
-<h1>Contato</h1>
-<p>Instrutor: Vinícius Silva Junqueira<br />
-Email: <a href="mailto:junqueiravinicius@hotmail.com" class="email">junqueiravinicius@hotmail.com</a><br />
-GitHub: <a href="https://github.com/viniciusjunqueira/curso-r-github-ia" class="uri">https://github.com/viniciusjunqueira/curso-r-github-ia</a><br />
-Lattes: <a href="http://lattes.cnpq.br/4686677580216927" class="uri">http://lattes.cnpq.br/4686677580216927</a><br />
-LinkedIn: www.linkedin.com/in/junqueiravinicius</p>
-<p>Última atualização: 2025-10-08<br />
-Versão: 6.0 – Dia 4 100% integração com IA no RStudio</p>
 </div>
 
 

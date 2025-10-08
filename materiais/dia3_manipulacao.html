@@ -13,7 +13,7 @@
 
 <meta name="date" content="2025-10-08" />
 
-<title>Cronograma</title>
+<title>Dia 3</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1621,8 +1621,8 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Cronograma</h1>
-<h3 class="subtitle">Introdução à Programação em R com GitHub, ChatGPT e
+<h1 class="title toc-ignore">Dia 3</h1>
+<h3 class="subtitle">Introdução Programação em R com GitHub, ChatGPT e
 Claude</h3>
 <h4 class="author">Vinícius Silva Junqueira</h4>
 <h4 class="date">2025-10-08</h4>
@@ -1631,406 +1631,1693 @@ Claude</h3>
 
 <div id="TOC">
 <ul>
-<li><a href="#informa%C3%A7%C3%B5es-gerais-do-curso" id="toc-informações-gerais-do-curso">Informações Gerais do
-Curso</a></li>
-<li><a href="#pr%C3%A9-requisitos-t%C3%A9cnicos" id="toc-pré-requisitos-técnicos">Pré-requisitos Técnicos</a>
+<li><a href="#transforma%C3%A7%C3%A3o-io-e-visualiza%C3%A7%C3%A3o" id="toc-transformação-io-e-visualização">Transformação, I/O e
+Visualização</a>
 <ul>
-<li><a href="#instala%C3%A7%C3%B5es-obrigat%C3%B3rias-para-todos-os-sistemas" id="toc-instalações-obrigatórias-para-todos-os-sistemas">Instalações
-obrigatórias (para todos os sistemas)</a></li>
+<li><a href="#revis%C3%A3o-r%C3%A1pida-do-dia-2-10-min" id="toc-revisão-rápida-do-dia-2-10-min">Revisão Rápida do Dia 2 (≈ 10
+min)</a></li>
 </ul></li>
-<li><a href="#estrutura-pedag%C3%B3gica-e-filosofia" id="toc-estrutura-pedagógica-e-filosofia">Estrutura Pedagógica e
-Filosofia</a></li>
-<li><a href="#pacotes-r-necess%C3%A1rios" id="toc-pacotes-r-necessários">Pacotes R Necessários</a>
+<li><a href="#parte-1-transforma%C3%A7%C3%A3o-e-io-de-dados-19h00---20h30" id="toc-parte-1-transformação-e-io-de-dados-19h00---20h30">Parte 1:
+Transformação e I/O de Dados (19h00 - 20h30)</a>
 <ul>
-<li><a href="#instala%C3%A7%C3%A3o-no-dia-1-a-3-n%C3%BAcleo-do-curso" id="toc-instalação-no-dia-1-a-3-núcleo-do-curso">Instalação no Dia 1 a 3
-(núcleo do curso)</a></li>
-<li><a href="#pacotes-de-ia-dia-4" id="toc-pacotes-de-ia-dia-4">Pacotes
-de IA (Dia 4)</a></li>
+<li><a href="#tidyr-transformando-estruturas-de-dados" id="toc-tidyr-transformando-estruturas-de-dados">1.1 Tidyr:
+Transformando estruturas de dados</a></li>
+<li><a href="#tratamento-de-valores-ausentes-na" id="toc-tratamento-de-valores-ausentes-na">1.2 Tratamento de Valores
+Ausentes (NA)</a></li>
+<li><a href="#leitura-e-escrita-de-dados-io" id="toc-leitura-e-escrita-de-dados-io">1.3 Leitura e Escrita de Dados
+(I/O)</a></li>
+<li><a href="#ferramentas-%C3%BAteis" id="toc-ferramentas-úteis">1.4
+Ferramentas Úteis</a></li>
 </ul></li>
-<li><a href="#dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho" id="toc-dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho">Dia 1:
-17/11 (Segunda) — Fundamentos e Ambiente de Trabalho</a>
+<li><a href="#intervalo-20h30---20h50" id="toc-intervalo-20h30---20h50">INTERVALO (20h30 - 20h50)</a></li>
+<li><a href="#parte-2-visualiza%C3%A7%C3%A3o-com-ggplot2-20h50---22h00" id="toc-parte-2-visualização-com-ggplot2-20h50---22h00">Parte 2:
+Visualização com ggplot2 (20h50 - 22h00)</a>
 <ul>
-<li><a href="#h00---20h30-ambienta%C3%A7%C3%A3o-e-setup-completo" id="toc-h00---20h30-ambientação-e-setup-completo">19h00 - 20h30 |
-Ambientação e Setup Completo</a></li>
-<li><a href="#h30---20h50-intervalo" id="toc-h30---20h50-intervalo">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-fundamentos-do-r" id="toc-h50---22h00-fundamentos-do-r">20h50 - 22h00 | Fundamentos do
-R</a></li>
+<li><a href="#gram%C3%A1tica-de-gr%C3%A1ficos" id="toc-gramática-de-gráficos">2.1 Gramática de Gráficos</a></li>
+<li><a href="#tipos-de-gr%C3%A1ficos-geoms" id="toc-tipos-de-gráficos-geoms">2.2 Tipos de Gráficos (geoms)</a></li>
+<li><a href="#personaliza%C3%A7%C3%A3o" id="toc-personalização">2.3
+Personalização</a></li>
+<li><a href="#combinando-gr%C3%A1ficos-patchwork" id="toc-combinando-gráficos-patchwork">2.4 Combinando Gráficos
+(patchwork)</a></li>
+<li><a href="#salvando-gr%C3%A1ficos-ggsave" id="toc-salvando-gráficos-ggsave">2.5 Salvando Gráficos
+(ggsave)</a></li>
+<li><a href="#salvando-gr%C3%A1ficos-ggsave-1" id="toc-salvando-gráficos-ggsave-1">2.5 Salvando Gráficos
+(ggsave)</a></li>
+<li><a href="#exerc%C3%ADcios-pr%C3%A1ticos" id="toc-exercícios-práticos">Exercícios Práticos</a></li>
+<li><a href="#commit-do-dia" id="toc-commit-do-dia">Commit do
+Dia</a></li>
+<li><a href="#checklist-de-encerramento" id="toc-checklist-de-encerramento">Checklist de Encerramento</a></li>
+<li><a href="#refer%C3%AAncias-r%C3%A1pidas" id="toc-referências-rápidas">Referências Rápidas</a></li>
 </ul></li>
-<li><a href="#dia-2-1811-ter%C3%A7a-l%C3%B3gica-fun%C3%A7%C3%B5es-e-introdu%C3%A7%C3%A3o-ao-tidyverse" id="toc-dia-2-1811-terça-lógica-funções-e-introdução-ao-tidyverse">Dia
-2: 18/11 (Terça) — Lógica, Funções e Introdução ao Tidyverse</a>
-<ul>
-<li><a href="#h00---20h30-programa%C3%A7%C3%A3o-em-r" id="toc-h00---20h30-programação-em-r">19h00 - 20h30 | Programação em
-R</a></li>
-<li><a href="#h30---20h50-intervalo-1" id="toc-h30---20h50-intervalo-1">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-introdu%C3%A7%C3%A3o-ao-tidyverse" id="toc-h50---22h00-introdução-ao-tidyverse">20h50 - 22h00 | Introdução
-ao Tidyverse</a></li>
-</ul></li>
-<li><a href="#dia-3-2411-segunda-transforma%C3%A7%C3%A3o-io-e-visualiza%C3%A7%C3%A3o" id="toc-dia-3-2411-segunda-transformação-io-e-visualização">Dia 3: 24/11
-(Segunda) — Transformação, I/O e Visualização</a>
-<ul>
-<li><a href="#h00---20h30-transforma%C3%A7%C3%A3o-e-io-de-dados" id="toc-h00---20h30-transformação-e-io-de-dados">19h00 - 20h30 |
-Transformação e I/O de Dados</a></li>
-<li><a href="#h30---20h50-intervalo-2" id="toc-h30---20h50-intervalo-2">20h30 - 20h50 | Intervalo</a></li>
-<li><a href="#h50---22h00-visualiza%C3%A7%C3%A3o-com-ggplot2" id="toc-h50---22h00-visualização-com-ggplot2">20h50 - 22h00 |
-Visualização com ggplot2</a></li>
-</ul></li>
-<li><a href="#dia-4-2511-ter%C3%A7a-integra%C3%A7%C3%A3o-do-chatgpt-e-claude-no-rstudio" id="toc-dia-4-2511-terça-integração-do-chatgpt-e-claude-no-rstudio">Dia
-4: 25/11 (Terça) — Integração do ChatGPT e Claude no RStudio</a>
-<ul>
-<li><a href="#h00---19h30-conceitos-e-modelos" id="toc-h00---19h30-conceitos-e-modelos">19h00 - 19h30 | Conceitos e
-modelos</a></li>
-<li><a href="#h30---20h15-configura%C3%A7%C3%A3o-de-chaves-e-ambiente" id="toc-h30---20h15-configuração-de-chaves-e-ambiente">19h30 - 20h15 |
-Configuração de chaves e ambiente</a></li>
-<li><a href="#h15---20h30-intervalo" id="toc-h15---20h30-intervalo">20h15 - 20h30 | Intervalo</a></li>
-<li><a href="#h30---21h00-rstudio-gptstudio-chatgpt" id="toc-h30---21h00-rstudio-gptstudio-chatgpt">20h30 - 21h00 | RStudio +
-gptstudio (ChatGPT)</a></li>
-<li><a href="#h00---21h30-rstudio-chattr-claude" id="toc-h00---21h30-rstudio-chattr-claude">21h00 - 21h30 | RStudio +
-chattr (Claude)</a></li>
-<li><a href="#h30---22h00-exerc%C3%ADcio-guiado-de-integra%C3%A7%C3%A3o" id="toc-h30---22h00-exercício-guiado-de-integração">21h30 - 22h00 |
-Exercício guiado de integração</a></li>
-</ul></li>
-<li><a href="#troubleshooting-por-sistema-operacional" id="toc-troubleshooting-por-sistema-operacional">Troubleshooting por
-Sistema Operacional</a>
-<ul>
-<li><a href="#windows" id="toc-windows">Windows</a></li>
-<li><a href="#macos" id="toc-macos">macOS</a></li>
-<li><a href="#linux-ubuntudebian" id="toc-linux-ubuntudebian">Linux
-(Ubuntu/Debian)</a></li>
-<li><a href="#problemas-comuns-todos-os-so" id="toc-problemas-comuns-todos-os-so">Problemas comuns (todos os
-SO)</a></li>
-</ul></li>
-<li><a href="#recursos-adicionais" id="toc-recursos-adicionais">Recursos
-Adicionais</a></li>
-<li><a href="#contato" id="toc-contato">Contato</a></li>
 </ul>
 </div>
 
-<div style="page-break-after: always;"></div>
-<div id="informações-gerais-do-curso" class="section level1">
-<h1>Informações Gerais do Curso</h1>
-<p>Carga horária total: 16 horas<br />
-Datas: 17/11, 18/11, 24/11 e 25/11<br />
-Horário: 19h00 às 22h00 (com intervalo de 20 minutos às 20h30)<br />
-Tempo líquido por dia: 2h40 de conteúdo efetivo<br />
-Público-alvo: Iniciantes de diversas áreas (ciências agrárias, saúde,
-economia, biologia, ciências sociais)<br />
-Material: Repositório GitHub com datasets, scripts e exercícios<br />
-Repositório original: <a href="https://github.com/viniciusjunqueira/curso-r-github-ia" class="uri">https://github.com/viniciusjunqueira/curso-r-github-ia</a><br />
-Sistemas Operacionais: Windows, macOS e Linux (curso compatível com
-todos)</p>
-<p>Estrutura do curso (visão geral):<br />
-- Dia 1: Fundamentos de R + Ambiente reprodutível (RStudio, Git, GitHub,
-fork).<br />
-- Dia 2: Lógica, condicionais, funções, tidyverse básico.<br />
-- Dia 3: Transformações com tidyr/dplyr, I/O e visualização com
-ggplot2.<br />
-- Dia 4: Integração prática do ChatGPT e do Claude dentro do
-RStudio.</p>
-<div style="page-break-after: always;"></div>
+<div id="transformação-io-e-visualização" class="section level1">
+<h1>Transformação, I/O e Visualização</h1>
+<blockquote>
+<p><strong>Objetivos do dia</strong></p>
+<ul>
+<li>Transformar dados com <strong>tidyr</strong> (pivot, separate,
+unite)</li>
+<li>Tratar <strong>valores ausentes</strong> adequadamente</li>
+<li>Ler e escrever dados de diferentes formatos (CSV, Excel)</li>
+<li>Organizar projetos com <strong>here::here()</strong></li>
+<li>Criar visualizações profissionais com <strong>ggplot2</strong></li>
+<li>Combinar gráficos e personalizar temas</li>
+</ul>
+</blockquote>
+<p><strong>Tempo previsto:</strong> 19h00–22h00 (intervalo
+20h30–20h50)</p>
+<hr />
+<div id="revisão-rápida-do-dia-2-10-min" class="section level2">
+<h2>Revisão Rápida do Dia 2 (≈ 10 min)</h2>
+<pre class="r"><code>library(tidyverse)
+library(palmerpenguins)
+
+# Pipeline básico com dplyr (revisão)
+penguins %&gt;%
+  filter(!is.na(bill_length_mm)) %&gt;%
+  select(species, island, bill_length_mm, body_mass_g) %&gt;%
+  mutate(massa_kg = body_mass_g / 1000) %&gt;%
+  group_by(species) %&gt;%
+  summarize(
+    n = n(),
+    media_bico = mean(bill_length_mm),
+    media_massa = mean(massa_kg)
+  ) %&gt;%
+  arrange(desc(media_massa))</code></pre>
+<hr />
 </div>
-<div id="pré-requisitos-técnicos" class="section level1">
-<h1>Pré-requisitos Técnicos</h1>
-<div id="instalações-obrigatórias-para-todos-os-sistemas" class="section level2">
-<h2>Instalações obrigatórias (para todos os sistemas)</h2>
+</div>
+<div id="parte-1-transformação-e-io-de-dados-19h00---20h30" class="section level1">
+<h1>Parte 1: Transformação e I/O de Dados (19h00 - 20h30)</h1>
+<div id="tidyr-transformando-estruturas-de-dados" class="section level2">
+<h2>1.1 Tidyr: Transformando estruturas de dados</h2>
+<div id="o-que-é-tidyr" class="section level3">
+<h3>O que é Tidyr?</h3>
+<p><strong>tidyr</strong> é o pacote para reorganizar a estrutura dos
+seus dados. É essencial porque muitas vezes recebemos dados em formatos
+“bagunçados” (como planilhas do Excel) e precisamos transformá-los em
+formato “tidy” para análise.</p>
+<p><strong>Principais funções:</strong></p>
+<ul>
+<li><code>pivot_longer()</code> / <code>pivot_wider()</code>: converter
+entre formatos wide ↔︎ long</li>
+<li><code>separate()</code> / <code>unite()</code>: dividir ou unir
+colunas</li>
+<li><code>drop_na()</code>, <code>replace_na()</code>,
+<code>fill()</code>: tratar valores ausentes</li>
+</ul>
+</div>
+<div id="pivot_longer-wide-para-long" class="section level3">
+<h3>pivot_longer(): Wide para Long</h3>
+<p><strong>O que faz:</strong> Transforma múltiplas colunas em duas
+novas colunas: uma com os nomes das colunas originais e outra com seus
+valores.</p>
+<p><strong>Quando usar:</strong> Quando você tem múltiplas colunas que
+na verdade representam valores de uma mesma variável. Por exemplo, se
+você tem colunas “jan_2024”, “fev_2024”, “mar_2024”, elas na verdade
+representam valores de uma variável “mês”.</p>
+<p><strong>Por que usar:</strong> Dados no formato long (tidy) facilitam
+muito análises com dplyr e visualizações com ggplot2.</p>
+<pre class="r"><code># Dados em formato WIDE (comum em planilhas)
+vendas_wide &lt;- tibble(
+  produto = c(&quot;Notebook&quot;, &quot;Mouse&quot;, &quot;Teclado&quot;),
+  jan_2024 = c(150, 320, 180),
+  fev_2024 = c(180, 350, 200),
+  mar_2024 = c(160, 380, 190)
+)
+
+vendas_wide
+
+# Transformar para LONG (formato tidy)
+vendas_long &lt;- vendas_wide %&gt;%
+  pivot_longer(
+    cols = jan_2024:mar_2024,        # Colunas para transformar
+    names_to = &quot;mes_ano&quot;,             # Nome da nova coluna de categorias
+    values_to = &quot;quantidade&quot;          # Nome da nova coluna de valores
+  )
+
+vendas_long
+
+# Limpar a coluna mes_ano
+vendas_long &lt;- vendas_long %&gt;%
+  separate(mes_ano, into = c(&quot;mes&quot;, &quot;ano&quot;), sep = &quot;_&quot;) %&gt;%
+  mutate(
+    mes = case_when(
+      mes == &quot;jan&quot; ~ &quot;Janeiro&quot;,
+      mes == &quot;fev&quot; ~ &quot;Fevereiro&quot;,
+      mes == &quot;mar&quot; ~ &quot;Março&quot;
+    ),
+    ano = as.numeric(ano)
+  )
+
+vendas_long
+
+# Agora análises ficam fáceis!
+vendas_long %&gt;%
+  group_by(produto) %&gt;%
+  summarize(
+    total = sum(quantidade),
+    media = mean(quantidade)
+  )</code></pre>
+</div>
+<div id="pivot_wider-long-para-wide" class="section level3">
+<h3>pivot_wider(): Long para Wide</h3>
+<p><strong>O que faz:</strong> Transforma duas colunas (uma de
+categorias e outra de valores) em múltiplas colunas, onde cada categoria
+vira uma coluna.</p>
+<p><strong>Quando usar:</strong> - Para criar tabelas de resumo mais
+legíveis (formato “planilha”) - Quando você precisa de uma coluna
+separada para cada categoria - Para preparar dados para certas análises
+ou relatórios</p>
+<p><strong>É o inverso do pivot_longer()!</strong></p>
+<pre class="r"><code># Reverter para wide
+vendas_long %&gt;%
+  unite(&quot;periodo&quot;, mes, ano, sep = &quot;_&quot;) %&gt;%  # Unir mês e ano
+  pivot_wider(
+    names_from = periodo,
+    values_from = quantidade
+  )
+
+# Exemplo prático: notas de alunos
+notas_long &lt;- tibble(
+  aluno = rep(c(&quot;Ana&quot;, &quot;Bruno&quot;, &quot;Carla&quot;), each = 3),
+  disciplina = rep(c(&quot;Matemática&quot;, &quot;Português&quot;, &quot;História&quot;), 3),
+  nota = c(8.5, 9.0, 7.5, 7.0, 8.0, 8.5, 9.5, 8.5, 9.0)
+)
+
+notas_long
+
+# Transformar: disciplinas viram colunas
+notas_wide &lt;- notas_long %&gt;%
+  pivot_wider(
+    names_from = disciplina,
+    values_from = nota
+  )
+
+notas_wide</code></pre>
+</div>
+<div id="separate-e-unite" class="section level3">
+<h3>separate() e unite()</h3>
+<p><strong>separate():</strong> Divide uma coluna em múltiplas colunas
+usando um separador.</p>
+<p><strong>Quando usar separate():</strong> - Quando você tem
+informações combinadas em uma única coluna (ex: “São Paulo-SP”) - Para
+extrair partes específicas de um texto (ex: dia, mês, ano de uma data) -
+Para limpar dados mal formatados</p>
+<p><strong>Argumentos principais:</strong> - <code>col</code>: coluna a
+ser dividida - <code>into</code>: vetor com nomes das novas colunas -
+<code>sep</code>: separador (pode ser um caractere ou regex) -
+<code>extra</code>: o que fazer com pedaços extras (“warn”, “drop”,
+“merge”)</p>
+<p><strong>unite():</strong> Combina múltiplas colunas em uma única
+coluna.</p>
+<p><strong>Quando usar unite():</strong> - Para criar identificadores
+únicos combinando campos (ex: “SP_001”) - Para formatar datas ou textos
+de maneira específica - Para reverter um <code>separate()</code>
+anterior</p>
+<p><strong>Argumentos principais:</strong> - <code>col</code>: nome da
+nova coluna - <code>...</code>: colunas a combinar - <code>sep</code>:
+separador para usar na união</p>
+<pre class="r"><code># Dados com informação combinada
+dados &lt;- tibble(
+  nome_completo = c(&quot;Ana Silva&quot;, &quot;Bruno Costa&quot;, &quot;Carla Dias&quot;),
+  data_nasc = c(&quot;15/03/1995&quot;, &quot;22/07/1998&quot;, &quot;10/11/1993&quot;),
+  cidade_estado = c(&quot;São Paulo-SP&quot;, &quot;Rio de Janeiro-RJ&quot;, &quot;Belo Horizonte-MG&quot;)
+)
+
+dados
+
+# SEPARATE: dividir colunas
+dados_separados &lt;- dados %&gt;%
+  separate(nome_completo, into = c(&quot;nome&quot;, &quot;sobrenome&quot;), sep = &quot; &quot;) %&gt;%
+  separate(data_nasc, into = c(&quot;dia&quot;, &quot;mes&quot;, &quot;ano&quot;), sep = &quot;/&quot;) %&gt;%
+  separate(cidade_estado, into = c(&quot;cidade&quot;, &quot;estado&quot;), sep = &quot;-&quot;)
+
+dados_separados
+
+# UNITE: combinar colunas
+dados_unidos &lt;- dados_separados %&gt;%
+  unite(&quot;nome_completo&quot;, nome, sobrenome, sep = &quot; &quot;) %&gt;%
+  unite(&quot;data_nascimento&quot;, dia, mes, ano, sep = &quot;/&quot;)
+
+dados_unidos
+
+# Exemplo prático: limpar dados de telefone
+telefones &lt;- tibble(
+  cliente = c(&quot;João&quot;, &quot;Maria&quot;, &quot;Pedro&quot;),
+  telefone = c(&quot;11-98765-4321&quot;, &quot;21-99876-5432&quot;, &quot;31-97654-3210&quot;)
+)
+
+telefones %&gt;%
+  separate(telefone, into = c(&quot;ddd&quot;, &quot;numero&quot;), sep = &quot;-&quot;, extra = &quot;merge&quot;)</code></pre>
+<hr />
+</div>
+</div>
+<div id="tratamento-de-valores-ausentes-na" class="section level2">
+<h2>1.2 Tratamento de Valores Ausentes (NA)</h2>
+<p><strong>O que são NAs?</strong></p>
+<p><code>NA</code> (Not Available) representa valores ausentes ou
+desconhecidos em R. Eles aparecem por diversos motivos: - Dados não
+coletados - Informação não disponível - Erros na coleta - Junção de
+tabelas sem correspondência</p>
+<p><strong>Por que tratar NAs é importante?</strong></p>
+<ul>
+<li>Muitas funções retornam <code>NA</code> se houver qualquer
+<code>NA</code> nos dados</li>
+<li>NAs podem distorcer análises estatísticas</li>
+<li>Alguns modelos não aceitam NAs</li>
+<li>É importante decidir conscientemente o que fazer com dados
+ausentes</li>
+</ul>
+<p><strong>Três estratégias principais:</strong> 1.
+<strong>Identificar</strong>: entender onde e quantos NAs existem 2.
+<strong>Remover</strong>: excluir linhas/colunas com NAs (quando
+apropriado) 3. <strong>Imputar</strong>: substituir NAs por valores
+estimados</p>
+<div id="identificar-nas" class="section level3">
+<h3>Identificar NAs</h3>
+<p><strong>Funções úteis:</strong> - <code>is.na()</code>: retorna
+TRUE/FALSE para cada elemento - <code>sum(is.na())</code>: conta quantos
+NAs existem - <code>mean(is.na())</code>: proporção de NAs -
+<code>complete.cases()</code>: identifica linhas sem nenhum NA</p>
+<pre class="r"><code># Criar dados com NA para exemplo
+dados_na &lt;- tibble(
+  id = 1:10,
+  nome = c(&quot;Ana&quot;, &quot;Bruno&quot;, NA, &quot;Diego&quot;, &quot;Elena&quot;, &quot;Felipe&quot;, NA, &quot;Hugo&quot;, &quot;Iris&quot;, &quot;João&quot;),
+  idade = c(25, NA, 30, 28, NA, 35, 22, NA, 27, 29),
+  salario = c(3000, 4500, NA, 5000, 3500, NA, 4000, 4800, NA, 5200)
+)
+
+dados_na
+
+# Contar NAs por coluna
+dados_na %&gt;%
+  summarize(across(everything(), ~sum(is.na(.))))
+
+# Proporção de NAs
+dados_na %&gt;%
+  summarize(across(everything(), ~mean(is.na(.)) * 100))
+
+# Identificar linhas com qualquer NA
+dados_na %&gt;%
+  filter(if_any(everything(), is.na))
+
+# Identificar linhas completas (sem NA)
+dados_na %&gt;%
+  filter(if_all(everything(), ~!is.na(.)))</code></pre>
+</div>
+<div id="remover-nas" class="section level3">
+<h3>Remover NAs</h3>
+<p><strong>Quando remover NAs:</strong> - Quando representam uma porção
+pequena dos dados (&lt; 5%) - Quando são aleatórios (não há padrão
+sistemático) - Quando você tem dados suficientes mesmo após remoção</p>
+<p><strong>Cuidado:</strong> Remover NAs pode introduzir viés se eles
+não forem aleatórios!</p>
+<p><strong>Funções:</strong> - <code>drop_na()</code>: remove linhas com
+qualquer NA (ou em colunas específicas) - <code>na.omit()</code>:
+similar ao drop_na (base R) - <code>filter(!is.na())</code>: remove NAs
+de colunas específicas</p>
+<pre class="r"><code># Remover linhas com QUALQUER NA
+dados_na %&gt;%
+  drop_na()
+
+# Remover linhas com NA em colunas específicas
+dados_na %&gt;%
+  drop_na(idade, salario)
+
+# Manter apenas linhas completas
+dados_na %&gt;%
+  na.omit()  # base R</code></pre>
+</div>
+<div id="substituir-nas" class="section level3">
+<h3>Substituir NAs</h3>
+<p><strong>Métodos de imputação (substituição):</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>R (versão 4.3 ou superior)<br />
-Download: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
-<li><p>RStudio Desktop (2023.09+)<br />
-Download: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p></li>
-<li><p>Git<br />
-Windows: <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a><br />
-macOS: verifique com <code>git --version</code> (ou use o
-instalador)<br />
-Linux (Ubuntu/Debian):</p>
-<pre class="bash"><code>sudo apt update
-sudo apt install git</code></pre></li>
-<li><p>Conta no GitHub<br />
-<a href="https://github.com/signup" class="uri">https://github.com/signup</a></p></li>
-</ol>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="estrutura-pedagógica-e-filosofia" class="section level1">
-<h1>Estrutura Pedagógica e Filosofia</h1>
+<li><strong>Valor fixo</strong>: substituir por 0, “Desconhecido”, etc.
 <ul>
-<li>Multiplataforma: conteúdo compatível com Windows, macOS e
-Linux<br />
-</li>
-<li>RStudio como IDE padrão<br />
-</li>
-<li>Teoria seguida de prática guiada<br />
-</li>
-<li>Commits diários no fork do aluno<br />
-</li>
-<li>IA como ferramenta para explicação, depuração e geração de
-material<br />
-</li>
-<li>Portabilidade: here::here() e projetos .Rproj</li>
+<li>Use quando o NA tem significado específico (ex: ausência =
+zero)</li>
+</ul></li>
+<li><strong>Medida central</strong>: substituir por média, mediana ou
+moda
+<ul>
+<li>Use para variáveis numéricas quando NAs são poucos e aleatórios</li>
+<li>Mediana é mais robusta a outliers que média</li>
+</ul></li>
+<li><strong>Forward/Backward fill</strong>: usar valor anterior ou
+posterior
+<ul>
+<li>Use para séries temporais ou dados sequenciais</li>
+<li><code>fill(.direction = &quot;down&quot;)</code>: preenche para baixo</li>
+<li><code>fill(.direction = &quot;up&quot;)</code>: preenche para cima</li>
+</ul></li>
+<li><strong>Interpolação</strong>: estimar baseado em valores próximos
+<ul>
+<li>Use para séries temporais quando há padrão</li>
+<li>Mais sofisticado que fill</li>
+</ul></li>
+</ol>
+<p><strong>Funções:</strong> - <code>replace_na()</code>: substitui por
+valor específico - <code>ifelse()</code> + <code>mean()/median()</code>:
+substitui por estatística - <code>fill()</code>: preenche com valores
+adjacentes</p>
+<pre class="r"><code># Substituir por valor específico
+dados_na %&gt;%
+  mutate(
+    nome = replace_na(nome, &quot;Desconhecido&quot;),
+    idade = replace_na(idade, 0)
+  )
+
+# Substituir por medida central
+dados_na %&gt;%
+  mutate(
+    idade = ifelse(is.na(idade), median(idade, na.rm = TRUE), idade),
+    salario = ifelse(is.na(salario), mean(salario, na.rm = TRUE), salario)
+  )
+
+# Preencher com valor anterior/posterior (fill)
+dados_sequencial &lt;- tibble(
+  mes = 1:12,
+  vendas = c(100, 120, NA, NA, 150, NA, 170, 180, NA, 200, 210, NA)
+)
+
+dados_sequencial
+
+# Preencher para baixo (forward fill)
+dados_sequencial %&gt;%
+  fill(vendas, .direction = &quot;down&quot;)
+
+# Preencher para cima (backward fill)
+dados_sequencial %&gt;%
+  fill(vendas, .direction = &quot;up&quot;)
+
+# Interpolação linear (mais sofisticado)
+dados_sequencial %&gt;%
+  mutate(vendas = zoo::na.approx(vendas, na.rm = FALSE))</code></pre>
+<hr />
+</div>
+</div>
+<div id="leitura-e-escrita-de-dados-io" class="section level2">
+<h2>1.3 Leitura e Escrita de Dados (I/O)</h2>
+<p><strong>I/O = Input/Output</strong> (Entrada/Saída)</p>
+<p>A capacidade de ler e escrever arquivos é fundamental para qualquer
+análise de dados. Você precisará: - <strong>Importar</strong> dados de
+diversas fontes (CSV, Excel, bancos de dados) -
+<strong>Exportar</strong> resultados para compartilhar ou usar em outras
+ferramentas</p>
+<div id="por-que-usar-readr-em-vez-de-funções-base-do-r" class="section level3">
+<h3>Por que usar readr em vez de funções base do R?</h3>
+<p><strong>readr</strong> (parte do tidyverse) é melhor porque: - ✅
+Mais rápido (até 10x) - ✅ Produz tibbles em vez de data.frames - ✅ Não
+converte strings em fatores automaticamente - ✅ Melhor tratamento de
+encoding (acentos!) - ✅ Mensagens mais claras sobre tipos de colunas -
+✅ Sintaxe consistente e intuitiva</p>
+</div>
+<div id="leitura-de-arquivos-csv" class="section level3">
+<h3>Leitura de arquivos CSV</h3>
+<p><strong>CSV = Comma-Separated Values</strong> (Valores Separados por
+Vírgula)</p>
+<p>É o formato mais comum para dados tabulares. Mas atenção: existem
+variações!</p>
+<p><strong>read_csv()</strong>: Para arquivos com separador
+<strong>vírgula</strong> (padrão internacional) - Exemplo:
+<code>1,2,3</code> - Decimal com ponto: <code>3.14</code></p>
+<p><strong>read_csv2()</strong>: Para arquivos com separador
+<strong>ponto-e-vírgula</strong> (padrão brasileiro) - Exemplo:
+<code>1;2;3</code> - Decimal com vírgula: <code>3,14</code></p>
+<p><strong>Parâmetros importantes:</strong> - <code>col_types</code>:
+especificar tipos das colunas (evita surpresas) - <code>locale</code>:
+controlar encoding e formatos regionais - <code>skip</code>: pular
+linhas iniciais (cabeçalhos, notas) - <code>n_max</code>: ler apenas
+primeiras linhas (para testar) - <code>na</code>: definir quais valores
+representam NA</p>
+<pre class="r"><code>library(readr)
+library(here)
+
+# Ler CSV com separador vírgula (padrão internacional)
+# dados &lt;- read_csv(here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;))
+
+# Ler CSV com separador ponto-e-vírgula (padrão brasileiro)
+# dados &lt;- read_csv2(here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;))
+
+# Especificar encoding (importante para acentos!)
+# dados &lt;- read_csv(
+#   here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;),
+#   locale = locale(encoding = &quot;UTF-8&quot;)
+# )
+
+# Para arquivos com encoding Windows (latin1)
+# dados &lt;- read_csv(
+#   here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;),
+#   locale = locale(encoding = &quot;latin1&quot;)
+# )
+
+# Especificar tipos de colunas
+# dados &lt;- read_csv(
+#   here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;),
+#   col_types = cols(
+#     id = col_integer(),
+#     nome = col_character(),
+#     data = col_date(format = &quot;%d/%m/%Y&quot;),
+#     valor = col_double()
+#   )
+# )
+
+# Pular linhas iniciais
+# dados &lt;- read_csv(here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;), skip = 2)
+
+# Ler apenas primeiras linhas (para testar)
+# dados_preview &lt;- read_csv(here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;), n_max = 100)</code></pre>
+</div>
+<div id="o-problema-do-encoding-acentuação" class="section level3">
+<h3>O problema do encoding (acentuação)</h3>
+<p><strong>Encoding</strong> define como caracteres especiais (acentos,
+ç, etc.) são armazenados.</p>
+<p><strong>Problemas comuns:</strong> - Arquivo criado no Windows → ler
+no Mac/Linux → acentos aparecem como � - Excel salva em encoding
+diferente → R lê errado → “São Paulo” vira “SÃ£o Paulo”</p>
+<p><strong>Soluções:</strong> - <strong>UTF-8</strong>: padrão universal
+moderno - SEMPRE use para novos arquivos - <strong>latin1
+(ISO-8859-1)</strong>: comum em arquivos Windows antigos - Use
+<code>locale(encoding = &quot;...&quot;)</code> para especificar</p>
+<p><strong>Como descobrir o encoding?</strong> 1. Abra o arquivo no
+RStudio e veja se acentos estão corretos 2. Teste UTF-8 primeiro, depois
+latin1 3. Use <code>guess_encoding()</code> do readr para ajudar</p>
+</div>
+<div id="leitura-de-arquivos-excel" class="section level3">
+<h3>Leitura de arquivos Excel</h3>
+<p><strong>Por que ler Excel?</strong> - Formato muito usado em empresas
+e pesquisas - Pode conter múltiplas planilhas - Formatação e fórmulas
+(que precisamos extrair)</p>
+<p><strong>readxl vs writexl:</strong> - <code>readxl</code>: LER
+arquivos Excel (.xlsx, .xls) - <code>writexl</code>: ESCREVER arquivos
+Excel</p>
+<p><strong>Vantagens do readxl:</strong> - ✅ Não precisa de Java ou
+Excel instalado - ✅ Funciona em Windows, Mac e Linux - ✅ Lê .xlsx
+(novo) e .xls (antigo) - ✅ Preserva tipos de dados</p>
+<p><strong>Parâmetros úteis:</strong> - <code>sheet</code>: qual
+planilha ler (por nome ou número) - <code>range</code>: ler apenas parte
+da planilha (ex: “A1:E100”) - <code>skip</code>: pular linhas iniciais -
+<code>col_names</code>: se primeira linha tem nomes das colunas -
+<code>na</code>: valores que devem ser tratados como NA</p>
+<pre class="r"><code>library(readxl)
+
+# Ler primeira planilha
+# dados &lt;- read_excel(here(&quot;data&quot;, &quot;raw&quot;, &quot;planilha.xlsx&quot;))
+
+# Especificar planilha por nome ou número
+# dados &lt;- read_excel(here(&quot;data&quot;, &quot;raw&quot;, &quot;planilha.xlsx&quot;), sheet = &quot;Vendas&quot;)
+# dados &lt;- read_excel(here(&quot;data&quot;, &quot;raw&quot;, &quot;planilha.xlsx&quot;), sheet = 2)
+
+# Especificar intervalo de células
+# dados &lt;- read_excel(
+#   here(&quot;data&quot;, &quot;raw&quot;, &quot;planilha.xlsx&quot;), 
+#   range = &quot;A1:E100&quot;
+# )
+
+# Pular linhas
+# dados &lt;- read_excel(here(&quot;data&quot;, &quot;raw&quot;, &quot;planilha.xlsx&quot;), skip = 3)
+
+# Ver nomes das planilhas
+# excel_sheets(here(&quot;data&quot;, &quot;raw&quot;, &quot;planilha.xlsx&quot;))</code></pre>
+</div>
+<div id="escrita-de-dados" class="section level3">
+<h3>Escrita de dados</h3>
+<p><strong>Por que exportar dados?</strong> - Compartilhar resultados
+com colegas - Backup de dados processados - Usar em outras ferramentas
+(Excel, Power BI, Python) - Guardar resultados intermediários de
+análises longas</p>
+<p><strong>Formatos e quando usar:</strong></p>
+<ol style="list-style-type: decimal">
+<li><strong>CSV</strong> (<code>write_csv</code>,
+<code>write_csv2</code>):
+<ul>
+<li>✅ Universal - abre em qualquer programa</li>
+<li>✅ Tamanho pequeno (texto simples)</li>
+<li>❌ Não preserva formatação</li>
+<li>❌ Problemas com encoding</li>
+<li><strong>Use para:</strong> compartilhar dados simples</li>
+</ul></li>
+<li><strong>Excel</strong> (<code>write_xlsx</code>):
+<ul>
+<li>✅ Fácil para não-programadores abrirem</li>
+<li>✅ Mantém formatação básica</li>
+<li>❌ Tamanho maior que CSV</li>
+<li><strong>Use para:</strong> relatórios para stakeholders</li>
+</ul></li>
+<li><strong>RDS</strong> (<code>saveRDS</code>, <code>readRDS</code>):
+<ul>
+<li>✅ Preserva tipos de dados perfeitamente</li>
+<li>✅ Comprimido (tamanho pequeno)</li>
+<li>✅ Rápido para ler/escrever</li>
+<li>❌ Só abre no R</li>
+<li><strong>Use para:</strong> dados intermediários, objetos R
+complexos</li>
+</ul></li>
+</ol>
+<p><strong>Dica:</strong> Sempre salve dados originais em
+<code>data/raw/</code> e processados em <code>data/processed/</code></p>
+</div>
+<div id="organização-de-projetos-com-here" class="section level3">
+<h3>Organização de Projetos com here()</h3>
+<p><strong>O problema dos caminhos:</strong></p>
+<p>Caminho absoluto (❌ NÃO USAR):</p>
+<pre class="r"><code>dados &lt;- read_csv(&quot;C:/Users/vinicius/Documents/projeto/data/dados.csv&quot;)</code></pre>
+<p><strong>Problema:</strong> Só funciona no SEU computador!</p>
+<p>Caminho relativo com setwd() (❌ EVITAR):</p>
+<pre class="r"><code>setwd(&quot;C:/Users/vinicius/Documents/projeto&quot;)
+dados &lt;- read_csv(&quot;data/dados.csv&quot;)</code></pre>
+<p><strong>Problema:</strong> Frágil, não funciona em scripts executados
+de outros lugares</p>
+<p><strong>A solução: here() (✅ SEMPRE USAR)</strong></p>
+<pre class="r"><code>dados &lt;- read_csv(here(&quot;data&quot;, &quot;dados.csv&quot;))</code></pre>
+<p><strong>Vantagens do here():</strong> - ✅ Funciona em Windows, Mac e
+Linux - ✅ Funciona independente de onde você executa o script - ✅
+Colaboração: código funciona para todos - ✅ Raiz do projeto é detectada
+automaticamente (.Rproj)</p>
+<p><strong>Como funciona:</strong> 1. here() encontra a raiz do projeto
+(onde está o .Rproj) 2. Constrói caminhos a partir dessa raiz 3. Usa
+separadores corretos para cada sistema operacional</p>
+<p><strong>Estrutura recomendada de projeto:</strong></p>
+<pre><code>meu-projeto/
+├── meu-projeto.Rproj    ← here() usa isso como raiz
+├── data/
+│   ├── raw/             ← Dados originais (NUNCA modificar!)
+│   └── processed/       ← Dados processados/limpos
+├── scripts/             ← Scripts de análise
+├── output/
+│   ├── figures/         ← Gráficos salvos
+│   └── tables/          ← Tabelas exportadas
+├── docs/                ← Relatórios e documentação
+└── README.md            ← Descrição do projeto</code></pre>
+<p><strong>Boas práticas:</strong> - Sempre use projetos
+<code>.Rproj</code> - Sempre use <code>here()</code> para caminhos -
+Nunca modifique dados em <code>data/raw/</code> - Documente estrutura no
+README.md</p>
+<pre class="r"><code># Criar dados de exemplo
+dados_exemplo &lt;- tibble(
+  id = 1:5,
+  nome = c(&quot;Ana&quot;, &quot;Bruno&quot;, &quot;Carla&quot;, &quot;Diego&quot;, &quot;Elena&quot;),
+  nota = c(8.5, 7.0, 9.0, 6.5, 8.0)
+)
+
+# Salvar como CSV (UTF-8)
+# write_csv(dados_exemplo, here(&quot;output&quot;, &quot;tables&quot;, &quot;notas.csv&quot;))
+
+# Salvar como CSV com separador ponto-e-vírgula
+# write_csv2(dados_exemplo, here(&quot;output&quot;, &quot;tables&quot;, &quot;notas.csv&quot;))
+
+# Salvar como Excel (requer writexl)
+# library(writexl)
+# write_xlsx(dados_exemplo, here(&quot;output&quot;, &quot;tables&quot;, &quot;notas.xlsx&quot;))
+
+# Salvar como RDS (formato nativo R - preserva tipos)
+# saveRDS(dados_exemplo, here(&quot;output&quot;, &quot;tables&quot;, &quot;notas.rds&quot;))
+
+# Ler RDS
+# dados &lt;- readRDS(here(&quot;output&quot;, &quot;tables&quot;, &quot;notas.rds&quot;))</code></pre>
+</div>
+<div id="organização-de-projetos-com-here-1" class="section level3">
+<h3>Organização de Projetos com here()</h3>
+<p><strong>Por que usar here()?</strong></p>
+<p>O pacote <code>here</code> resolve caminhos relativos de forma
+portável, funcionando em qualquer sistema operacional e evitando
+problemas com diretórios de trabalho.</p>
+<pre class="r"><code>library(here)
+
+# Estrutura recomendada de projeto:
+# meu-projeto/
+# ├── meu-projeto.Rproj
+# ├── data/
+# │   ├── raw/          # Dados originais (nunca modificar!)
+# │   └── processed/    # Dados processados
+# ├── scripts/          # Scripts R
+# ├── output/
+# │   ├── figures/      # Gráficos
+# │   └── tables/       # Tabelas
+# ├── docs/             # Documentação e relatórios
+# └── README.md
+
+# Ver raiz do projeto
+here()
+
+# Construir caminhos portáveis
+here(&quot;data&quot;, &quot;raw&quot;, &quot;dados.csv&quot;)
+here(&quot;output&quot;, &quot;figures&quot;, &quot;grafico1.png&quot;)
+here(&quot;scripts&quot;, &quot;01_analise.R&quot;)
+
+# Exemplo de uso completo
+# dados &lt;- read_csv(here(&quot;data&quot;, &quot;raw&quot;, &quot;vendas.csv&quot;))
+# 
+# dados_processados &lt;- dados %&gt;%
+#   filter(ano == 2024) %&gt;%
+#   mutate(vendas_milhares = vendas / 1000)
+# 
+# write_csv(dados_processados, here(&quot;data&quot;, &quot;processed&quot;, &quot;vendas_2024.csv&quot;))</code></pre>
+<hr />
+</div>
+</div>
+<div id="ferramentas-úteis" class="section level2">
+<h2>1.4 Ferramentas Úteis</h2>
+<div id="janitor-limpeza-de-dados" class="section level3">
+<h3>janitor: Limpeza de dados</h3>
+<p><strong>O que é janitor?</strong></p>
+<p>janitor é um pacote focado em <strong>limpar dados
+bagunçados</strong> - especialmente aqueles que vêm de planilhas Excel
+criadas por humanos (não por programas).</p>
+<p><strong>Problemas comuns que janitor resolve:</strong> - Nomes de
+colunas com espaços, acentos, caracteres especiais - Linhas e colunas
+completamente vazias - Linhas duplicadas - Formatação inconsistente</p>
+<p><strong>Principais funções:</strong></p>
+<p><strong>1. clean_names()</strong>: Limpa nomes de colunas
+automaticamente - Remove espaços → substitui por <code>_</code> - Remove
+acentos e caracteres especiais - Converte tudo para minúsculas - Formato
+snake_case - <strong>Use sempre que importar dados de
+Excel!</strong></p>
+<p><strong>2. tabyl()</strong>: Tabelas de frequência melhoradas - Mais
+informativa que <code>table()</code> do R base - Funciona bem com pipes
+- Fácil adicionar percentuais e totais</p>
+<p><strong>3. adorn_</strong>*: Funções para embelezar tabelas -
+<code>adorn_percentages()</code>: adiciona percentuais -
+<code>adorn_pct_formatting()</code>: formata percentuais -
+<code>adorn_ns()</code>: mostra contagens junto com percentuais -
+<code>adorn_totals()</code>: adiciona linha/coluna de totais</p>
+<p><strong>4. remove_empty()</strong>: Remove linhas/colunas vazias -
+Comum em dados de Excel com células vazias fantasmas -
+<code>remove_empty(&quot;rows&quot;)</code>: remove linhas vazias -
+<code>remove_empty(&quot;cols&quot;)</code>: remove colunas vazias -
+<code>remove_empty(c(&quot;rows&quot;, &quot;cols&quot;))</code>: remove ambos</p>
+<p><strong>5. get_dupes()</strong>: Encontra linhas duplicadas - Mostra
+quais linhas estão duplicadas - Mais informativo que
+<code>duplicated()</code></p>
+</div>
+<div id="skimr-exploração-rápida" class="section level3">
+<h3>skimr: Exploração rápida</h3>
+<p><strong>O que é skimr?</strong></p>
+<p>skimr fornece <strong>resumos estatísticos completos</strong> de
+forma rápida e visual - muito melhor que <code>summary()</code> do R
+base.</p>
+<p><strong>Vantagens do skim():</strong> - ✅ Um resumo por tipo de
+variável (numérico, texto, data, etc.) - ✅ Mostra quantidade de dados
+ausentes - ✅ Histogramas inline (mini-histogramas na tabela!) - ✅
+Estatísticas relevantes automaticamente - ✅ Funciona com group_by()
+para resumos por grupo - ✅ Output limpo e organizado</p>
+<p><strong>O que skim() mostra:</strong></p>
+<p><strong>Para variáveis numéricas:</strong> - n_missing: quantos NAs -
+complete_rate: % de valores completos - mean, sd: média e desvio padrão
+- p0, p25, p50, p75, p100: percentis (min, Q1, mediana, Q3, max) - hist:
+mini-histograma visual!</p>
+<p><strong>Para variáveis de texto:</strong> - n_missing, complete_rate
+- min, max: comprimento mínimo/máximo - empty: quantas strings vazias -
+n_unique: quantos valores únicos</p>
+<p><strong>Para variáveis lógicas:</strong> - mean: proporção de TRUEs -
+count: contagem de TRUE/FALSE</p>
+<p><strong>Uso típico:</strong></p>
+<pre class="r"><code># Exploração inicial rápida
+dados %&gt;% skim()
+
+# Por grupo
+dados %&gt;% group_by(categoria) %&gt;% skim()
+
+# Apenas numéricos
+dados %&gt;% skim() %&gt;% filter(skim_type == &quot;numeric&quot;)</code></pre>
+<p><strong>Quando usar:</strong> - Primeira exploração de um dataset
+novo - Checagem rápida de qualidade dos dados - Identificação de
+outliers e problemas - Documentação de características dos dados</p>
+<pre class="r"><code>library(janitor)
+
+# Dados bagunçados (comum em planilhas)
+dados_sujos &lt;- tibble(
+  `Nome Completo` = c(&quot;Ana Silva&quot;, &quot;Bruno Costa&quot;),
+  `Idade (anos)` = c(25, 30),
+  `Salário Mensal (R$)` = c(5000, 6000),
+  `E-mail!!!` = c(&quot;ana@email.com&quot;, &quot;bruno@email.com&quot;)
+)
+
+dados_sujos
+
+# Limpar nomes de colunas automaticamente
+dados_limpos &lt;- dados_sujos %&gt;%
+  clean_names()
+
+dados_limpos
+names(dados_limpos)
+
+# Tabulação cruzada melhorada
+penguins %&gt;%
+  tabyl(species, island) %&gt;%
+  adorn_percentages(&quot;row&quot;) %&gt;%
+  adorn_pct_formatting() %&gt;%
+  adorn_ns()
+
+# Remover linhas/colunas completamente vazias
+dados_com_vazios &lt;- tibble(
+  a = c(1, 2, NA, 4),
+  b = c(NA, NA, NA, NA),  # Coluna vazia
+  c = c(5, 6, 7, 8)
+)
+
+dados_com_vazios %&gt;%
+  remove_empty(c(&quot;rows&quot;, &quot;cols&quot;))</code></pre>
+</div>
+<div id="skimr-exploração-rápida-1" class="section level3">
+<h3>skimr: Exploração rápida</h3>
+<pre class="r"><code>library(skimr)
+
+# Resumo estatístico completo
+penguins %&gt;%
+  skim()
+
+# Por grupo
+penguins %&gt;%
+  group_by(species) %&gt;%
+  skim()
+
+# Customizar saída
+penguins %&gt;%
+  skim() %&gt;%
+  filter(skim_type == &quot;numeric&quot;) %&gt;%
+  select(skim_variable, n_missing, numeric.mean, numeric.sd)</code></pre>
+<hr />
+</div>
+</div>
+</div>
+<div id="intervalo-20h30---20h50" class="section level1">
+<h1>INTERVALO (20h30 - 20h50)</h1>
+<p>Aproveite para: - Revisar conceitos de transformação - Experimentar
+com seus dados - Preparar para ggplot2!</p>
+<hr />
+</div>
+<div id="parte-2-visualização-com-ggplot2-20h50---22h00" class="section level1">
+<h1>Parte 2: Visualização com ggplot2 (20h50 - 22h00)</h1>
+<div id="gramática-de-gráficos" class="section level2">
+<h2>2.1 Gramática de Gráficos</h2>
+<div id="o-que-é-ggplot2" class="section level3">
+<h3>O que é ggplot2?</h3>
+<p><strong>ggplot2</strong> é um sistema de visualização baseado na
+“Grammar of Graphics” (Gramática de Gráficos) - uma filosofia que trata
+gráficos como sentenças construídas por camadas.</p>
+<p><strong>Por que ggplot2 é revolucionário?</strong> - Você
+<strong>descreve</strong> o que quer ver, não <strong>como</strong>
+desenhar - Gráficos complexos são combinações de camadas simples -
+Consistência: mesma lógica para todos os tipos de gráficos -
+Flexibilidade: fácil personalizar qualquer aspecto</p>
+<p><strong>Analogia:</strong> É como escrever uma frase: -
+<strong>Sujeito</strong> (data): seus dados - <strong>Verbo</strong>
+(geom): o que mostrar (pontos, linhas, barras) -
+<strong>Advérbios</strong> (aes): como mapear variáveis (x, y, cor,
+tamanho) - <strong>Adjetivos</strong> (themes, scales): aparência e
+estilo</p>
+</div>
+<div id="componentes-essenciais" class="section level3">
+<h3>Componentes essenciais:</h3>
+<p><strong>1. Data (dados)</strong>: O dataset que você quer
+visualizar</p>
+<pre class="r"><code>ggplot(data = penguins)  # Apenas especifica os dados</code></pre>
+<p><strong>2. Aesthetics (aes)</strong>: Mapeamento de variáveis para
+propriedades visuais - <code>x</code>, <code>y</code>: posição nos eixos
+- <code>color</code>: cor de pontos/linhas - <code>fill</code>: cor de
+preenchimento - <code>size</code>: tamanho - <code>shape</code>: forma
+(círculo, triângulo, etc.) - <code>alpha</code>: transparência (0 =
+invisível, 1 = opaco) - <code>linetype</code>: tipo de linha (sólida,
+tracejada, etc.)</p>
+<pre class="r"><code># Exemplo de aesthetics
+aes(x = flipper_length_mm,        # eixo x
+    y = body_mass_g,               # eixo y
+    color = species,               # cor por espécie
+    size = bill_length_mm)         # tamanho por comprimento do bico</code></pre>
+<p><strong>3. Geometries (geom)</strong>: Tipo de representação visual -
+<code>geom_point()</code>: pontos (gráfico de dispersão) -
+<code>geom_line()</code>: linhas - <code>geom_bar()</code>: barras -
+<code>geom_boxplot()</code>: boxplots - <code>geom_histogram()</code>:
+histogramas - E muitos outros…</p>
+<p><strong>4. Scales</strong>: Controle fino de como os dados são
+mapeados - <code>scale_x_continuous()</code>: escala do eixo x -
+<code>scale_color_manual()</code>: cores personalizadas -
+<code>scale_y_log10()</code>: escala logarítmica</p>
+<p><strong>5. Themes</strong>: Aparência geral (não afeta os dados) -
+<code>theme_minimal()</code>: minimalista - <code>theme_bw()</code>:
+preto e branco - <code>theme_classic()</code>: clássico -
+<code>theme()</code>: personalização completa</p>
+</div>
+<div id="a-lógica-do-soma-de-camadas" class="section level3">
+<h3>A lógica do + (soma de camadas)</h3>
+<p>Em ggplot2, você <strong>adiciona</strong> camadas com
+<code>+</code>:</p>
+<pre class="r"><code>ggplot(data = dados, aes(x = var1, y = var2)) +  # Base
+  geom_point() +                                   # Camada 1: pontos
+  geom_smooth() +                                  # Camada 2: linha de tendência
+  labs(title = &quot;Meu gráfico&quot;) +                   # Camada 3: títulos
+  theme_minimal()                                  # Camada 4: tema</code></pre>
+<p><strong>Importante:</strong> Use <code>+</code> no final da linha,
+não no início!</p>
+</div>
+<div id="aesthetics-globais-vs-locais" class="section level3">
+<h3>Aesthetics globais vs locais</h3>
+<p><strong>Global</strong> (no <code>ggplot()</code>): aplica-se a todas
+as camadas</p>
+<pre class="r"><code>ggplot(dados, aes(x = var1, y = var2, color = grupo)) +
+  geom_point() +      # Usa cor
+  geom_smooth()       # Também usa cor</code></pre>
+<p><strong>Local</strong> (dentro do <code>geom_*()</code>): aplica-se
+apenas àquela camada</p>
+<pre class="r"><code>ggplot(dados, aes(x = var1, y = var2)) +
+  geom_point(aes(color = grupo)) +  # Apenas pontos coloridos
+  geom_smooth()                      # Linha sem cor</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+# Estrutura básica
+# ggplot(data = dados, aes(x = var1, y = var2)) +
+#   geom_point()
+
+# Exemplo com palmerpenguins
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point()
+
+# Adicionar cor por espécie
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point()
+
+# Adicionar forma por ilha
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, 
+                     color = species, shape = island)) +
+  geom_point(size = 3, alpha = 0.7)</code></pre>
+<hr />
+</div>
+</div>
+<div id="tipos-de-gráficos-geoms" class="section level2">
+<h2>2.2 Tipos de Gráficos (geoms)</h2>
+<div id="escolhendo-o-tipo-certo-de-gráfico" class="section level3">
+<h3>Escolhendo o tipo certo de gráfico</h3>
+<p><strong>Pergunte-se:</strong> 1. Quantas variáveis quero mostrar? (1,
+2, 3+) 2. Que tipo de variáveis? (categórica vs numérica) 3. Qual
+história quero contar? (distribuição, relação, comparação, evolução)</p>
+<p><strong>Guia rápido:</strong> - <strong>Relação entre 2
+numéricas</strong> → Dispersão (geom_point) - <strong>Comparar
+categorias</strong> → Barras (geom_bar/geom_col) - <strong>Distribuição
+de 1 numérica</strong> → Histograma ou Densidade - <strong>Comparar
+distribuições</strong> → Boxplot ou Violin - <strong>Evolução
+temporal</strong> → Linhas (geom_line) - <strong>Parte do todo</strong>
+→ Pizza (evite!) ou Barras empilhadas</p>
+</div>
+<div id="gráfico-de-dispersão-geom_point" class="section level3">
+<h3>Gráfico de Dispersão (geom_point)</h3>
+<p><strong>Quando usar:</strong> - Mostrar relação entre duas variáveis
+numéricas - Identificar correlações, tendências ou padrões - Visualizar
+clusters ou outliers</p>
+<p><strong>Parâmetros úteis:</strong> - <code>size</code>: tamanho dos
+pontos (número ou mapeado a variável) - <code>alpha</code>:
+transparência (útil quando há sobreposição) - <code>shape</code>: forma
+dos pontos (círculo, triângulo, quadrado, etc.) - <code>color</code>:
+cor (fixa ou mapeada a variável categórica)</p>
+<p><strong>Dica:</strong> Use <code>geom_smooth()</code> junto para
+adicionar linha de tendência!</p>
+<p><strong>Tipos de relação que você pode identificar:</strong> -
+Positiva: x aumenta, y aumenta - Negativa: x aumenta, y diminui -
+Não-linear: curva ou padrão complexo - Sem relação: pontos dispersos
+aleatoriamente</p>
+<pre class="r"><code># Dispersão básica
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+
+# Com cores e tamanhos
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g,
+                     color = species, size = bill_length_mm)) +
+  geom_point(alpha = 0.6)
+
+# Adicionar linha de tendência
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species), alpha = 0.6) +
+  geom_smooth(method = &quot;lm&quot;, se = TRUE)</code></pre>
+</div>
+<div id="gráfico-de-barras-geom_bar-geom_col" class="section level3">
+<h3>Gráfico de Barras (geom_bar / geom_col)</h3>
+<p><strong>Diferença importante:</strong> - <strong>geom_bar()</strong>:
+conta automaticamente (para dados brutos) - Use quando: quer contar
+quantas vezes cada categoria aparece - Exemplo: quantos alunos de cada
+curso</p>
+<ul>
+<li><strong>geom_col()</strong>: usa valores que já estão calculados
+<ul>
+<li>Use quando: já tem os valores agregados</li>
+<li>Exemplo: vendas totais por mês (já somadas)</li>
+</ul></li>
 </ul>
-<div style="page-break-after: always;"></div>
-</div>
-<div id="pacotes-r-necessários" class="section level1">
-<h1>Pacotes R Necessários</h1>
-<div id="instalação-no-dia-1-a-3-núcleo-do-curso" class="section level2">
-<h2>Instalação no Dia 1 a 3 (núcleo do curso)</h2>
-<pre class="r"><code>install.packages(c(
-  &quot;tidyverse&quot;, &quot;here&quot;, &quot;janitor&quot;, &quot;skimr&quot;,
-  &quot;readxl&quot;, &quot;writexl&quot;, &quot;rmarkdown&quot;, &quot;knitr&quot;,
-  &quot;lubridate&quot;, &quot;scales&quot;, &quot;patchwork&quot;, &quot;broom&quot;,
-  &quot;palmerpenguins&quot;
-))</code></pre>
-</div>
-<div id="pacotes-de-ia-dia-4" class="section level2">
-<h2>Pacotes de IA (Dia 4)</h2>
-<pre class="r"><code>install.packages(c(&quot;gptstudio&quot;, &quot;chattr&quot;, &quot;httr2&quot;, &quot;jsonlite&quot;))</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-1-1711-segunda-fundamentos-e-ambiente-de-trabalho" class="section level1">
-<h1>Dia 1: 17/11 (Segunda) — Fundamentos e Ambiente de Trabalho</h1>
-<div id="h00---20h30-ambientação-e-setup-completo" class="section level2">
-<h2>19h00 - 20h30 | Ambientação e Setup Completo</h2>
-<p>Apresentação do curso, objetivos e metodologia.<br />
-Por que R, GitHub e IA.<br />
-Checklist de instalações (R, RStudio, Git).<br />
-Configuração do Git (user.name/user.email).<br />
-Autenticação no GitHub (PAT recomendado).<br />
-Fazer fork do repositório do curso.<br />
-Clonar o fork no RStudio (Projeto .Rproj).<br />
-Verificar <code>git remote -v</code> apontando para o fork do aluno.</p>
-</div>
-<div id="h30---20h50-intervalo" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-fundamentos-do-r" class="section level2">
-<h2>20h50 - 22h00 | Fundamentos do R</h2>
-<p>Objetos e estruturas básicas: vetores, listas, data.frames,
-fatores.<br />
-Funções básicas: c(), length(), class(), typeof().<br />
-Exploração: str(), head(), tail(), names(), dplyr::glimpse(),
-summary().<br />
-Indexação: [], $, subsetting lógico.<br />
-Prática guiada: criar vetores e data.frames, manipular objetos.<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git add scripts/01_fundamentos.R
-git commit -m &quot;Fundamentos do R - Dia 1&quot;
-git push origin main</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-2-1811-terça-lógica-funções-e-introdução-ao-tidyverse" class="section level1">
-<h1>Dia 2: 18/11 (Terça) — Lógica, Funções e Introdução ao
-Tidyverse</h1>
-<div id="h00---20h30-programação-em-r" class="section level2">
-<h2>19h00 - 20h30 | Programação em R</h2>
-<p>Operadores lógicos e relacionais.<br />
-Condicionais: if/else, ifelse() (vetorizado), dplyr::case_when().<br />
-Loops e funções: for vs. vetorização, criação de funções, validação de
-entradas.<br />
-Boas práticas e debugging: snake_case, comentários, leitura de
-traceback.<br />
-Mini demonstração de como a IA pode explicar um erro simples.</p>
-</div>
-<div id="h30---20h50-intervalo-1" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-introdução-ao-tidyverse" class="section level2">
-<h2>20h50 - 22h00 | Introdução ao Tidyverse</h2>
-<p>Filosofia tidyverse e uso de pipes (%&gt;% e |&gt;).<br />
-Verbos essenciais do dplyr: filter(), select(), mutate(), arrange(),
-summarize(), group_by().<br />
-Datas com lubridate: ymd/dmy/mdy, year/month/wday, today/now.<br />
-Exemplo integrado com palmerpenguins.<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git commit -m &quot;Lógica, funções e tidyverse - Dia 2&quot;</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-3-2411-segunda-transformação-io-e-visualização" class="section level1">
-<h1>Dia 3: 24/11 (Segunda) — Transformação, I/O e Visualização</h1>
-<div id="h00---20h30-transformação-e-io-de-dados" class="section level2">
-<h2>19h00 - 20h30 | Transformação e I/O de Dados</h2>
-<p>Reshape com tidyr: pivot_longer(), pivot_wider(), separate(),
-unite().<br />
-Tratamento de NAs: is.na(), drop_na(), replace_na(), fill().<br />
-Leitura/Escrita: readr::read_csv(), read_csv2(),
-readxl::read_excel().<br />
-Portabilidade com here::here() e organização de projetos.<br />
-Ferramentas úteis: janitor::clean_names(), skimr::skim().</p>
-</div>
-<div id="h30---20h50-intervalo-2" class="section level2">
-<h2>20h30 - 20h50 | Intervalo</h2>
-</div>
-<div id="h50---22h00-visualização-com-ggplot2" class="section level2">
-<h2>20h50 - 22h00 | Visualização com ggplot2</h2>
-<p>Gramática de gráficos: camadas, aesthetics, geoms comuns.<br />
-Gráficos: dispersão, barras, boxplot, linhas,
-histograma/densidade.<br />
-Combinação com patchwork, formatos com scales.<br />
-Personalização e salvamento: theme_*, labs(), ggsave().<br />
-Commit sugerido:</p>
-<pre class="bash"><code>git commit -m &quot;Transformação, I/O e visualização - Dia 3&quot;</code></pre>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="dia-4-2511-terça-integração-do-chatgpt-e-claude-no-rstudio" class="section level1">
-<h1>Dia 4: 25/11 (Terça) — Integração do ChatGPT e Claude no
-RStudio</h1>
-<p>Objetivo do dia: capacitar o aluno a usar ChatGPT (OpenAI) e Claude
-(Anthropic) diretamente no RStudio para explicar erros, revisar e gerar
-código, criar rascunhos de relatórios e automatizar pequenas rotinas via
-API.</p>
-<div id="h00---19h30-conceitos-e-modelos" class="section level2">
-<h2>19h00 - 19h30 | Conceitos e modelos</h2>
-<p>Panorama rápido sobre LLMs, APIs, limites e custos.<br />
-Boas práticas de uso responsável de IA: privacidade, dados sensíveis,
-versionamento de código gerado.<br />
-Comparação prática: quando usar ChatGPT e quando usar Claude.</p>
-</div>
-<div id="h30---20h15-configuração-de-chaves-e-ambiente" class="section level2">
-<h2>19h30 - 20h15 | Configuração de chaves e ambiente</h2>
-<p>Variáveis de ambiente no R: uso de ~/.Renviron e Sys.getenv().<br />
-Criação de chaves de API e configuração local.<br />
-Nomes convencionados: - OPENAI_API_KEY para ChatGPT (OpenAI) -
-ANTHROPIC_API_KEY para Claude (Anthropic)</p>
-<p>Exemplo de ~/.Renviron:</p>
-<pre class="r"><code>OPENAI_API_KEY=coloque_sua_chave_aqui
-ANTHROPIC_API_KEY=coloque_sua_chave_aqui</code></pre>
-<p>Teste rápido no R:</p>
-<pre class="r"><code>Sys.getenv(&quot;OPENAI_API_KEY&quot;)
-Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)</code></pre>
-<p>Instalação de pacotes:</p>
-<pre class="r"><code>install.packages(c(&quot;gptstudio&quot;, &quot;chattr&quot;, &quot;httr2&quot;, &quot;jsonlite&quot;))</code></pre>
-</div>
-<div id="h15---20h30-intervalo" class="section level2">
-<h2>20h15 - 20h30 | Intervalo</h2>
-</div>
-<div id="h30---21h00-rstudio-gptstudio-chatgpt" class="section level2">
-<h2>20h30 - 21h00 | RStudio + gptstudio (ChatGPT)</h2>
-<p>Abertura dos Addins do gptstudio no RStudio (chat pane e code
-assistant).<br />
-Uso no editor: seleção de código e prompt de revisão.<br />
-Exemplos típicos: explicar erro, refatorar função, gerar testes
-unitários simples.<br />
-Script de exemplo (via API manual com httr2):</p>
-<pre class="r"><code>library(httr2); library(jsonlite)
+<p><strong>Quando usar barras:</strong> - Comparar quantidades entre
+categorias - Mostrar rankings - Visualizar composição (barras
+empilhadas) - Dados temporais discretos (meses, anos)</p>
+<p><strong>Parâmetros importantes:</strong></p>
+<p><strong>position</strong>: Como organizar múltiplas barras -
+<code>&quot;stack&quot;</code> (padrão): empilhadas uma sobre a outra -
+<code>&quot;dodge&quot;</code>: lado a lado - <code>&quot;fill&quot;</code>: empilhadas
+proporcionalmente (100%)</p>
+<p><strong>width</strong>: Largura das barras (0-1) - Menor = barras
+mais finas com mais espaço</p>
+<p><strong>fill vs color</strong>: - <code>fill</code>: cor de
+preenchimento da barra - <code>color</code>: cor da borda da barra</p>
+<p><strong>Dicas de design:</strong> - Ordene categorias por valor (não
+alfabeticamente) - Use cores apenas quando necessário (não decore por
+decorar) - Evite 3D (distorce percepção) - Comece eixo y em zero (não
+engane visualmente) - Considere barras horizontais se nomes de
+categorias forem longos</p>
+<pre class="r"><code># Contagem (geom_bar)
+ggplot(penguins, aes(x = species)) +
+  geom_bar()
 
-endpoint &lt;- &quot;https://api.openai.com/v1/chat/completions&quot;
-prompt &lt;- &quot;Explique o que este código faz e sugira melhorias:\n\nx &lt;- 1:10; mean(x)&quot;
-body &lt;- list(
-  model = &quot;gpt-4o-mini&quot;,
-  messages = list(list(role=&quot;user&quot;, content=prompt))
+# Com preenchimento por outra variável
+ggplot(penguins, aes(x = species, fill = island)) +
+  geom_bar()
+
+# Barras lado a lado
+ggplot(penguins, aes(x = species, fill = island)) +
+  geom_bar(position = &quot;dodge&quot;)
+
+# Proporção (100%)
+ggplot(penguins, aes(x = species, fill = island)) +
+  geom_bar(position = &quot;fill&quot;) +
+  labs(y = &quot;Proporção&quot;)
+
+# Barras horizontais
+ggplot(penguins, aes(y = species)) +
+  geom_bar()
+
+# geom_col (quando você tem valores agregados)
+resumo &lt;- penguins %&gt;%
+  group_by(species) %&gt;%
+  summarize(massa_media = mean(body_mass_g, na.rm = TRUE))
+
+ggplot(resumo, aes(x = species, y = massa_media)) +
+  geom_col(fill = &quot;steelblue&quot;)</code></pre>
+</div>
+<div id="boxplot-geom_boxplot" class="section level3">
+<h3>Boxplot (geom_boxplot)</h3>
+<p><strong>O que é um boxplot?</strong></p>
+<p>Um boxplot (ou diagrama de caixa) mostra a distribuição de dados
+através de quartis. É uma forma compacta de ver: - A mediana (linha
+central) - A dispersão (tamanho da caixa) - Outliers (pontos
+isolados)</p>
+<p><strong>Anatomia do boxplot:</strong></p>
+<pre><code>    máximo (ou Q3 + 1.5*IQR)
+        │
+    ┌───┴───┐
+    │  Q3   │  ← 75% dos dados estão abaixo
+    │───────│  ← mediana (Q2)
+    │  Q1   │  ← 25% dos dados estão abaixo
+    └───┬───┘
+        │
+    mínimo (ou Q1 - 1.5*IQR)
+    
+    ●  ← outliers (pontos fora do padrão)</code></pre>
+<p><strong>Quando usar:</strong> - Comparar distribuições entre grupos -
+Identificar outliers - Ver simetria/assimetria dos dados - Quando tem
+muitas categorias (mais eficiente que múltiplos histogramas)</p>
+<p><strong>Vantagens:</strong> - Mostra 5 estatísticas de uma vez (min,
+Q1, mediana, Q3, max) - Identifica outliers automaticamente - Compacto -
+fácil comparar muitos grupos</p>
+<p><strong>Desvantagens:</strong> - Não mostra a forma exata da
+distribuição - Pode esconder bimodalidade (duas “montanhas”) - Menos
+intuitivo para público não-técnico</p>
+<p><strong>Alternativas:</strong> - <strong>Violin plot</strong>
+(<code>geom_violin</code>): mostra a forma completa da distribuição -
+<strong>Jitter plot</strong> (<code>geom_jitter</code>): mostra todos os
+pontos individuais - <strong>Combinação</strong>: boxplot + jitter =
+melhor dos dois mundos</p>
+<p><strong>Dicas:</strong> - Use <code>geom_jitter()</code> junto para
+mostrar pontos individuais - Ordene grupos por mediana para facilitar
+comparação - Use cores para distinguir grupos, mas não exagere</p>
+<pre class="r"><code># Boxplot básico
+ggplot(penguins, aes(x = species, y = body_mass_g)) +
+  geom_boxplot()
+
+# Com cores
+ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot()
+
+# Adicionar pontos individuais
+ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.2, alpha = 0.3, size = 1)
+
+# Violin plot (alternativa)
+ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_violin()</code></pre>
+</div>
+<div id="gráfico-de-linhas-geom_line" class="section level3">
+<h3>Gráfico de Linhas (geom_line)</h3>
+<p><strong>Quando usar:</strong> - Dados temporais (séries temporais) -
+Mostrar tendências ou evolução - Dados com ordem natural (temperatura ao
+longo do dia) - Conectar pontos sequenciais</p>
+<p><strong>CUIDADO:</strong> Não use linhas para: - Dados categóricos
+sem ordem (espécies, nomes) - Quando não há continuidade entre
+pontos</p>
+<p><strong>Por que usar linhas em vez de barras para séries
+temporais?</strong> - Linhas enfatizam tendência e fluxo - Mais fácil
+ver mudanças ao longo do tempo - Menos “peso visual” quando há muitos
+pontos - Facilita comparação de múltiplas séries</p>
+<p><strong>Parâmetros úteis:</strong> - <code>size</code>: espessura da
+linha - <code>linetype</code>: tipo de linha (sólida, tracejada,
+pontilhada) - <code>color</code>: cor da linha - <code>group</code>:
+quando tem múltiplas linhas</p>
+<p><strong>Dica:</strong> Combine <code>geom_line()</code> +
+<code>geom_point()</code> para destacar valores individuais</p>
+</div>
+<div id="histograma-e-densidade-geom_histogram-geom_density" class="section level3">
+<h3>Histograma e Densidade (geom_histogram / geom_density)</h3>
+<p><strong>Histograma (geom_histogram)</strong></p>
+<p><strong>O que mostra:</strong> A distribuição de uma variável
+numérica dividida em “bins” (intervalos).</p>
+<p><strong>Quando usar:</strong> - Entender a forma da distribuição
+(simétrica, assimétrica, bimodal) - Identificar moda (valor mais
+frequente) - Ver dispersão dos dados - Detectar outliers</p>
+<p><strong>Parâmetro crítico: bins (ou binwidth)</strong> -
+<code>bins</code>: número de barras (padrão = 30) -
+<code>binwidth</code>: largura de cada barra -
+<strong>Importante:</strong> Número de bins muda a interpretação! -
+Poucos bins → padrões grosseiros, perde detalhes - Muitos bins → muito
+detalhado, difícil ver padrão geral - Teste diferentes valores!</p>
+<p><strong>Tipos de distribuição que você pode identificar:</strong> -
+<strong>Normal</strong> (sino): simétrica, maioria no centro -
+<strong>Assimétrica positiva</strong>: cauda longa à direita -
+<strong>Assimétrica negativa</strong>: cauda longa à esquerda -
+<strong>Bimodal</strong>: duas “montanhas” (dois grupos distintos) -
+<strong>Uniforme</strong>: todas as barras similares (raro em dados
+reais)</p>
+<p><strong>Densidade (geom_density)</strong></p>
+<p><strong>O que mostra:</strong> Uma versão “suavizada” do histograma -
+uma curva contínua.</p>
+<p><strong>Vantagens sobre histograma:</strong> - Não depende de escolha
+arbitrária de bins - Mais suave e fácil de interpretar - Melhor para
+comparar múltiplas distribuições sobrepostas - Mais “bonito”
+visualmente</p>
+<p><strong>Desvantagens:</strong> - Pode ser menos intuitivo para
+público não-técnico - Pode suavizar demais e esconder detalhes</p>
+<p><strong>Quando usar cada um:</strong> - <strong>Histograma</strong>:
+primeira exploração, apresentação para não-técnicos -
+<strong>Densidade</strong>: comparar grupos, análise mais refinada,
+publicações</p>
+<p><strong>Dica:</strong> Use <code>alpha</code> (transparência) quando
+sobrepor múltiplas distribuições!</p>
+<pre class="r"><code># Criar dados temporais
+vendas_tempo &lt;- tibble(
+  mes = 1:12,
+  vendas = c(100, 120, 150, 140, 170, 190, 200, 210, 195, 220, 240, 250),
+  custos = c(80, 90, 100, 95, 110, 120, 125, 130, 120, 135, 145, 150)
 )
 
-req &lt;- request(endpoint) |&gt;
-  req_method(&quot;POST&quot;) |&gt;
-  req_headers(Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;OPENAI_API_KEY&quot;))) |&gt;
-  req_body_json(body)
+# Linha simples
+ggplot(vendas_tempo, aes(x = mes, y = vendas)) +
+  geom_line()
 
-resp &lt;- req_perform(req)
-json &lt;- resp_body_json(resp)
-cat(json$choices[[1]]$message$content)</code></pre>
+# Com pontos
+ggplot(vendas_tempo, aes(x = mes, y = vendas)) +
+  geom_line(color = &quot;blue&quot;, size = 1) +
+  geom_point(color = &quot;blue&quot;, size = 3)
+
+# Múltiplas linhas (precisa pivotear)
+vendas_long &lt;- vendas_tempo %&gt;%
+  pivot_longer(cols = c(vendas, custos), names_to = &quot;tipo&quot;, values_to = &quot;valor&quot;)
+
+ggplot(vendas_long, aes(x = mes, y = valor, color = tipo)) +
+  geom_line(size = 1) +
+  geom_point(size = 2)</code></pre>
 </div>
-<div id="h00---21h30-rstudio-chattr-claude" class="section level2">
-<h2>21h00 - 21h30 | RStudio + chattr (Claude)</h2>
-<p>Fluxo básico com chattr::chat_claude().<br />
-Exemplos práticos: explicar um traceback, sugerir validação de
-argumentos, gerar esqueleto de RMarkdown.<br />
-Script de exemplo (API manual com httr2):</p>
-<pre class="r"><code>library(httr2); library(jsonlite)
+<div id="histograma-e-densidade-geom_histogram-geom_density-1" class="section level3">
+<h3>Histograma e Densidade (geom_histogram / geom_density)</h3>
+<pre class="r"><code># Histograma
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(bins = 30, fill = &quot;steelblue&quot;, color = &quot;white&quot;)
 
-endpoint &lt;- &quot;https://api.anthropic.com/v1/messages&quot;
-prompt &lt;- &quot;Revise a função abaixo e a torne mais robusta a NAs.\n\nsoma_media &lt;- function(x){ sum(x)/length(x) }&quot;
+# Ajustar número de bins
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(bins = 15, fill = &quot;steelblue&quot;, alpha = 0.7)
 
-body &lt;- list(
-  model = &quot;claude-3-5-sonnet-latest&quot;,
-  max_tokens = 300,
-  messages = list(list(role=&quot;user&quot;, content=prompt))
+# Por grupo
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_histogram(bins = 30, alpha = 0.6, position = &quot;identity&quot;)
+
+# Densidade
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_density(fill = &quot;steelblue&quot;, alpha = 0.5)
+
+# Densidade por grupo
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_density(alpha = 0.5)</code></pre>
+<hr />
+</div>
+</div>
+<div id="personalização" class="section level2">
+<h2>2.3 Personalização</h2>
+<div id="labels-labs---comunicando-claramente" class="section level3">
+<h3>Labels (labs) - Comunicando claramente</h3>
+<p><strong>Por que labels são importantes?</strong></p>
+<p>Um gráfico sem bons labels é como um livro sem capa - ninguém sabe do
+que se trata! Labels transformam um gráfico técnico em uma ferramenta de
+comunicação.</p>
+<p><strong>Elementos de labs():</strong></p>
+<ul>
+<li><strong>title</strong>: Título principal - O QUE o gráfico mostra
+<ul>
+<li>Seja descritivo: “Relação entre…” não apenas “Gráfico 1”</li>
+<li>Máximo 1-2 linhas</li>
+</ul></li>
+<li><strong>subtitle</strong>: Subtítulo - Contexto adicional ou
+detalhes
+<ul>
+<li>Informação complementar sobre período, amostra, etc.</li>
+</ul></li>
+<li><strong>x / y</strong>: Rótulos dos eixos - SEMPRE inclua unidades!
+<ul>
+<li>❌ “Massa”</li>
+<li>✅ “Massa Corporal (g)”</li>
+</ul></li>
+<li><strong>color / fill / size / etc.</strong>: Legendas
+<ul>
+<li>Renomeie para termos claros: “Espécie” em vez de “species”</li>
+</ul></li>
+<li><strong>caption</strong>: Nota de rodapé - Fonte dos dados, créditos
+<ul>
+<li>Exemplo: “Fonte: Palmer Archipelago LTER”</li>
+</ul></li>
+</ul>
+<p><strong>Regra de ouro:</strong> Seu gráfico deve se explicar sozinho.
+Uma pessoa que nunca viu seus dados deveria entender o que está sendo
+mostrado apenas olhando o gráfico.</p>
+</div>
+<div id="temas-themes---definindo-a-aparência" class="section level3">
+<h3>Temas (themes) - Definindo a aparência</h3>
+<p><strong>O que são temas?</strong></p>
+<p>Temas controlam a aparência <strong>não-dados</strong> do gráfico:
+cor de fundo, linhas de grade, fontes, etc. Não afetam os dados em si,
+apenas como são apresentados.</p>
+<p><strong>Temas prontos (built-in):</strong></p>
+<ul>
+<li><strong>theme_gray()</strong> (padrão): fundo cinza, grade branca
+<ul>
+<li>Uso: padrão, nada especial</li>
+</ul></li>
+<li><strong>theme_bw()</strong>: preto e branco, fundo branco
+<ul>
+<li>Uso: impressão P&amp;B, publicações acadêmicas</li>
+</ul></li>
+<li><strong>theme_minimal()</strong>: minimalista, sem bordas
+<ul>
+<li>Uso: apresentações modernas, relatórios limpos</li>
+<li><strong>Recomendado para iniciantes!</strong></li>
+</ul></li>
+<li><strong>theme_classic()</strong>: eixos simples, sem grades
+<ul>
+<li>Uso: estilo clássico, gráficos “científicos”</li>
+</ul></li>
+<li><strong>theme_dark()</strong>: fundo escuro
+<ul>
+<li>Uso: apresentações em projetores, dashboards</li>
+</ul></li>
+<li><strong>theme_void()</strong>: completamente limpo
+<ul>
+<li>Uso: mapas, visualizações artísticas</li>
+</ul></li>
+</ul>
+<p><strong>Como personalizar temas?</strong></p>
+<p>Use <code>theme()</code> para ajustar elementos específicos:</p>
+<pre class="r"><code>theme(
+  plot.title = element_text(size = 16, face = &quot;bold&quot;),
+  axis.text = element_text(size = 12),
+  legend.position = &quot;bottom&quot;,
+  panel.grid.minor = element_blank()  # Remove grade secundária
+)</code></pre>
+<p><strong>Elementos ajustáveis:</strong> -
+<strong>element_text()</strong>: texto (título, eixos, legendas) -
+<strong>element_line()</strong>: linhas (eixos, grades) -
+<strong>element_rect()</strong>: retângulos (fundo, bordas) -
+<strong>element_blank()</strong>: remove o elemento</p>
+<p><strong>Dica:</strong> Combine tema pronto + ajustes finos:</p>
+<pre class="r"><code>theme_minimal() + theme(legend.position = &quot;bottom&quot;)</code></pre>
+</div>
+<div id="escalas-scales---controle-fino" class="section level3">
+<h3>Escalas (scales) - Controle fino</h3>
+<p><strong>O que são scales?</strong></p>
+<p>Scales controlam <strong>como</strong> os dados são mapeados para
+propriedades visuais. Toda aesthetic (x, y, color, size, etc.) tem uma
+scale.</p>
+<p><strong>Por que ajustar scales?</strong> - Cores mais bonitas ou
+acessíveis - Eixos com quebras específicas - Transformações (log, sqrt)
+- Formatação de valores (moeda, percentual)</p>
+<p><strong>Tipos principais:</strong></p>
+<p><strong>1. Scales de posição (eixos x e y)</strong></p>
+<pre class="r"><code># Controlar quebras e limites
+scale_y_continuous(
+  breaks = seq(0, 100, 10),    # Onde mostrar marcas
+  limits = c(0, 100),          # Limite do eixo
+  expand = c(0, 0)             # Remover espaço extra
 )
 
-req &lt;- request(endpoint) |&gt;
-  req_method(&quot;POST&quot;) |&gt;
-  req_headers(
-    Authorization = paste(&quot;Bearer&quot;, Sys.getenv(&quot;ANTHROPIC_API_KEY&quot;)),
-    &quot;anthropic-version&quot; = &quot;2023-06-01&quot;,
-    &quot;content-type&quot; = &quot;application/json&quot;
-  ) |&gt;
-  req_body_json(body)
+# Transformações
+scale_y_log10()                # Escala logarítmica
+scale_x_sqrt()                 # Raiz quadrada
+scale_x_reverse()              # Inverter eixo</code></pre>
+<p><strong>2. Scales de cor</strong></p>
+<pre class="r"><code># Cores manuais
+scale_color_manual(values = c(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;))
 
-resp &lt;- req_perform(req)
-json &lt;- resp_body_json(resp)
-cat(json$content[[1]]$text)</code></pre>
+# Paletas viridis (acessíveis para daltônicos!)
+scale_color_viridis_d()        # Discreta (categórica)
+scale_color_viridis_c()        # Contínua (numérica)
+
+# Paletas Brewer
+scale_color_brewer(palette = &quot;Set1&quot;)</code></pre>
+<p><strong>3. Formatação com scales (pacote)</strong></p>
+<pre class="r"><code>library(scales)
+
+# Formatar números
+scale_y_continuous(labels = label_comma())      # 1,000
+scale_y_continuous(labels = label_percent())    # 50%
+scale_y_continuous(labels = label_dollar())     # $100
+scale_y_continuous(labels = label_number(
+  prefix = &quot;R$ &quot;,
+  decimal.mark = &quot;,&quot;,
+  big.mark = &quot;.&quot;
+))  # R$ 1.000,00</code></pre>
+<p><strong>Cores para daltônicos:</strong></p>
+<p>Use paletas acessíveis! ~8% dos homens têm daltonismo.</p>
+<p>✅ <strong>Boas escolhas:</strong> -
+<code>scale_color_viridis_d()</code> (melhor!) -
+<code>scale_color_brewer(palette = &quot;Set2&quot;)</code> - Esquemas
+azul-laranja (distinguíveis)</p>
+<p>❌ <strong>Evite:</strong> - Vermelho-verde (indistinguíveis para
+daltônicos) - Muitas cores similares</p>
+<pre class="r"><code>ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point() +
+  labs(
+    title = &quot;Relação entre Nadadeira e Massa Corporal&quot;,
+    subtitle = &quot;Dados do Arquipélago Palmer, Antártica&quot;,
+    x = &quot;Comprimento da Nadadeira (mm)&quot;,
+    y = &quot;Massa Corporal (g)&quot;,
+    color = &quot;Espécie&quot;,
+    caption = &quot;Fonte: palmerpenguins package&quot;
+  )</code></pre>
 </div>
-<div id="h30---22h00-exercício-guiado-de-integração" class="section level2">
-<h2>21h30 - 22h00 | Exercício guiado de integração</h2>
-<p>Tarefa 1: usar gptstudio para revisar um script curto de dplyr e
-propor 2 melhorias.<br />
-Tarefa 2: usar chattr para gerar uma função em R que: - receba um
-data.frame e uma coluna numérica - remova NAs, retorne média e
-desvio-padrão com nomes claros - inclua validação de tipos e mensagens
-de erro úteis</p>
-<p>Entrega esperada no fork do aluno: -
-scripts/04_ia_integracao_gptstudio.R - scripts/04_ia_integracao_claude.R
-- docs/relatorio_ia.Rmd com um parágrafo descrevendo o que a IA sugeriu,
-o que foi adotado e por quê.</p>
-<p>Checklist final: - variáveis de ambiente lidas com Sys.getenv() -
-addins do gptstudio funcionando - chamada mínima via httr2 para cada API
-- commit e push no fork</p>
-<pre class="bash"><code>git add scripts/04_*.R docs/relatorio_ia.Rmd
-git commit -m &quot;Integração ChatGPT e Claude no RStudio (Dia 4)&quot;
+<div id="temas-themes" class="section level3">
+<h3>Temas (themes)</h3>
+<pre class="r"><code>grafico_base &lt;- ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot() +
+  labs(title = &quot;Massa Corporal por Espécie&quot;)
+
+# Tema padrão (gray)
+grafico_base
+
+# Tema minimalista
+grafico_base + theme_minimal()
+
+# Tema BW
+grafico_base + theme_bw()
+
+# Tema clássico
+grafico_base + theme_classic()
+
+# Tema escuro
+grafico_base + theme_dark()
+
+# Customizar tema
+grafico_base +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = &quot;bold&quot;),
+    axis.text = element_text(size = 12),
+    legend.position = &quot;bottom&quot;
+  )</code></pre>
+</div>
+<div id="escalas-scales" class="section level3">
+<h3>Escalas (scales)</h3>
+<pre class="r"><code>library(scales)
+
+# Escala de cores manual
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point() +
+  scale_color_manual(values = c(&quot;darkorange&quot;, &quot;purple&quot;, &quot;cyan4&quot;))
+
+# Escala de cores viridis (acessível e bonita)
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point() +
+  scale_color_viridis_d()
+
+# Escala de eixo
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  scale_y_continuous(
+    labels = label_comma(),  # Formatar números com vírgula
+    breaks = seq(3000, 6000, 500)
+  )
+
+# Transformação logarítmica
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  scale_y_log10()</code></pre>
+<hr />
+</div>
+</div>
+<div id="combinando-gráficos-patchwork" class="section level2">
+<h2>2.4 Combinando Gráficos (patchwork)</h2>
+<p><strong>Por que combinar gráficos?</strong></p>
+<p>Muitas vezes você quer mostrar múltiplas visualizações relacionadas
+lado a lado: - Comparar diferentes aspectos dos mesmos dados - Mostrar
+“antes e depois” - Painéis para relatórios e apresentações - Contar uma
+história visual completa</p>
+<p><strong>patchwork vs alternativas:</strong></p>
+<ul>
+<li><strong>Base R</strong> (<code>par(mfrow)</code>,
+<code>layout</code>): complexo, limitado</li>
+<li><strong>gridExtra</strong> (<code>grid.arrange</code>): funcional
+mas verboso</li>
+<li><strong>patchwork</strong>: simples, intuitivo, poderoso ✅</li>
+</ul>
+<p><strong>Sintaxe básica de patchwork:</strong></p>
+<pre class="r"><code># + : lado a lado (horizontal)
+grafico1 + grafico2
+
+# / : um em cima do outro (vertical)
+grafico1 / grafico2
+
+# Combinar: () agrupa operações
+(grafico1 + grafico2) / grafico3</code></pre>
+<p><strong>Operadores:</strong> - <code>+</code> : lado a lado -
+<code>/</code> : empilhar - <code>|</code> : lado a lado (alternativa ao
++) - <code>()</code> : agrupar</p>
+<p><strong>Layouts complexos:</strong></p>
+<pre class="r"><code># 2x2
+(g1 + g2) / (g3 + g4)
+
+# L-shape
+g1 + (g2 / g3)
+
+# Tamanhos diferentes
+g1 + g2 + plot_layout(widths = c(2, 1))  # g1 é 2x mais largo</code></pre>
+<p><strong>Funcionalidades úteis:</strong></p>
+<p><strong>1. plot_annotation()</strong>: Adicionar título geral e
+caption</p>
+<pre class="r"><code>(g1 + g2) / (g3 + g4) +
+  plot_annotation(
+    title = &quot;Análise Completa&quot;,
+    subtitle = &quot;Dados de 2024&quot;,
+    caption = &quot;Fonte: MinhaFonte&quot;,
+    tag_levels = &quot;A&quot;  # Adiciona A, B, C, D...
+  )</code></pre>
+<p><strong>2. plot_layout()</strong>: Controlar layout</p>
+<pre class="r"><code>g1 + g2 + g3 +
+  plot_layout(
+    ncol = 2,              # Número de colunas
+    guides = &quot;collect&quot;,    # Coletar legendas
+    widths = c(2, 1, 1),  # Larguras relativas
+    heights = c(1, 2)      # Alturas relativas
+  )</code></pre>
+<p><strong>3. Legendas unificadas:</strong></p>
+<pre class="r"><code>(g1 + g2) / (g3 + g4) +
+  plot_layout(guides = &quot;collect&quot;) &amp;  # &amp; aplica a todos
+  theme(legend.position = &quot;bottom&quot;)</code></pre>
+<p><strong>Dicas de design:</strong> - Mantenha escalas consistentes
+entre gráficos relacionados - Use cores consistentes para mesmas
+categorias - Não sobrecarregue - máximo 4-6 painéis - Considere se um
+único gráfico com facetas seria melhor</p>
+</div>
+<div id="salvando-gráficos-ggsave" class="section level2">
+<h2>2.5 Salvando Gráficos (ggsave)</h2>
+<p><strong>Por que usar ggsave?</strong></p>
+<p>Você precisa salvar gráficos para: - Incluir em relatórios, artigos,
+apresentações - Compartilhar com colegas - Backup de visualizações
+importantes - Usar em outros softwares</p>
+<p><strong>ggsave() é inteligente:</strong> - Detecta formato pela
+extensão (.png, .pdf, .jpg, etc.) - Ajusta resolução automaticamente -
+Salva o último gráfico por padrão (ou você especifica) - Funciona
+perfeitamente com here()</p>
+<p><strong>Sintaxe básica:</strong></p>
+<pre class="r"><code>ggsave(
+  filename = &quot;meu_grafico.png&quot;,  # Nome e formato
+  plot = meu_grafico,            # Qual gráfico (opcional)
+  width = 8,                     # Largura em polegadas
+  height = 6,                    # Altura em polegadas
+  dpi = 300                      # Resolução (pontos por polegada)
+)</code></pre>
+<p><strong>Formatos e quando usar:</strong></p>
+<p><strong>1. PNG (.png)</strong> - <strong>Raster</strong> (pixels) -
+✅ Bom para: web, apresentações, compartilhamento rápido - ✅ Suporta
+transparência - ✅ Tamanho razoável com boa qualidade - ❌ Perde
+qualidade ao ampliar muito - <strong>DPI recomendado:</strong> 300 (alta
+qualidade), 150 (web)</p>
+<p><strong>2. PDF (.pdf)</strong> - <strong>Vetor</strong> (matemático)
+- ✅ Bom para: publicações acadêmicas, impressão profissional - ✅
+Escala infinitamente sem perder qualidade - ✅ Tamanho pequeno para
+gráficos simples - ❌ Pode ser grande com muitos pontos - <strong>Sem
+DPI</strong> (vetor não tem pixels)</p>
+<p><strong>3. SVG (.svg)</strong> - <strong>Vetor</strong> (para web) -
+✅ Bom para: web, design, editável em Illustrator - ✅ Escala
+perfeitamente - ✅ Pode ser editado como código - ❌ Suporte limitado em
+alguns contextos - <strong>Sem DPI</strong> (vetor)</p>
+<p><strong>4. JPEG (.jpg)</strong> - <strong>Raster</strong> (pixels) -
+✅ Tamanho muito pequeno - ❌ Perde qualidade (compressão) - ❌ Não
+suporta transparência - <strong>Evite para gráficos!</strong> (Use
+PNG)</p>
+<p><strong>5. TIFF (.tiff)</strong> - <strong>Raster</strong> (pixels) -
+✅ Alta qualidade sem compressão - ✅ Aceito em publicações - ❌
+Arquivos muito grandes - <strong>Use apenas se exigido</strong></p>
+<p><strong>Configurações importantes:</strong></p>
+<p><strong>DPI (Dots Per Inch) - resolução:</strong> - <strong>72
+dpi</strong>: tela de computador (baixa qualidade) - <strong>150
+dpi</strong>: apresentações, web (qualidade média) - <strong>300
+dpi</strong>: impressão, publicações (alta qualidade) ✅ - <strong>600
+dpi</strong>: impressão profissional (raramente necessário)</p>
+<p><strong>Tamanho (width e height):</strong> - Padrão: polegadas
+(inches) - 1 polegada = 2.54 cm - Tamanhos comuns: -
+<strong>Apresentação slide:</strong> 10 x 7.5 polegadas (16:9) -
+<strong>Artigo coluna única:</strong> 3.5 x 3.5 polegadas -
+<strong>Artigo largura total:</strong> 7 x 5 polegadas -
+<strong>Poster:</strong> 24 x 18 polegadas</p>
+<p><strong>Boas práticas:</strong></p>
+<pre class="r"><code># Use here() para portabilidade
+ggsave(
+  here(&quot;output&quot;, &quot;figures&quot;, &quot;massa_especies.png&quot;),
+  width = 8,
+  height = 6,
+  dpi = 300,
+  bg = &quot;white&quot;  # Fundo branco (útil com temas transparentes)
+)
+
+# Salvar em múltiplos formatos
+for (fmt in c(&quot;png&quot;, &quot;pdf&quot;, &quot;svg&quot;)) {
+  ggsave(
+    here(&quot;output&quot;, &quot;figures&quot;, paste0(&quot;grafico.&quot;, fmt)),
+    plot = meu_grafico,
+    width = 8,
+    height = 6,
+    dpi = 300
+  )
+}</code></pre>
+<p><strong>Resolução de problemas:</strong></p>
+<p><strong>Texto muito pequeno/grande:</strong> - Ajuste
+<code>width</code> e <code>height</code> (não <code>dpi</code>) - Ou
+ajuste tamanhos de fonte no gráfico antes de salvar</p>
+<p><strong>Arquivo muito grande:</strong> - PNG: reduza DPI para 150 -
+PDF com muitos pontos: converta para PNG - Simplifique o gráfico (menos
+pontos, objetos)</p>
+<p><strong>Cores diferentes do RStudio:</strong> - Especifique
+<code>bg = &quot;white&quot;</code> (ou cor de fundo desejada) - Alguns temas têm
+fundo transparente por padrão</p>
+<p><strong>Eixos cortados:</strong> - Adicione
+<code>scale_y_continuous(expand = expansion(mult = 0.05))</code> - Ou
+ajuste margens:
+<code>theme(plot.margin = margin(1, 1, 1, 1, &quot;cm&quot;))</code></p>
+<pre class="r"><code>library(patchwork)
+
+# Criar vários gráficos
+g1 &lt;- ggplot(penguins, aes(x = species, fill = species)) +
+  geom_bar() +
+  labs(title = &quot;Contagem por Espécie&quot;) +
+  theme_minimal()
+
+g2 &lt;- ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_density(alpha = 0.5) +
+  labs(title = &quot;Distribuição de Massa&quot;) +
+  theme_minimal()
+
+g3 &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point() +
+  labs(title = &quot;Nadadeira vs Massa&quot;) +
+  theme_minimal()
+
+g4 &lt;- ggplot(penguins, aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot() +
+  labs(title = &quot;Bico por Espécie&quot;) +
+  theme_minimal()
+
+# Combinar lado a lado
+g1 + g2
+
+# Combinar em cima/embaixo
+g1 / g2
+
+# Layout complexo
+(g1 + g2) / (g3 + g4)
+
+# Com título geral
+(g1 + g2) / (g3 + g4) +
+  plot_annotation(
+    title = &quot;Análise Exploratória de Pinguins&quot;,
+    subtitle = &quot;Palmer Archipelago, Antarctica&quot;,
+    caption = &quot;Dados: palmerpenguins&quot;
+  )
+
+# Coletar legendas
+(g1 + g2) / (g3 + g4) +
+  plot_layout(guides = &quot;collect&quot;) &amp;
+  theme(legend.position = &quot;bottom&quot;)</code></pre>
+<hr />
+</div>
+<div id="salvando-gráficos-ggsave-1" class="section level2">
+<h2>2.5 Salvando Gráficos (ggsave)</h2>
+<pre class="r"><code># Criar gráfico
+meu_grafico &lt;- ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot() +
+  labs(
+    title = &quot;Massa Corporal por Espécie de Pinguim&quot;,
+    x = &quot;Espécie&quot;,
+    y = &quot;Massa Corporal (g)&quot;
+  ) +
+  theme_minimal() +
+  theme(legend.position = &quot;none&quot;)
+
+# Salvar como PNG
+# ggsave(
+#   filename = here(&quot;output&quot;, &quot;figures&quot;, &quot;massa_especies.png&quot;),
+#   plot = meu_grafico,
+#   width = 8,
+#   height = 6,
+#   dpi = 300
+# )
+
+# Salvar como PDF (vetorial)
+# ggsave(
+#   filename = here(&quot;output&quot;, &quot;figures&quot;, &quot;massa_especies.pdf&quot;),
+#   plot = meu_grafico,
+#   width = 8,
+#   height = 6
+# )
+
+# Salvar último gráfico criado
+# ggsave(here(&quot;output&quot;, &quot;figures&quot;, &quot;ultimo_grafico.png&quot;), dpi = 300)
+
+# Diferentes formatos
+# ggsave(&quot;grafico.png&quot;)   # PNG
+# ggsave(&quot;grafico.pdf&quot;)   # PDF
+# ggsave(&quot;grafico.svg&quot;)   # SVG (escalável)
+# ggsave(&quot;grafico.jpg&quot;)   # JPEG</code></pre>
+<hr />
+</div>
+<div id="exercícios-práticos" class="section level2">
+<h2>Exercícios Práticos</h2>
+<div id="exercício-1-transformação-de-dados" class="section level3">
+<h3>Exercício 1: Transformação de dados</h3>
+<pre class="r"><code># Dados de temperatura (wide)
+temp_wide &lt;- tibble(
+  cidade = c(&quot;São Paulo&quot;, &quot;Rio de Janeiro&quot;, &quot;Belo Horizonte&quot;),
+  jan = c(25, 28, 24),
+  fev = c(26, 29, 25),
+  mar = c(24, 27, 23),
+  abr = c(22, 25, 21)
+)
+
+# a) Transforme para formato long
+
+
+# b) Calcule temperatura média por cidade
+
+
+# c) Qual cidade teve maior variação?
+
+
+# d) Crie gráfico de linhas mostrando temperatura ao longo dos meses</code></pre>
+</div>
+<div id="exercício-2-limpeza-e-io" class="section level3">
+<h3>Exercício 2: Limpeza e I/O</h3>
+<pre class="r"><code># a) Crie um dataset com nomes de colunas bagunçados e limpe com janitor
+
+
+# b) Adicione algumas linhas com NA e trate-os adequadamente
+
+
+# c) Salve o dataset limpo como CSV usando here()
+
+
+# d) Leia o arquivo de volta e confirme que está correto</code></pre>
+</div>
+<div id="exercício-3-visualização-completa" class="section level3">
+<h3>Exercício 3: Visualização completa</h3>
+<pre class="r"><code># Use o dataset penguins para criar:
+
+# a) Um gráfico de dispersão relacionando duas variáveis numéricas
+
+
+# b) Um boxplot comparando espécies
+
+
+# c) Um histograma da distribuição de massa corporal
+
+
+# d) Combine os 3 gráficos usando patchwork
+
+
+# e) Personalize com temas, cores e labels apropriados
+
+
+# f) Salve o resultado final com ggsave()</code></pre>
+<hr />
+</div>
+</div>
+<div id="commit-do-dia" class="section level2">
+<h2>Commit do Dia</h2>
+<pre class="bash"><code>git add scripts/03_transformacao_viz.R
+git commit -m &quot;Dia 3: transformação, I/O e visualização com ggplot2&quot;
 git push origin main</code></pre>
-<div style="page-break-after: always;"></div>
+<hr />
 </div>
+<div id="checklist-de-encerramento" class="section level2">
+<h2>Checklist de Encerramento</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Dominou pivot_longer e
+pivot_wider</label></li>
+<li><label><input type="checkbox"></input>Entendeu separate e
+unite</label></li>
+<li><label><input type="checkbox"></input>Sabe tratar valores
+ausentes</label></li>
+<li><label><input type="checkbox"></input>Consegue ler CSV e
+Excel</label></li>
+<li><label><input type="checkbox"></input>Organiza projetos com
+here()</label></li>
+<li><label><input type="checkbox"></input>Conhece janitor e skimr</label></li>
+<li><label><input type="checkbox"></input>Cria gráficos básicos com
+ggplot2</label></li>
+<li><label><input type="checkbox"></input>Personaliza gráficos (temas, cores,
+labels)</label></li>
+<li><label><input type="checkbox"></input>Combina gráficos com
+patchwork</label></li>
+<li><label><input type="checkbox"></input>Salva gráficos com
+ggsave()</label></li>
+<li><label><input type="checkbox"></input>Fez commit no seu fork</label></li>
+</ul>
+<hr />
 </div>
-<div id="troubleshooting-por-sistema-operacional" class="section level1">
-<h1>Troubleshooting por Sistema Operacional</h1>
-<div id="windows" class="section level2">
-<h2>Windows</h2>
-<p>Git não encontrado: reinstalar Git (opção Git from the command
-line…).<br />
-Acentos estranhos: garantir UTF-8 ao salvar, ou usar
-locale(encoding=“latin1”) quando necessário.<br />
-Pacotes com erro: tentar instalar na biblioteca do usuário.</p>
+<div id="referências-rápidas" class="section level2">
+<h2>Referências Rápidas</h2>
+<ul>
+<li><strong>ggplot2 cheatsheet</strong>: <a href="https://posit.co/resources/cheatsheets/" class="uri">https://posit.co/resources/cheatsheets/</a></li>
+<li><strong>R for Data Science - Data Visualization</strong>: <a href="https://r4ds.hadley.nz/data-visualize" class="uri">https://r4ds.hadley.nz/data-visualize</a></li>
+<li><strong>tidyr documentation</strong>: <a href="https://tidyr.tidyverse.org/" class="uri">https://tidyr.tidyverse.org/</a></li>
+<li><strong>patchwork</strong>: <a href="https://patchwork.data-imaginist.com/" class="uri">https://patchwork.data-imaginist.com/</a></li>
+<li><strong>R Graph Gallery</strong>: <a href="https://r-graph-gallery.com/" class="uri">https://r-graph-gallery.com/</a></li>
+</ul>
+<hr />
+<p><strong>Amanhã no Dia 4:</strong> Integração do ChatGPT e Claude no
+RStudio! 🤖</p>
 </div>
-<div id="macos" class="section level2">
-<h2>macOS</h2>
-<p>xcrun error com Git: <code>xcode-select --install</code><br />
-LaTeX não encontrado: <code>tinytex::install_tinytex()</code></p>
-</div>
-<div id="linux-ubuntudebian" class="section level2">
-<h2>Linux (Ubuntu/Debian)</h2>
-<p>Compilação de pacotes:</p>
-<pre class="bash"><code>sudo apt install build-essential libcurl4-openssl-dev libssl-dev libxml2-dev
-sudo apt install libfontconfig1-dev libharfbuzz-dev libfribidi-dev</code></pre>
-</div>
-<div id="problemas-comuns-todos-os-so" class="section level2">
-<h2>Problemas comuns (todos os SO)</h2>
-<p>Permission denied ao fazer push: corrigir origin para o fork do
-aluno:</p>
-<pre class="bash"><code>git remote set-url origin https://github.com/SEU-USUARIO/curso-r-github-ia.git</code></pre>
-<p>API Key não encontrada: configurar no ~/.Renviron e reiniciar o
-R.</p>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div id="recursos-adicionais" class="section level1">
-<h1>Recursos Adicionais</h1>
-<p>R for Data Science (2e): <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a><br />
-Happy Git with R: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a><br />
-Cheatsheets Posit: <a href="https://posit.co/resources/cheatsheets/" class="uri">https://posit.co/resources/cheatsheets/</a><br />
-palmerpenguins: <a href="https://allisonhorst.github.io/palmerpenguins/" class="uri">https://allisonhorst.github.io/palmerpenguins/</a><br />
-Datasets: TidyTuesday, Brasil.io, Kaggle</p>
-<div style="page-break-after: always;"></div>
-</div>
-<div id="contato" class="section level1">
-<h1>Contato</h1>
-<p>Instrutor: Vinícius Silva Junqueira<br />
-Email: <a href="mailto:junqueiravinicius@hotmail.com" class="email">junqueiravinicius@hotmail.com</a><br />
-GitHub: <a href="https://github.com/viniciusjunqueira/curso-r-github-ia" class="uri">https://github.com/viniciusjunqueira/curso-r-github-ia</a><br />
-Lattes: <a href="http://lattes.cnpq.br/4686677580216927" class="uri">http://lattes.cnpq.br/4686677580216927</a><br />
-LinkedIn: www.linkedin.com/in/junqueiravinicius</p>
-<p>Última atualização: 2025-10-08<br />
-Versão: 6.0 – Dia 4 100% integração com IA no RStudio</p>
 </div>
 
 
