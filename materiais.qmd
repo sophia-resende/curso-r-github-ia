@@ -1,0 +1,15 @@
+---
+title: "Materiais do Curso"
+---
+
+## PDFs
+- [Apostila completa](curso_completo_master.pdf)
+- [Cronograma](cronograma.pdf)
+
+## Pastas e dados
+- [`materiais/`](materiais/) – dados e exemplos
+
+## Notas em R Markdown
+Liste aqui os `.Rmd` que você quer publicar como páginas:
+- [01-introducao.Rmd](01-introducao.Rmd)
+- [02-basico.Rmd](02-basico.Rmd)
