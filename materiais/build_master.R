@@ -1,5 +1,4 @@
 # install.packages("qpdf")
-
 library(qpdf)
 
 setwd('./materiais/')

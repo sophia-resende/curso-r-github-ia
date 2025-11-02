@@ -1,6 +1,7 @@
 ---
 title: "Sobre o Autor"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 geometry: margin=2.5cm
@@ -72,5 +73,5 @@ Bem-vindo ao curso. Vamos transformar dados em conhecimento!
 **Contato:**
 
 - GitHub: [github.com/viniciusjunqueira](https://github.com/viniciusjunqueira)
-- LinkedIn: [linkedin.com/in/viniciusjunqueira](https://linkedin.com/in/viniciusjunqueira)
+- LinkedIn: [linkedin.com/junqueiravinicius](https://www.linkedin.com/in/junqueiravinicius/)
 - Email: [junqueiravinicius@hotmail.com](mailto:junqueiravinicius@hotmail.com)

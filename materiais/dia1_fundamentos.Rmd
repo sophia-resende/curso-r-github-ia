@@ -53,13 +53,13 @@ knitr::opts_chunk$set(
 
 ---
 
-## 1. Apresentação do Curso (≈ 15 min)
+# Apresentação do Curso (15 min)
 
-### 1.1 Bem-vindos!
+## Bem-vindos!
 
 Olá! Seja muito bem-vindo ao **Curso Intensivo de R com GitHub e IA**. Esta jornada de 16 horas foi cuidadosamente estruturada para transformar você de iniciante a alguém capaz de realizar análises de dados completas usando ferramentas modernas e profissionais.
 
-### 1.2 Objetivos Gerais do Curso
+## Objetivos Gerais do Curso
 
 Ao final deste curso, você será capaz de:
 
@@ -69,7 +69,7 @@ Ao final deste curso, você será capaz de:
 - Versionar seu código com Git e colaborar via GitHub
 - Usar inteligência artificial (ChatGPT e Claude) para acelerar seu aprendizado e resolver problemas
 
-### 1.3 Metodologia
+## Metodologia
 
 Nossa abordagem é **100% prática e hands-on**:
 
@@ -79,14 +79,14 @@ Nossa abordagem é **100% prática e hands-on**:
 - **IA como assistente** para explicação, depuração e geração de código
 - **Multiplataforma**: todo conteúdo funciona em Windows, macOS e Linux
 
-### 1.4 Estrutura dos 4 Dias
+## Estrutura dos 4 Dias
 
 - **Dia 1 (hoje)**: Fundamentos de R + Ambiente reprodutível (RStudio, Git, GitHub, fork)
 - **Dia 2**: Lógica de programação, condicionais, funções e tidyverse básico
 - **Dia 3**: Transformações com tidyr/dplyr, leitura/escrita de dados e visualização com ggplot2
 - **Dia 4**: Integração prática do ChatGPT e Claude dentro do RStudio
 
-### 1.5 Materiais e Suporte
+## Materiais e Suporte
 
 - **Repositório GitHub**: https://github.com/viniciusjunqueira/curso-r-github-ia
 - **Datasets**: incluídos no repositório + pacote palmerpenguins
@@ -94,9 +94,9 @@ Nossa abordagem é **100% prática e hands-on**:
 
 ---
 
-## 2. Por Que R, GitHub e IA? (≈ 15 min)
+# Por Que R, GitHub e IA? (15 min)
 
-### 2.1 Por Que R?
+## Por Que R?
 
 **R é uma linguagem poderosa e gratuita**, criada especificamente para análise de dados e estatística. Algumas razões para aprender R:
 
@@ -120,7 +120,7 @@ Nossa abordagem é **100% prática e hands-on**:
 - Essencial para ciência de dados, bioinformática, economia, ciências sociais
 - Combina bem com Python em pipelines modernos de dados
 
-### 2.2 Por Que GitHub?
+## Por Que GitHub?
 
 **GitHub não é apenas para programadores!** É uma plataforma essencial para:
 
@@ -144,7 +144,7 @@ Nossa abordagem é **100% prática e hands-on**:
 - Base para deployment de aplicações
 - Padrão da indústria para ciência de dados
 
-### 2.3 Por Que IA (ChatGPT e Claude)?
+## Por Que IA (ChatGPT e Claude)?
 
 A inteligência artificial revolucionou o aprendizado de programação. **Não é trapaça, é trabalhar de forma inteligente!**
 
@@ -171,7 +171,7 @@ A inteligência artificial revolucionou o aprendizado de programação. **Não �
 
 ---
 
-## 3. Ambientação e Setup (≈ 40 min)
+# Ambientação e Setup (40 min)
 
 > **Objetivos desta seção**
 >
@@ -180,14 +180,14 @@ A inteligência artificial revolucionou o aprendizado de programação. **Não �
 > - Entender e aplicar o **workflow com fork**
 > - Preparar ambiente reprodutível com projetos `.Rproj` e `here()`
 
-### 3.1 Verificações rápidas
+## Verificações rápidas
 ```{r}
 R.version.string           # Versão do R
-# RStudio.Version()$version # Versão do RStudio
-# system("git --version")    # Confirma Git disponível
+RStudio.Version()$version  # Versão do RStudio
+system("git --version")    # Confirma Git disponível
 ```
 
-### 3.2 Configurar Git (uma vez só)
+## Configurar Git (uma vez só)
 No **Terminal do RStudio** (funciona em Windows/macOS/Linux):
 ```bash
 git config --global user.name "Seu Nome"
@@ -196,7 +196,7 @@ git config --global user.email "seu@email.com"
 git config --global --list
 ```
 
-### 3.3 Autenticar no GitHub (PAT recomendado)
+## Autenticar no GitHub (PAT recomendado)
 
 **O que é um PAT?**
 
@@ -204,15 +204,15 @@ Um Personal Access Token (PAT) é como uma "senha especial" que permite ao RStud
 
 **Passo a passo para criar e configurar o PAT:**
 
-#### 3.3.1 Instalar pacotes necessários
+### Instalar pacotes necessários
 ```{r}
-# install.packages("usethis")
-# install.packages("gitcreds")
+install.packages("usethis")
+install.packages("gitcreds")
 ```
 
-#### 3.3.2 Criar o token no GitHub
+### Criar o token no GitHub
 ```{r}
-# usethis::create_github_token()
+usethis::create_github_token()
 ```
 
 Este comando abrirá seu navegador automaticamente na página de criação de tokens do GitHub. Você verá uma página pré-configurada com as permissões necessárias.
@@ -237,9 +237,9 @@ Este comando abrirá seu navegador automaticamente na página de criação de to
    - ⚠️ **VOCÊ SÓ VERÁ ESTE TOKEN UMA VEZ!**
    - Cole em um lugar seguro temporariamente (bloco de notas)
 
-#### 3.3.3 Salvar o token no RStudio
+###  Salvar o token no RStudio
 ```{r}
-# gitcreds::gitcreds_set()
+gitcreds::gitcreds_set()
 ```
 
 Quando executar este comando, você verá algo assim no Console:
@@ -257,9 +257,9 @@ Você verá uma mensagem de confirmação:
 -> Done.
 ```
 
-#### 3.3.4 Verificar se funcionou
+#### Verificar se funcionou
 ```{r}
-# usethis::git_sitrep()
+usethis::git_sitrep()
 ```
 
 Este comando mostra o status da sua configuração Git/GitHub. Procure por:
@@ -276,13 +276,13 @@ Se você ver isso, está tudo configurado! ✅
 
 ---
 
-### 3.4 Workflow com Fork (obrigatório para a turma)
+### Workflow com Fork (obrigatório para a turma)
 
 ```
 Original (instrutor)  →  FORK (sua conta)  →  CLONE (seu PC)  →  PUSH (para seu fork)
 ```
 
-1. Abra: https://github.com/viniciusjunqueira/curso-r-github-ia  
+1. Abra: https://github.com/viniciusjunqueira/curso-r-github-ia
 2. Clique **Fork** → escolha **sua conta** → *Create fork*.  
 3. Clone **SEU fork**:
 ```bash
@@ -300,7 +300,7 @@ git remote -v
 
 ---
 
-### 3.5 Estrutura de projeto e portabilidade
+### Estrutura de projeto e portabilidade
 ```
 curso-r-github-ia/
 ├── curso-r-github-ia.Rproj
@@ -316,23 +316,23 @@ curso-r-github-ia/
 
 ```{r}
 # Caminhos: sempre prefira here::here()
-# install.packages("here")
-# library(here)
-# caminho <- here("data", "raw", "dados.csv")
-# caminho
+install.packages("here")
+library(here)
+caminho <- here("data", "raw", "dados.csv")
+caminho
 ```
 
 > **UTF-8**: salve arquivos com `File → Save with Encoding → UTF-8` (evita problemas de acentuação em todos os SOs).
 
 ---
 
-## 4. Fundamentos de R (≈ 50 min)
+# Fundamentos de R (50 min)
 
-### 4.1 Objetos básicos e operações
+## Objetos básicos e operações
 
 **O que são objetos em R?**
 
-Em R, tudo é um objeto! Quando você cria uma variável, você está criando um objeto que armazena informação na memória. Os tipos básicos mais importantes são:
+Em R, tudo é um objeto! Quando você cria uma variável, você está criando um objeto que armazena informação na memória do computador. Os tipos básicos mais importantes são:
 
 - **Numérico (numeric)**: números decimais como `3.14`, `10.5`, `-2.7`
 - **Inteiro (integer)**: números inteiros como `1L`, `100L` (o `L` indica inteiro)
@@ -343,19 +343,61 @@ Você cria objetos usando o operador de atribuição `<-` (preferido) ou `=`.
 
 ```{r}
 # Números, lógicos, strings
-x_num <- 3.14; x_log <- TRUE; x_chr <- "Olá, R!"
+x_num <- 3.14
+x_log <- TRUE
+x_chr <- "Olá, R!"
 class(x_num); typeof(x_num)
 class(x_log); typeof(x_log)
 class(x_chr); typeof(x_chr)
 
 # Aritmética
-10 + 2; 10 - 2; 10 * 2; 10 / 3; 2 ^ 3
+10 + 2  # somatório
+10 - 2  # subtração
+10 * 2  # multiplicação
+10 / 3  # divisão
+2 ^ 3   # exponecial 
 
-# Especiais
-Inf; -Inf; NaN; NA
+# Infinito positivo. Significa que o valor tende ao infinito positivo.
+a <- 1 / 0
+a
+# Resultado: Inf
+
+# Infinito negativo. Significa que o valor tende ao infinito negativo.
+b <- -1 / 0
+b
+# Resultado: -Inf
+
+# Not a Number (NaN). Indica uma operação indefinida matematicamente.
+c <- 0 / 0
+c
+# Resultado: NaN
+
+# Valor ausente (NA). Representa um valor desconhecido ou faltante.
+d <- c(2, 4, NA, 8)
+d
+# Resultado: 2  4  NA  8
+
+# -------------------------------------------------------------
+# Testando os tipos de valores
+# -------------------------------------------------------------
+
+is.infinite(a)   # TRUE
+is.nan(c)        # TRUE
+is.na(d)         # TRUE para o elemento ausente
+is.na(NaN)       # TRUE — NaN é considerado um tipo especial de NA
+is.finite(a)     # FALSE — porque Inf não é finito
+is.finite(10)    # TRUE  — número normal é finito
+
+# -------------------------------------------------------------
+# Operações que produzem resultados especiais
+# -------------------------------------------------------------
+Inf + (-Inf)     # NaN (infinito positivo menos infinito negativo é indefinido)
+Inf / Inf        # NaN
+0 * Inf          # NaN
+NA + 1           # NA
 ```
 
-### 4.2 Vetores e indexação
+## Vetores e indexação
 
 **O que são vetores?**
 
@@ -375,12 +417,44 @@ length(v); mean(v); sum(v)
 
 v[1]; v[2:4]; v[-1]
 sel <- v > 25; sel; v[sel]
-
-names(v) <- letters[1:5]
-v["c"]
 ```
 
-### 4.3 Listas e data.frames
+**Utilizando a função** `names()`: Essa função serve para dar nomes (ou cabeçalhos) aos elementos de um vetor, lista ou outro objeto em R. Esses nomes tornam os dados mais organizados e permitem acessar valores pelo nome, em vez de usar apenas posições numéricas. É útil quando você quer que cada elemento tenha um rótulo identificador, como nomes de amostras, variáveis, tratamentos ou categorias — o que deixa o código mais legível e fácil de interpretar.
+
+```{r}
+names(v) <- letters[1:5]
+
+# Mostrando o vetor com nomes
+v
+#   a   b   c   d   e 
+#  10  20  30  40  50
+
+# Acessando um elemento pelo nome
+v["c"]
+# 30
+```
+**Type coercion**. Em R, um vetor é uma estrutura homogênea, ou seja, todos os seus elementos precisam ser do mesmo tipo. Quando você cria um vetor com elementos de tipos diferentes, o R automaticamente converte (ou “coage”) todos os valores para um tipo comum que consiga representar todos eles. Esse processo é chamado de coerção de tipos (type coercion).
+
+Regras básicas de coerção:
+O R segue uma hierarquia de tipos, do mais simples para o mais geral:
+logical → integer → double → character
+
+Isso significa:
+Se você misturar lógicos (TRUE, FALSE) com números, eles viram números (TRUE = 1, FALSE = 0).
+
+Se misturar números com texto, tudo vira texto.
+
+O tipo character tem sempre prioridade, porque é o único que pode representar qualquer coisa como texto.
+
+```{r}
+x <- c(1, "a")
+# "1" "a"
+
+class(x)
+# "character"
+```
+
+## Listas e data.frames
 
 **Listas: estruturas flexíveis**
 
@@ -422,7 +496,7 @@ alunos$nome
 alunos$aprov <- ifelse(alunos$nota >= 7, "Aprovado", "Recuperação")
 ```
 
-### 4.4 Fatores
+## Fatores
 
 **O que são fatores?**
 
@@ -453,7 +527,7 @@ summary(conceito)
 
 ---
 
-## 5. Exploração inicial de dados (≈ 40 min)
+# Exploração inicial de dados (40 min)
 
 > Vamos usar um dataset real (`palmerpenguins`) para praticar **inspeção e resumo** com diferentes funções, incluindo `dplyr::glimpse()`.
 
@@ -503,7 +577,7 @@ table(penguins$species)
 # table(penguins$species, penguins$island)
 ```
 
-### 5.1 Comparando str() vs glimpse()
+## Comparando str() vs glimpse()
 
 Ambas mostram a estrutura dos dados, mas com estilos diferentes:
 
@@ -525,9 +599,9 @@ dplyr::glimpse(penguins)
 
 ---
 
-## 6. Exercícios guiados (≈ 20 min)
+# Exercícios guiados (20 min)
 
-### Exercício 1 — Vetores
+## Exercício 1 — Vetores
 1. Crie um vetor numérico com 8 valores quaisquer.  
 2. Calcule média, mediana e desvio-padrão.  
 3. Filtre apenas os valores **acima da média**.
@@ -536,7 +610,7 @@ dplyr::glimpse(penguins)
 # Seu código aqui
 ```
 
-### Exercício 2 — Data frame
+## Exercício 2 — Data frame
 1. Crie um `data.frame` com colunas: `id`, `nome`, `nota`, `ativo`.  
 2. Crie uma nova coluna `situacao` usando `ifelse(nota >= 7, "Aprovado", "Recuperação")`.  
 3. Mostre apenas as colunas `nome` e `situacao` das 2 primeiras linhas.
@@ -545,7 +619,7 @@ dplyr::glimpse(penguins)
 # Seu código aqui
 ```
 
-### Exercício 3 — Exploração `palmerpenguins`
+## Exercício 3 — Exploração `palmerpenguins`
 1. Use `glimpse()` para ter uma visão geral dos dados.
 2. Conte quantos NAs existem em cada coluna.  
 3. Crie uma nova coluna `massa_kg` convertendo `body_mass_g` para quilogramas.  
@@ -557,7 +631,7 @@ dplyr::glimpse(penguins)
 
 ---
 
-## 7. Primeiro commit (≈ 5 min)
+# Primeiro commit (5 min)
 
 No **Terminal do RStudio**:
 ```bash
@@ -570,7 +644,7 @@ git push origin main
 
 ---
 
-## 8. Checklist de encerramento
+# Checklist de encerramento
 
 - [ ] R, RStudio e Git instalados e funcionando.  
 - [ ] Git configurado com `user.name` e `user.email`.  
@@ -582,7 +656,7 @@ git push origin main
 
 ---
 
-## 9. Referências rápidas
+# Referências rápidas
 - **R for Data Science (2e)**: https://r4ds.hadley.nz/  
 - **Happy Git with R**: https://happygitwithr.com/  
 - **Cheatsheets Posit**: https://posit.co/resources/cheatsheets/  
