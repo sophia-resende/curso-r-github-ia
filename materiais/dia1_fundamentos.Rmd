@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Dia 1"
 subtitle: "Fundamentos e Ambiente de Trabalho"
@@ -23,10 +24,10 @@ header-includes:
   - \fancyfoot[R]{\small junqueiravinicius@hotmail.com}
   - \renewcommand{\headrulewidth}{0.4pt}
   - \renewcommand{\footrulewidth}{0.4pt}
-
 ---
+-->
 
-```{r setup, include=FALSE}
+```{r setup-dia-1, include=FALSE}
 # ========================================
 # CHUNK DE SETUP - NÃO APARECE NO PDF
 # ========================================

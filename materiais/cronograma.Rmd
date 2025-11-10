@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Cronograma"
 subtitle: "Introdução à Programação em R com GitHub e IA"
@@ -26,8 +27,9 @@ header-includes:
 - \renewcommand{\headrulewidth}{0.4pt}
 - \renewcommand{\footrulewidth}{0.4pt}
 ---
+-->
 
-```{r setup, include=FALSE}
+```{r setup-cronograma, include=FALSE}
 # ========================================
 # CHUNK DE SETUP - NÃO APARECE NO PDF
 # ========================================

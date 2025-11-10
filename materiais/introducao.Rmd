@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Sobre o Curso"
 output:
@@ -6,6 +7,7 @@ output:
 geometry: margin=2.5cm
 fontsize: 11pt
 ---
+-->
 
 # Bem-vindo a Introdução Programação em R com GitHub, ChatGPT e Claude
 

@@ -1,18 +1,19 @@
+<!--
 ---
 title: "Dia 4"
+subtitle: "Integração do ChatGPT e Claude no RStudio"
 author: "Vinícius Silva Junqueira"
 date: "`r Sys.Date()`"
 output:
-  html_document:
-    toc: true
-    toc_depth: '2'
-    df_print: paged
   pdf_document:
     latex_engine: xelatex
     toc: true
     toc_depth: 2
     number_sections: true
-subtitle: Introdução Programação em R com GitHub, ChatGPT e Claude
+  html_document:
+    toc: true
+    toc_depth: '2'
+    df_print: paged
 lang: "pt-BR"
 fontsize: 11pt
 geometry: margin=2.5cm
@@ -26,11 +27,12 @@ header-includes:
 - \renewcommand{\headrulewidth}{0.4pt}
 - \renewcommand{\footrulewidth}{0.4pt}
 ---
+-->
 
-```{r setup, include=FALSE}
+```{r setup-dia-4, include=FALSE}
 knitr::opts_chunk$set(
   echo = TRUE,
-  eval = FALSE,
+  eval = F,
   warning = FALSE,
   message = FALSE,
   error = FALSE,
@@ -38,12 +40,15 @@ knitr::opts_chunk$set(
 )
 ```
 
+\newpage
+
 # Integração do ChatGPT e Claude no RStudio
 
 > **Objetivo do dia**
->
+
 > Capacitar você a usar ChatGPT (OpenAI) e Claude (Anthropic) diretamente no RStudio para:
-> - Explicar erros e debugar código
+
+> - Explicar erros e fazer debug do código
 > - Revisar e refatorar código
 > - Gerar código e funções
 > - Criar rascunhos de relatórios e documentação
@@ -57,63 +62,52 @@ knitr::opts_chunk$set(
 
 ```{r revisao}
 library(tidyverse)
-
-# Dia 1: Fundamentos
-vetor <- c(1, 2, 3, 4, 5)
-mean(vetor)
-
-# Dia 2: Funções e tidyverse
-calcular_media <- function(x) {
-  mean(x, na.rm = TRUE)
-}
-
-dados <- tibble(x = 1:10, y = x^2)
-
-# Dia 3: Transformação e visualização
-dados %>%
-  mutate(z = x + y) %>%
-  ggplot(aes(x, y)) +
-  geom_point()
 ```
 
 ---
 
-# Parte 1: Conceitos e Modelos (19h00 - 19h30)
+# Conceitos e Modelos (19h00 - 19h30)
 
-## 1.1 O que são LLMs (Large Language Models)?
+## O que são LLMs (Large Language Models)?
 
 **LLM = Large Language Model** (Modelo de Linguagem Grande)
 
 **O que são:**
+
 - Modelos de inteligência artificial treinados em volumes massivos de texto
 - Aprendem padrões da linguagem, conceitos e relações
 - Capazes de gerar texto, código, explicações e muito mais
 
 **Como funcionam (simplificado):**
+
 1. **Treinamento**: Leem bilhões de páginas de texto da internet, livros, código
 2. **Aprendizado**: Identificam padrões - como palavras se relacionam, estruturas de código
 3. **Geração**: Preveem a próxima palavra/token mais provável dada uma entrada
 
 **Não são:**
+
 - ❌ Bancos de dados que "buscam" respostas
 - ❌ Sistemas de busca como Google
 - ❌ Calculadoras ou compiladores
 
 **São:**
+
 - ✅ Sistemas de reconhecimento de padrões estatísticos
 - ✅ Geradores de texto coerente baseados em probabilidades
 - ✅ Assistentes que "entendem" contexto
 
-### Modelos principais que usaremos
+## Modelos principais que usaremos
 
 **1. ChatGPT (OpenAI)**
 
 **Família GPT-4:**
+
 - `gpt-4o`: Mais rápido e barato, multimodal (texto + imagem)
 - `gpt-4o-mini`: Ainda mais rápido e barato, excelente custo-benefício
 - `gpt-4-turbo`: Balanceado entre velocidade e qualidade
 
 **Pontos fortes:**
+
 - ✅ Explicações didáticas e passo a passo
 - ✅ Geração rápida de código
 - ✅ Bom em tarefas criativas
@@ -121,6 +115,7 @@ dados %>%
 - ✅ Mais barato que Claude
 
 **Quando usar:**
+
 - Explicar conceitos de forma simples
 - Gerar código rapidamente (protótipos)
 - Criar documentação básica
@@ -129,12 +124,14 @@ dados %>%
 **2. Claude (Anthropic)**
 
 **Família Claude 3:**
+
 - `claude-3-5-sonnet-latest`: Melhor modelo, mais inteligente
 - `claude-3-opus`: Mais preciso, melhor para análises complexas
 - `claude-3-sonnet`: Balanceado
 - `claude-3-haiku`: Mais rápido e barato
 
 **Pontos fortes:**
+
 - ✅ Análise profunda de código
 - ✅ Respostas mais longas e detalhadas
 - ✅ Melhor em raciocínio complexo
@@ -142,12 +139,13 @@ dados %>%
 - ✅ Melhor contexto (200k tokens vs 128k do GPT)
 
 **Quando usar:**
+
 - Revisar código complexo
 - Análise e refatoração profunda
 - Explicações técnicas detalhadas
 - Debugging de problemas difíceis
 
-### Comparação prática
+## Comparação prática
 
 | Critério | ChatGPT | Claude |
 |----------|---------|--------|
@@ -162,7 +160,7 @@ dados %>%
 
 ---
 
-## 1.2 O que são APIs?
+# O que são APIs?
 
 **API = Application Programming Interface** (Interface de Programação de Aplicações)
 
@@ -216,9 +214,9 @@ dados %>%
 
 ---
 
-## 1.3 Limites e Custos
+# Limites e Custos
 
-### Custos por modelo
+## Custos por modelo
 
 **OpenAI (GPT-4o-mini) - mais barato:**
 - Input: $0.150 / 1M tokens (~750k palavras)
@@ -241,7 +239,7 @@ dados %>%
 - Token ≈ 0.5 palavras em português (devido aos acentos)
 - "Olá, como você está?" ≈ 7-8 tokens
 
-### Rate Limits (Limites de taxa)
+## Rate Limits (Limites de taxa)
 
 **Por que existem:**
 - Prevenir abuso e spam
@@ -271,9 +269,9 @@ dados %>%
 
 ---
 
-## 1.4 Boas Práticas de Uso Responsável de IA
+# Boas Práticas de Uso Responsável de IA
 
-### Privacidade e Dados Sensíveis
+## Privacidade e Dados Sensíveis
 
 **⚠️ NUNCA envie para APIs de IA:**
 - ❌ Senhas ou credenciais
@@ -290,7 +288,7 @@ dados %>%
 
 **Lembre-se:** Tudo que você envia pode ser usado para treinar modelos futuros!
 
-### Versionamento de Código Gerado por IA
+## Versionamento de Código Gerado por IA
 
 **Por que versionar:**
 - Transparência sobre origem do código
@@ -312,7 +310,7 @@ zscore <- function(x) {
 git commit -m "feat: adiciona função zscore (gerada com ChatGPT)"
 ```
 
-### Validação e Teste
+## Validação e Teste
 
 **⚠️ CRÍTICO: NUNCA use código de IA sem entender e testar!**
 
@@ -342,7 +340,7 @@ git commit -m "feat: adiciona função zscore (gerada com ChatGPT)"
    - Adicione validações
    - Otimize performance
 
-### Uso Ético
+## Uso Ético
 
 **Faça:**
 - ✅ Use IA como assistente, não substituto do aprendizado
@@ -360,9 +358,9 @@ git commit -m "feat: adiciona função zscore (gerada com ChatGPT)"
 
 ---
 
-# Parte 2: Configuração de Chaves e Ambiente (19h30 - 20h15)
+# Configuração de Chaves e Ambiente (19h30 - 20h15)
 
-## 2.1 Variáveis de Ambiente no R
+## Variáveis de Ambiente no R
 
 **O que são variáveis de ambiente?**
 
@@ -371,6 +369,7 @@ Variáveis de ambiente são configurações que ficam armazenadas fora do seu c�
 **Por que usar para chaves de API?**
 
 **Segurança:**
+
 - ✅ Chaves não ficam no código (evita commit acidental para GitHub)
 - ✅ Diferentes chaves para diferentes ambientes (dev, prod)
 - ✅ Fácil rotação de chaves sem mudar código
@@ -388,14 +387,16 @@ Sys.setenv(NOME_DA_VARIAVEL = "valor")
 Sys.getenv()
 ```
 
-### O arquivo .Renviron
+## O arquivo .Renviron
 
 **O que é .Renviron:**
+
 - Arquivo de texto simples que define variáveis de ambiente
 - Carregado automaticamente quando R inicia
 - Localização: diretório home do usuário (`~/.Renviron`)
 
 **Vantagens:**
+
 - Variáveis persistem entre sessões
 - Não precisa redefinir toda vez
 - Fácil de gerenciar
@@ -434,23 +435,26 @@ ANTHROPIC_API_KEY=sk-ant-abcdefg123456789
 
 ---
 
-## 2.2 Criando Chaves de API
+# Criando Chaves de API
 
-### OpenAI (ChatGPT)
+## OpenAI (ChatGPT)
 
 **Passo 1: Criar conta**
+
 1. Acesse https://platform.openai.com/
-2. Sign up (criar conta) ou Login
+2. Crie uma conta ou Login
 3. Verifique email
 
 **Passo 2: Adicionar método de pagamento**
-1. Settings → Billing
-2. Add payment method
+
+1. Quickstart
+2. Adicione método de pagamento
 3. **Importante:** Configure um limite de gastos!
-   - Recommended: $5-10/mês para aprendizado
+   - Recomendado: $5-10/mês para aprendizado
    - Evita surpresas na fatura
 
 **Passo 3: Criar API Key**
+
 1. Settings → API Keys
 2. Create new secret key
 3. Dê um nome descritivo: "RStudio - Curso R"
@@ -459,30 +463,35 @@ ANTHROPIC_API_KEY=sk-ant-abcdefg123456789
    - Guarde em local seguro temporariamente
 
 **Passo 4: Configurar no R**
-```r
+
+```{r}
 usethis::edit_r_environ()
 # Adicione: OPENAI_API_KEY=sk-proj-SUA_CHAVE_AQUI
 # Salve e reinicie R
 ```
 
 **Passo 5: Testar**
-```r
+
+```{r}
 Sys.getenv("OPENAI_API_KEY")
 # Deve mostrar: "sk-proj-..."
 ```
 
-### Anthropic (Claude)
+## Anthropic (Claude)
 
 **Passo 1: Criar conta**
+
 1. Acesse https://console.anthropic.com/
-2. Sign up ou Login
+2. Crie uma conta ou Login
 3. Verifique email
 
 **Passo 2: Obter créditos**
+
 - Contas novas ganham alguns créditos gratuitos ($5-10)
 - Depois precisa adicionar método de pagamento
 
 **Passo 3: Criar API Key**
+
 1. Settings → API Keys
 2. Create Key
 3. Nome: "RStudio - Curso R"
@@ -490,23 +499,25 @@ Sys.getenv("OPENAI_API_KEY")
    - Formato: `sk-ant-...`
 
 **Passo 4: Configurar no R**
-```r
+
+```{r}
 usethis::edit_r_environ()
-# Adicione: ANTHROPIC_API_KEY=sk-ant-SUA_CHAVE_AQUI
+# Adicione: ANTHROPIC_API_KEY=
 # Salve e reinicie R
 ```
 
 **Passo 5: Testar**
-```r
+
+```{r}
 Sys.getenv("ANTHROPIC_API_KEY")
 # Deve mostrar: "sk-ant-..."
 ```
 
 ---
 
-## 2.3 Instalação de Pacotes
+# Instalação de Pacotes
 
-```r
+```{r}
 # Pacotes necessários
 install.packages(c(
   "gptstudio",    # Interface para ChatGPT no RStudio
@@ -522,9 +533,10 @@ library(httr2)
 library(jsonlite)
 ```
 
-### O que cada pacote faz
+## O que cada pacote faz
 
 **gptstudio:**
+
 - Addins no RStudio para ChatGPT
 - Chat panel integrado
 - Seleção de código + análise
@@ -532,18 +544,21 @@ library(jsonlite)
 - Correção de erros
 
 **chattr:**
+
 - Interface unificada para múltiplos LLMs
 - Suporta OpenAI, Anthropic, Google, outros
 - Chat interativo no console
 - Configuração flexível de modelos
 
 **httr2:**
+
 - Cliente HTTP moderno para R
 - Fazer requisições para APIs
 - Melhor que httr (versão anterior)
 - Pipe-friendly (`|>`)
 
 **jsonlite:**
+
 - Converter entre R e JSON
 - APIs usam JSON para comunicação
 - Parse de respostas JSON
@@ -553,48 +568,83 @@ library(jsonlite)
 # INTERVALO (20h15 - 20h30)
 
 Aproveite para:
+
 - Verificar se suas chaves estão configuradas
 - Instalar os pacotes
-- Testar conexão com internet
 - Tomar água/café!
 
 ---
 
-# Parte 3: RStudio + gptstudio (ChatGPT) (20h30 - 21h00)
+# RStudio + gptstudio (ChatGPT) (20h30 - 21h00)
 
-## 3.1 Conhecendo o gptstudio
+## Conhecendo o gptstudio
 
 **gptstudio** adiciona superpoderes de IA ao RStudio através de Addins.
 
 **Recursos principais:**
+
 1. **ChatGPT Chat**: Painel de chat lateral
 2. **Comment Code**: Adiciona comentários ao código
 3. **Explain Code**: Explica código selecionado
 4. **Write Code**: Gera código a partir de descrição
 5. **Edit Code**: Refatora/melhora código
 
-### Acessando os Addins
+## Acessando os Addins
 
 **Menu:** `Addins → GPTSTUDIO → ...`
 
 **Atalhos de teclado (configuráveis):**
+
 - Tools → Modify Keyboard Shortcuts
 - Busque "GPTSTUDIO"
 - Configure atalhos personalizados
 
 ---
 
-## 3.2 Chat Integrado
+## Chat Integrado
 
 **Como abrir:**
-```r
-# No console
-gptstudio::chat()
 
-# Ou: Addins → GPTSTUDIO → ChatGPT Chat
+```{r}
+gptstudio_chat(host = getOption("shiny.host", "127.0.0.1"))
+```
+
+```{r}
+# Para OpenAI
+gptstudio::get_available_models(service = "openai")
+
+# Para Anthropic (Claude)
+gptstudio::get_available_models(service = "anthropic")
+
+# Para Google (Gemini)
+# gptstudio::get_available_models(service = "google")
+
+# Para Azure OpenAI
+# gptstudio::get_available_models(service = "azure_openai")
+```
+
+```{r}
+# Configurar o modelo globalmente via variável de ambiente
+# Sys.setenv(OPENAI_MODEL = "gpt-4")
+Sys.setenv(OPENAI_MODEL = "gpt-3.5-turbo")
+# Sys.setenv(OPENAI_MODEL = "gpt-4-turbo-preview")
+```
+
+```{r}
+# Especificar o modelo diretamente na chamada
+# gptstudio::chat(
+  # prompt = "Sua pergunta aqui",
+  # model = "gpt-4"
+# )
+```
+
+```{r}
+# No console
+gptstudio::chat("Qual é a capital do Brasil?")
 ```
 
 **Interface do Chat:**
+
 - Painel lateral direito
 - Campo de input na parte inferior
 - Histórico de conversa acima
@@ -602,21 +652,24 @@ gptstudio::chat()
 
 **Uso básico:**
 
-```r
+```{r}
 # Perguntas gerais
-"Como criar um vetor em R?"
+
+gptstudio::chat("Como criar um vetor em R?")
+
 
 # Explicar conceitos
-"O que é um data.frame?"
+# "O que é um data.frame?"
 
 # Gerar código
-"Crie uma função que calcule média e desvio padrão"
+# "Crie uma função que calcule média e desvio padrão"
 
 # Debugging
-"Por que este código dá erro: mean(NA)"
+# "Por que este código dá erro: mean(NA)"
 ```
 
 **Dicas para bons prompts:**
+
 - Seja específico
 - Dê contexto quando necessário
 - Peça explicações passo a passo
@@ -624,16 +677,17 @@ gptstudio::chat()
 
 ---
 
-## 3.3 Explicar Código Selecionado
+## Explicar Código Selecionado
 
 **Como usar:**
+
 1. Selecione código no editor
 2. `Addins → GPTSTUDIO → Explain Code`
 3. Explicação aparece no console ou chat
 
 **Exemplo:**
 
-```r
+```{r}
 # Selecione este código e peça explicação
 dados %>%
   filter(!is.na(valor)) %>%
@@ -647,6 +701,7 @@ dados %>%
 ```
 
 **O que o ChatGPT explica:**
+
 - O que cada linha faz
 - Ordem de execução
 - Funções usadas
@@ -654,9 +709,10 @@ dados %>%
 
 ---
 
-## 3.4 Comentar Código Automaticamente
+## Comentar Código Automaticamente
 
 **Como usar:**
+
 1. Selecione código sem comentários
 2. `Addins → GPTSTUDIO → Comment Code`
 3. Comentários são inseridos automaticamente
@@ -697,7 +753,7 @@ calcular_estatisticas <- function(x) {
 
 ---
 
-## 3.5 Chamadas via API Manual (httr2)
+## Chamadas via API Manual (httr2)
 
 Para mais controle e automação, podemos chamar a API diretamente.
 
@@ -764,7 +820,7 @@ cat(resposta)
 
 ---
 
-## 3.6 Casos de Uso Práticos com ChatGPT
+## Casos de Uso Práticos com ChatGPT
 
 ### Caso 1: Explicar um erro
 
@@ -837,19 +893,20 @@ stopifnot(all(is.nan(teste3)))  # sd=0 → NaN
 
 ---
 
-# Parte 4: RStudio + chattr (Claude) (21h00 - 21h30)
+# RStudio + chattr (Claude) (21h00 - 21h30)
 
-## 4.1 Conhecendo o chattr
+## Conhecendo o chattr
 
 **chattr** é uma interface unificada para múltiplos modelos de IA, incluindo Claude.
 
 **Vantagens:**
+
 - Suporta Claude, ChatGPT, Google Gemini, outros
 - Interface simples e consistente
 - Chat interativo no console
 - Fácil trocar entre modelos
 
-### Configuração inicial
+## Configuração inicial
 
 ```{r chattr-config}
 library(chattr)
@@ -870,7 +927,7 @@ chattr_defaults()
 
 ---
 
-## 4.2 Chat Interativo
+## Chat Interativo
 
 **Como usar:**
 
@@ -886,13 +943,14 @@ chattr()
 ```
 
 **Recursos do chat:**
+
 - Histórico de conversa mantido na sessão
 - Contexto preservado (lembra conversa anterior)
 - Copy/paste de código facilmente
 
 ---
 
-## 4.3 Chat Programático
+## Chat Programático
 
 ```{r chattr-programatico}
 # Fazer pergunta diretamente
@@ -918,7 +976,7 @@ print(historico)
 
 ---
 
-## 4.4 Chamadas via API Manual (Claude)
+## Chamadas via API Manual (Claude)
 
 Para controle total e automação com Claude:
 
@@ -978,7 +1036,7 @@ cat(resposta)
 
 ---
 
-## 4.5 Casos de Uso Práticos com Claude
+## Casos de Uso Práticos com Claude
 
 ### Caso 1: Análise profunda de código
 
@@ -1111,9 +1169,9 @@ Run `rlang::last_trace()` to see where the error occurred.
 
 ---
 
-# Parte 5: Exercício Guiado de Integração (21h30 - 22h00)
+# Exercício Guiado de Integração (21h30 - 22h00)
 
-## 5.1 Tarefa 1: Revisar código com gptstudio
+## Tarefa 1: Revisar código com gptstudio
 
 **Objetivo:** Usar ChatGPT para revisar um script tidyverse e propor melhorias.
 
@@ -1180,7 +1238,7 @@ print(resultado)
 
 ---
 
-## 5.2 Tarefa 2: Gerar função com chattr (Claude)
+## Tarefa 2: Gerar função com chattr (Claude)
 
 **Objetivo:** Usar Claude para gerar uma função robusta.
 
@@ -1224,7 +1282,7 @@ Crie uma função em R chamada 'estatisticas_coluna' que:
 
 ---
 
-## 5.3 Tarefa 3: Documento de Reflexão
+## Tarefa 3: Documento de Reflexão
 
 **Objetivo:** Documentar o processo e aprendizados.
 
@@ -1293,7 +1351,7 @@ output: html_document
 
 ---
 
-## 5.4 Checklist Final
+## Checklist Final
 
 Antes de fazer o commit final, verifique:
 
@@ -1351,7 +1409,7 @@ Antes de fazer o commit final, verifique:
 
 ---
 
-## 5.5 Commit e Push
+## Commit e Push
 
 ```bash
 # Adicionar arquivos

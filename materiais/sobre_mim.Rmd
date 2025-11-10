@@ -1,3 +1,4 @@
+<!-- 
 ---
 title: "Sobre o Autor"
 output:
@@ -7,6 +8,7 @@ output:
 geometry: margin=2.5cm
 fontsize: 11pt
 ---
+-->
 
 # Sobre o Autor
 
@@ -43,7 +45,7 @@ Minha experiência abrange tanto o melhoramento genético de plantas quanto de a
 
 Ao longo da minha trajetória, **R se tornou a ferramenta fundamental** do meu trabalho diário. Foi através do R que consegui analisar milhões de dados fenotípicos e genotípicos, implementar modelos estatísticos complexos, criar visualizações que comunicam resultados para diferentes públicos, e desenvolver ferramentas computacionais que impactam decisões estratégicas em programas de melhoramento.
 
-Lembro-me perfeitamente de quando comecei a aprender R durante meu mestrado. No início, tudo parecia confuso e intimidador. Passei por frustrações, erros incompreensíveis e momentos em que pensei em desistir. Mas persisti, e posso afirmar sem hesitação: **aprender R foi uma das decisões mais transformadoras da minha carreira**.
+Lembro-me perfeitamente de quando comecei a aprender R durante meu mestrado. No início, tudo parecia confuso e intimidador. Passei por frustrações, erros incompreensíveis e momentos em que pensei em desistir. Mas persisti, e posso afirmar sem hesitação: **aprender linguagens de programação foi uma das decisões mais transformadoras da minha carreira**.
 
 O R me deu autonomia para resolver problemas, liberdade para explorar dados de formas criativas, e a capacidade de comunicar descobertas científicas com clareza. Ele abriu portas profissionais que eu nem imaginava existirem e me permitiu colaborar com pesquisadores ao redor do mundo.
 
@@ -58,7 +60,7 @@ Minha abordagem é diferente porque:
 - **Integro ferramentas modernas de IA** ao aprendizado, acelerando sua curva de evolução
 - **Valorizo a aplicação prática** sobre teoria abstrata
 
-Este curso é resultado de anos ensinando R para colegas, alunos e colaboradores de diferentes áreas. Refinei o conteúdo com base em centenas de dúvidas reais, erros comuns e feedbacks valiosos. Meu objetivo é que você não apenas aprenda R, mas que desenvolva confiança para usá-lo como ferramenta transformadora em sua própria jornada profissional.
+Este curso é resultado de anos utilizando R no melhoramento genético. Refinei o conteúdo com base em de dúvidas reais, erros comuns e feedbacks valiosos. Meu objetivo é que você não apenas aprenda R, mas que desenvolva confiança para usá-lo como ferramenta transformadora em sua própria jornada profissional.
 
 ## Vamos Juntos!
 

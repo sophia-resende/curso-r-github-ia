@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Dia 2"
 subtitle: "Lógica, Funções e Introdução ao Tidyverse"
@@ -22,8 +23,9 @@ header-includes:
   - \renewcommand{\headrulewidth}{0.4pt}
   - \renewcommand{\footrulewidth}{0.4pt}
 ---
+-->
 
-```{r setup, include=FALSE}
+```{r setup-dia-2, include=FALSE}
 # ========================================
 # CHUNK DE SETUP - NÃO APARECE NO PDF
 # ========================================
