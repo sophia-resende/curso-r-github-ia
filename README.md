@@ -3,6 +3,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![R](https://img.shields.io/badge/R-4.0+-blue.svg)](https://www.r-project.org/)
 
+## 🌐 Acesse o Curso Online
+
+**📖 [Clique aqui para acessar o material completo do curso](https://viniciusjunqueira.github.io/curso-r-github-ia/bem-vindo-ao-curso.html)**
+
 ## 📚 Visão Geral
 
 Este curso oferece uma introdução abrangente à programação em R, integrando ferramentas modernas de controle de versão (Git/GitHub) e inteligência artificial (ChatGPT e Claude) diretamente no workflow de desenvolvimento. Desenvolvido para pesquisadores, cientistas de dados e profissionais que desejam dominar a análise de dados e a programação em R com as melhores práticas contemporâneas.
