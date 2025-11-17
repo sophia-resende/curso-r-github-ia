@@ -478,7 +478,7 @@ class(x)
 
 #### Listas: estruturas flexíveis
 
-Uma **lista** é uma estrutura que pode conter elementos de **diferentes tipos** — ao contrário dos vetores, que são homogêneos.  
+Uma **lista** (`list`) é uma estrutura que pode conter elementos de **diferentes tipos** — ao contrário dos vetores, que são homogêneos.  
 Listas são extremamente versáteis e podem armazenar **números, textos, vetores, outras listas** e até **data.frames**!
 
 #### Uso típico de listas:
@@ -504,6 +504,7 @@ info
 ```
 A função `str()` (de *structure*) exibe um resumo compacto da estrutura de qualquer objeto em R.  
 É muito útil para entender rapidamente o conteúdo de listas e data.frames, mostrando:
+
 - O tipo de cada elemento (numérico, lógico, texto, etc.)
 - O tamanho dos vetores internos
 - Uma prévia dos valores armazenados
@@ -513,9 +514,10 @@ str(info)
 ```
 **Data.frames: a estrutura tabular**
 
-Um **data.frame** é a estrutura mais importante para análise de dados em R. É similar a uma planilha do Excel ou uma tabela de banco de dados: tem linhas (observações) e colunas (variáveis).
+Um **data.frame** (`data.frame`) é a estrutura mais importante para análise de dados em R. É similar a uma planilha do Excel ou uma tabela de banco de dados: tem linhas (observações) e colunas (variáveis).
 
 **Características do data.frame:**
+
 - Cada coluna pode ser de um tipo diferente (uma coluna numérica, outra texto)
 - Cada coluna é um vetor e deve ter o mesmo comprimento
 - É como uma lista especial onde todos os elementos têm o mesmo tamanho
@@ -548,7 +550,7 @@ alunos$aprov <- ifelse(alunos$nota >= 7, "Aprovado", "Recuperação")
 
 #### Diferença entre lista e data.frame
 
-| Aspecto | **Lista (`list`)** | **Data.frame** |
+| Aspecto | **Lista** | **Data.frame** |
 |----------|--------------------|----------------|
 | Estrutura | Coleção genérica de objetos | Lista especial com vetores de mesmo comprimento |
 | Tipos de elementos | Pode misturar tipos livremente | Cada coluna pode ter tipo diferente, mas mesmo tamanho |
@@ -583,7 +585,7 @@ as.data.frame(nova_lista)
 
 **O que são fatores?**
 
-**Fatores** são a forma do R representar **variáveis categóricas** (também chamadas de qualitativas). São usados para dados que podem assumir um número limitado de valores distintos, chamados de "níveis" (levels).
+**Fatores** (`factor`) são a forma do R representar **variáveis categóricas** (também chamadas de qualitativas). São usados para dados que podem assumir um número limitado de valores distintos, chamados de "níveis" (levels).
 
 **Quando usar fatores:**
 
@@ -641,19 +643,23 @@ Uma tibble é uma versão mais moderna e segura de um data.frame, usada no tidyv
 Principais diferenças:
 
 - Impressão:
+
   - `data.frame` imprime tudo (todas as linhas e todas as colunas, às vezes vira uma parede de texto).
   - `tibble` imprime só as primeiras linhas e corta na largura da tela, mostrando também o tipo de cada coluna.
 
 - Tipos na impressão:
+
   - tibbles sempre mostram o tipo de dado de cada coluna (`<dbl>`, `<int>`, `<chr>`, `<fct>`, etc.).
   - data.frames não mostram isso.
 
 - Subsetting:
+
   - Em um `data.frame`, `df[, "coluna"]` pode virar vetor.
   - Em uma tibble, `tb[ , "coluna"]` ainda é tibble (mais previsível).
   - Para vetor puro, usa-se `tb[["coluna"]]` ou `tb$coluna`.
 
 - Nomes estranhos:
+
   - tibbles aceitam nomes de colunas não sintáticos (por exemplo `"2024 (%)"`), e você acessa com crase: `tb$`2024 (%)``.
   - data.frames costumam tentar corrigir/alterar o nome automaticamente.
 
@@ -717,6 +723,7 @@ dplyr::glimpse(penguins)
 ```
 
 **Vantagens do `glimpse()`:**
+
 - Mostra tipo de cada coluna de forma clara
 - Apresenta primeiros valores de forma compacta
 - Melhor para datasets com muitas colunas
@@ -729,6 +736,7 @@ dplyr::glimpse(penguins)
 ## Exercícios guiados (20 min)
 
 ### Exercício 1 — Vetores
+
 1. Crie um vetor numérico com 8 valores quaisquer.  
 2. Calcule média, mediana e desvio-padrão.  
 3. Filtre apenas os valores **acima da média**.
@@ -738,6 +746,7 @@ dplyr::glimpse(penguins)
 ```
 
 ### Exercício 2 — Data frame
+
 1. Crie um `data.frame` com colunas: `id`, `nome`, `nota`, `ativo`.  
 2. Crie uma nova coluna `situacao` usando `ifelse(nota >= 7, "Aprovado", "Recuperação")`.  
 3. Mostre apenas as colunas `nome` e `situacao` das 2 primeiras linhas.
@@ -747,6 +756,7 @@ dplyr::glimpse(penguins)
 ```
 
 ### Exercício 3 — Exploração `palmerpenguins`
+
 1. Use `glimpse()` para ter uma visão geral dos dados.
 2. Conte quantos NAs existem em cada coluna.  
 3. Crie uma nova coluna `massa_kg` convertendo `body_mass_g` para quilogramas.  
@@ -761,6 +771,7 @@ dplyr::glimpse(penguins)
 ## Primeiro commit (5 min)
 
 No **Terminal do RStudio**:
+
 ```bash
 git add scripts/01_fundamentos.R
 git commit -m "Dia 1: fundamentos de R e setup"
