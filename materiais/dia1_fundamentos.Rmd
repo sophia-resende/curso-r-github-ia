@@ -107,21 +107,25 @@ Abordagem **100% prática e hands-on**:
 **R é uma linguagem poderosa e gratuita**, criada especificamente para análise de dados e estatística. Algumas razões para aprender R:
 
 **Ecosistema rico**
+
 - Mais de 20.000 pacotes disponíveis para praticamente qualquer análise
 - tidyverse: conjunto integrado de ferramentas modernas para ciência de dados
 - ggplot2: sistema de visualização elegante e profissional
 
 **Reprodutibilidade**
+
 - Tudo que você faz fica documentado em código
 - Fácil repetir análises com novos dados
 - R Markdown permite combinar código, resultados e narrativa
 
 **Comunidade ativa**
+
 - Grande comunidade brasileira e internacional
 - Milhares de tutoriais, cursos e fóruns de ajuda
 - TidyTuesday: prática semanal com dados reais
 
 **Demanda no mercado**
+
 - Usado em empresas, universidades e governos
 - Essencial para ciência de dados, bioinformática, economia, ciências sociais
 - Combina bem com Python em pipelines modernos de dados
@@ -131,21 +135,25 @@ Abordagem **100% prática e hands-on**:
 **GitHub não é apenas para programadores!** É uma plataforma essencial para:
 
 **Controle de versão**
+
 - Histórico completo de todas as mudanças no seu código
 - Possibilidade de voltar a versões anteriores
 - Nunca mais perder trabalho por acidente
 
 **Colaboração**
+
 - Trabalhe em equipe sem conflitos
 - Contribua para projetos open-source
 - Receba feedback e sugestões
 
 **Portfólio profissional**
+
 - Mostre seus projetos para empregadores
 - Demonstre evolução e consistência
 - Compartilhe conhecimento com a comunidade
 
 **Integração moderna**
+
 - Funciona perfeitamente com RStudio
 - Base para deployment de aplicações
 - Padrão da indústria para ciência de dados
@@ -155,21 +163,25 @@ Abordagem **100% prática e hands-on**:
 A inteligência artificial revolucionou o aprendizado de programação. **Não é trapaça, é trabalhar de forma inteligente!**
 
 **Acelera o aprendizado**
+
 - Explicações personalizadas para seu nível
 - Respostas imediatas para dúvidas específicas
 - Exemplos sob medida para seu contexto
 
 **Assistência na depuração**
+
 - Interpretação de mensagens de erro
 - Sugestões de correção
 - Identificação de problemas de lógica
 
 **Aumenta produtividade**
+
 - Geração de código boilerplate
 - Refatoração e otimização
 - Criação de documentação
 
 **Ferramentas do curso**
+
 - **ChatGPT (OpenAI)**: excelente para explicações didáticas e geração rápida de código
 - **Claude (Anthropic)**: ótimo para análises mais profundas e revisão de código complexo
 
@@ -192,6 +204,12 @@ R.version.string           # Versão do R
 RStudio.Version()$version  # Versão do RStudio
 system("git --version")    # Confirma Git disponível
 ```
+
+### Instalar Git (se não estiver disponível)
+
+Antes de começar a trabalhar com controle de versão no RStudio, você precisa ter o Git instalado no seu computador. Siga as instruções específicas para o seu sistema operacional.
+
+
 
 ### Configurar Git (uma vez só)
 No **Terminal do RStudio** (funciona em Windows/macOS/Linux):
@@ -277,6 +295,7 @@ Este comando mostra o status da sua configuração Git/GitHub. Procure por:
 Se você ver isso, está tudo configurado! ✅
 
 **Alternativas ao PAT:**
+
 - **GitHub Desktop** (aplicativo com interface gráfica - mais simples para iniciantes)
 - **SSH** (método avançado, requer configuração de chaves públicas/privadas)
 
